@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+    <!-- Sequence of teacher #T00335-->
+        <record id="seq_school_Teacher" model="ir.sequence">
+            <field name="name">Teacher</field>
+            <field name="code">school.teacher</field>
+            <field name="prefix">T</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False" />
+        </record>
+        <!-- sequence of supervisor #T00335-->
+        <record id="seq_school_Supervisor" model="ir.sequence">
+            <field name="name">Supervisor</field>
+            <field name="code">school.supervisor</field>
+            <field name="prefix">S</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False" />
+        </record>
+        <!-- sequence of student #T00335-->
+        <record id="seq_school_Student" model="ir.sequence">
+            <field name="name">Student</field>
+            <field name="code">school.student</field>
+            <field name="prefix">21</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False" />
+        </record>
+        <!-- sequence of principal #T00335-->
+        <record id="seq_school_Principal" model="ir.sequence">
+            <field name="name">Principal</field>
+            <field name="code">school.principal</field>
+            <field name="prefix">P</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False" />
+        </record>
+    </data>
+</odoo>

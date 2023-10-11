@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <!-- server action to turn is_status_active field False #T00404-->
+        <record id="action_to_archive_students_records" model="ir.actions.server">
+            <field name="name">Archive</field>
+            <field name="model_id" ref="model_school_student" />
+            <field name="state">code</field>
+            <field name="code">model.action_archive_students_records()</field>
+        </record>
+        <!-- server action to turn is_status_active field True #T00404-->
+        <record id="action_to_unarchive_students_records" model="ir.actions.server">
+            <field name="name">Unarchive</field>
+            <field name="model_id" ref="model_school_student" />
+            <field name="state">code</field>
+            <field name="code">model.action_unarchive_students_records()</field>
+        </record>
+    </data>
+</odoo>

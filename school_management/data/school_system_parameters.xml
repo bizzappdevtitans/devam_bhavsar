@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+    <!-- system parameter for allowed time period of fees payment in school.student #T00351-->
+        <record
+            id="allowed_time_period_for_feespayment_parameter"
+            model="ir.config_parameter"
+        >
+            <field name="key">allowed_time_period_for_feespayment</field>
+            <field name="value">2</field>
+        </record>
+    </data>
+</odoo>

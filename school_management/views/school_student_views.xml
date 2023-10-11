@@ -1,0 +1,345 @@
+<odoo>
+    <!-- kanban view #T00335-->
+    <record id="school_student_kanban_view" model="ir.ui.view">
+        <field name="name">school.student.kanban</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="school_student_view_kanban"
+                string="Student Details"
+                sample="1"
+            >
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_content">
+                                <div class="o_kanban_image">
+                                    <field
+                                        name="student_photo"
+                                        widget="image"
+                                        class="oe_avatar"
+                                    />
+                                </div>
+                                <div>
+                                    <strong>
+                                        <div>
+                                            First Name :
+                                            <field name="student_first_name" />
+                                        </div>
+                                        <div>
+                                            Last Name :
+                                            <field name="student_last_name" />
+                                        </div>
+                                        <div>
+                                            Roll no :
+                                            <field name="rollno" />
+                                        </div>
+                                        <div>
+                                            Standard:
+                                            <field name="standard" />
+                                        </div>
+                                        <div>
+                                            Division:
+                                            <field name="division_of_students_id" />
+                                        </div>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!-- tree view #T00335-->
+    <record id="school_student_tree_view" model="ir.ui.view">
+        <field name="name">school.student.tree</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_first_name" string="Student First name" />
+                <field name="student_last_name" string="Student Last name" />
+                <field name="rollno" />
+                <field name="teacher_assigned_id" />
+                <field name="standard" />
+                <field name="division_of_students_id" />
+                <field name="is_status_active" />
+            </tree>
+        </field>
+    </record>
+    <!-- graph view #T00335-->
+    <record id="school_student_graph_view" model="ir.ui.view">
+        <field name="name">school.student.graph</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <graph string="Age" type="bar">
+                <field name="student_first_name" />
+                <field name="age_of_student" type="measure" />
+                <field name="gender" />
+            </graph>
+        </field>
+    </record>
+    <!-- pivot view #T00335-->
+    <record id="school_student_pivot_view" model="ir.ui.view">
+        <field name="name">school.student.pivot</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <pivot string="Age">
+                <field name="student_first_name" type="row" />
+                <field name="age_of_student" type="col" />
+            </pivot>
+        </field>
+    </record>
+    <!-- calendar view #T00335-->
+    <record id="school_student_calendar_view" model="ir.ui.view">
+        <field name="name">school.student.calendar</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <calendar
+                string="Calendar"
+                mode="month"
+                date_start="date_of_birth"
+                event_open_popup="1"
+            >
+                <field name="date_of_birth" />
+                <field name="student_first_name" />
+            </calendar>
+        </field>
+    </record>
+    <!-- form view  with notebook and pages#T00335-->
+    <record id="school_student_form_view" model="ir.ui.view">
+        <field name="name">school.student.form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- button for wizard #T00348-->
+                        <button
+                        name="%(school_management.action_school_student_pay_fees_wizard)d"
+                        string="Pay Fees"
+                        type="action"
+                        class="oe_highlight"
+                        groups="school_management.access_school_student_group"
+                        attrs="{'invisible': [('admission_state', '=','cancelled')]}"
+                    />
+                    <!--Button to print receipt #T00444-->
+                        <button
+                        name="%(school_management.action_student_fees_receipt)d"
+                        string="Receipt"
+                        type="action"
+                        class="oe_highlight"
+                        attrs="{'invisible': [('fees_students_ids', '=',[])]}"
+                    />
+                    <!--status bar #T00335-->
+                        <field
+                        groups="school_management.access_school_teacher_group,school_management.access_school_supervisor_group,school_management.access_school_principal_group"
+                        name="admission_state"
+                        widget="statusbar"
+                    />
+
+                </header>
+                <sheet>
+                    <!-- ribbon widget for archived records #T00404 -->
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('is_status_active', '=', True)]}"
+                    />
+                    <!-- smart button to count subjects #T00335-->
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            class="oe_stat_button"
+                            type="object"
+                            name="action_show_number_of_subjects"
+                            icon="fa-book"
+                        >
+                            <field
+                                string="Subjects"
+                                name="subject_count"
+                                widget="statinfo"
+                            />
+                        </button>
+                        <!-- smart button to count payments #T00335-->
+                        <button
+                            class="oe_stat_button"
+                            type="object"
+                            name="action_show_number_of_payments"
+                            icon="fa-inr"
+                        >
+                            <field
+                                string="Payments"
+                                name="payment_count"
+                                widget="statinfo"
+                            />
+                        </button>
+                    </div>
+                    <div>
+                        <h1>
+                            <field name="sequence_enrol_no" readonly="1" />
+                            <field
+                                name="student_photo"
+                                widget="image"
+                                class="oe_avatar"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="student_first_name" />
+                            <field name="student_last_name" />
+                            <field name="age_of_student" />
+                            <field name="gender" widget="radio" />
+                            <field name="today_date" />
+                            <field name="last_date_for_fees_payment" />
+                        </group>
+                        <group>
+                            <field
+                                groups="school_management.access_school_teacher_group,school_management.access_school_supervisor_group,school_management.access_school_principal_group"
+                                name="is_status_active"
+                                widget="boolean_toggle"
+                            />
+                            <field
+                                groups="school_management.access_school_teacher_group,school_management.access_school_supervisor_group,school_management.access_school_principal_group"
+                                name="is_confirm_info"
+                            />
+                            <field
+                                groups="school_management.access_school_teacher_group,school_management.access_school_supervisor_group,school_management.access_school_principal_group"
+                                name="is_confirm_admission"
+                            />
+                            <field name="date_of_birth" />
+                            <field name="marksheet_file" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Class information" name="class">
+                            <group>
+                                <field name="teacher_assigned_id" />
+                                <field name="rollno" />
+                                <field name="standard" />
+                                <field name="division_of_students_id" />
+                            </group>
+                        </page>
+                        <page string="Fees information" name="students_fees">
+                            <field name="fees_students_ids">
+                                <tree>
+                                    <field name="currency_id" invisible='1' />
+                                    <field name="paid_date" />
+                                    <field
+                                        name="total_fees"
+                                        widget="monetary"
+                                        readonly="1"
+                                    />
+                                    <field name="paid_fees" widget="monetary" />
+                                    <field name="remaning_fees" widget="monetary" />
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="currency_id" invisible="1" />
+                                            <field name="paid_date" />
+                                            <field
+                                                name="total_fees"
+                                                widget="monetary"
+                                                readonly="1"
+                                            />
+                                            <field name="paid_fees" widget="monetary" />
+                                            <field
+                                                name="remaning_fees"
+                                                widget="monetary"
+                                            />
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Subject information" name="subj">
+                            <group>
+                                <field
+                                    name="subject_list_ids"
+                                    widget="many2many_tags"
+                                    string="Subjects"
+                                />
+                            </group>
+                        </page>
+                        <page string="Additional information" name="additional_info">
+                            <group>
+                                <field name="address_student" />
+                                <field name="father_name_student" />
+                                <field name="mother_name_student" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- chatter #T00335-->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+    <!-- search view #T00335-->
+    <record id="school_student_search_view" model="ir.ui.view">
+        <field name="name">school.student.search</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="student_first_name" />
+                <field name="student_last_name" />
+                <field name="gender" />
+                <field name="date_of_birth" />
+                <field name="is_status_active" />
+                <field name="age_of_student" />
+
+                <filter
+                    string="Active"
+                    name="is_status_active"
+                    domain="[('is_status_active', '=',True)]"
+                />
+                <!-- filter by status #T00335-->
+                <filter
+                    string="Archived"
+                    name="is_status_active"
+                    domain="[('is_status_active', '=', False)]"
+                />
+                <!-- group by standard #T00335-->
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Standard"
+                        name="standard"
+                        context="{'group_by': 'standard'}"
+                    />
+                </group>
+                <!-- group by gender #T00335-->
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Gender"
+                        name="gender"
+                        context="{'group_by': 'gender'}"
+                    />
+                </group>
+               <!-- group by division #T00335-->
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Division"
+                        name="division_of_students_id"
+                        context="{'group_by': 'division_of_students_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <!-- window action #T00335-->
+    <record id="action_school_student" model="ir.actions.act_window">
+        <field name="name">Student Details</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">kanban,tree,graph,pivot,calendar,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create Student Record</p>
+        </field>
+    </record>
+</odoo>
