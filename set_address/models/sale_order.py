@@ -13,30 +13,20 @@ class SaleOrder(models.Model):
         get more than one then the first employee will be shown if no condition is
         fullfilled and than the employees who have not selected address type : delivery
         than partner_shipping_id will be the company address #T00460"""
-        res = super(SaleOrder, self).onchange_partner_id()
-        for partner in self.partner_id:
-            if not (
-                partner.is_delivery_address
-                and partner.type == "delivery"
-                and partner.company_type == "person"
+        super(SaleOrder, self).onchange_partner_id()
+        company = self.env["res.partner"].browse(self.partner_id.id)
+        employees = company.child_ids
+        if company and employees:
+            if employee_has_set_is_delivery_addr := employees.filtered(
+                lambda field: field.is_delivery_address and field.type == "delivery"
             ):
-                employee_has_set_delivery_addr = self.env["res.partner"].search(
-                    [
-                        "&",
-                        "&",
-                        ("id", "in", partner.child_ids.ids),
-                        ("is_delivery_address", "=", False),
-                        ("type", "=", "delivery"),
-                    ]
-                )
-                self.partner_shipping_id = employee_has_set_delivery_addr[0]
-            employee_has_set_is_delivery_addr = self.env["res.partner"].search(
-                [
-                    "&",
-                    ("id", "in", partner.child_ids.ids),
-                    ("is_delivery_address", "=", True),
-                ]
-            )
-            self.partner_shipping_id = employee_has_set_is_delivery_addr[0]
-
-        return res
+                self.partner_shipping_id = employee_has_set_is_delivery_addr[0]
+                if employee_has_set_delivery_addr := employees.filtered(
+                    lambda field: employee_has_set_is_delivery_addr is False
+                ):
+                    self.partner_shipping_id = employee_has_set_delivery_addr[0]
+            if employee_has_set_dropship_addr := employees.filtered(
+                lambda field: field.is_delivery_address is False
+                and field.type == "dropship"
+            ):
+                self.partner_shipping_id = employee_has_set_dropship_addr[0]

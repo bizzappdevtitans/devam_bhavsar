@@ -3,7 +3,7 @@
     "version": "15.0.1.0.0",
     "depends": ["base", "sale", "sale_management"],
     "author": "bizzappdev",
-    "website": "https://github.com/OCA/project",
+    "website": "https://www.bizzappdev.com",
     "category": "Administration",
     "summary": "",
     "data": ["views/res_partner_views.xml"],
