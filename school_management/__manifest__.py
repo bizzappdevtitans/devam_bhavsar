@@ -3,9 +3,8 @@
     "version": "15.0.1.0.0",
     "depends": ["base", "mail", "base_automation"],
     "author": "bizzappdev",
-    "website": "https://github.com/OCA/multi-company",
+    "website": "https://www.bizzappdev.com",
     "category": "Administration",
-    "description": """School management tool""",
     "summary": "School management tool",
     "data": [
         "report/school_student_fees_receipt.xml",

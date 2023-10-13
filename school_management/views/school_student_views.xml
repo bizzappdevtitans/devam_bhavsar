@@ -130,6 +130,13 @@
                         class="oe_highlight"
                         attrs="{'invisible': [('fees_students_ids', '=',[])]}"
                     />
+                        <button
+                        name="test_searchg"
+                        id="test_searchg"
+                        string="searchss"
+                        type="object"
+                        class="oe_highlight"
+                    />
                     <!--status bar #T00335-->
                         <field
                         groups="school_management.access_school_teacher_group,school_management.access_school_supervisor_group,school_management.access_school_principal_group"

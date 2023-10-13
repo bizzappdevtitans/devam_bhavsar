@@ -191,15 +191,11 @@ class SchoolStudent(models.Model):
 
     def action_archive_students_records(self):
         """server action to turn is_status_active field False and #T00404"""
-        return self.search([("is_status_active", "=", True)]).write(
-            {"is_status_active": False}
-        )
+        self.write({"is_status_active": False})
 
     def action_unarchive_students_records(self):
         """server action to turn is_status_active field True #T00404"""
-        return self.search([("is_status_active", "=", False)]).write(
-            {"is_status_active": True}
-        )
+        self.write({"is_status_active": True})
 
     def action_archive_record_if_in_given_states(self):
         """logic for  automated action to change a record state if state is in applied or
@@ -217,6 +213,7 @@ class SchoolStudent(models.Model):
         students = self.search([]).filtered(
             lambda student: student.age_of_student == value
         )
+
         if not students:
             pass
         return [("id", "in", [student.id for student in students])]
