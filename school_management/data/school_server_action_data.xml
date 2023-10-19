@@ -2,7 +2,7 @@
     <data>
         <!-- server action to turn is_status_active field False #T00404-->
         <record id="action_to_archive_students_records" model="ir.actions.server">
-            <field name="name">Archive student records</field>
+            <field name="name">Archive Student records</field>
             <field name="model_id" ref="school_management.model_school_student" />
             <field name="state">code</field>
             <field
@@ -11,7 +11,7 @@
         </record>
         <!-- server action to turn is_status_active field True #T00404-->
         <record id="action_to_unarchive_students_records" model="ir.actions.server">
-            <field name="name">Unarchive student records</field>
+            <field name="name">Unarchive Student records</field>
             <field name="model_id" ref="school_management.model_school_student" />
             <field name="state">code</field>
             <field
