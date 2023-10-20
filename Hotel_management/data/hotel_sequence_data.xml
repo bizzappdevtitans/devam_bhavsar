@@ -1,0 +1,14 @@
+<odoo>
+    <record id="seq_hotel_room" model="ir.sequence">
+        <field name="name">Room number</field>
+        <field name="code">hotel.room.type</field>
+        <field name="prefix">Room-</field>
+        <field name="padding">3</field>
+    </record>
+    <record id="seq_hotel_room_reservation" model="ir.sequence">
+        <field name="name">Room reservation</field>
+        <field name="code">hotel.room.reservation</field>
+        <field name="prefix">R</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

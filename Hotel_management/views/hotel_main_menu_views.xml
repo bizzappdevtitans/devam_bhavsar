@@ -1,0 +1,21 @@
+<odoo>
+    <menuitem id="hotel_menu_root" name="Taj" />
+    <menuitem
+        id="hotel_room_root"
+        name="Rooms"
+        parent="hotel_menu_root"
+        action="action_hotel_room_type"
+    />
+    <menuitem
+        id="hotel_room_reservation_root"
+        name="Reserve room"
+        parent="hotel_menu_root"
+        action="action_hotel_room_reservation"
+    />
+    <menuitem
+        id="hotel_guests"
+        name="Guests"
+        parent="hotel_menu_root"
+        action="base.action_partner_form"
+    />
+</odoo>
