@@ -1,7 +1,7 @@
 {
     "name": "Hotel_management",
     "version": "15.0.1.0.0",
-    "depends": ["base"],
+    "depends": ["base", "mail"],
     "author": "bizzappdev",
     "website": "https://www.bizzappdev.com",
     "category": "Administration",
@@ -9,6 +9,10 @@
     "data": [
         "security/ir.model.access.csv",
         "data/hotel_sequence_data.xml",
+        "data/hotel_cron_data.xml",
+        "data/reservation_reminder_template.xml",
+        "data/hotel_system_parameters.xml",
+        "data/reservation_confirmed_email_template.xml",
         "views/hotel_reservation_views.xml",
         "views/hotel_room_type_views.xml",
         "views/hotel_main_menu_views.xml",

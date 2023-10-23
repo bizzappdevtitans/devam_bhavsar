@@ -1,0 +1,27 @@
+<odoo>
+    <!-- Email template for confirmed reservations #T00471 -->
+    <record id="reservation_confirmed_email_template" model="mail.template">
+        <field name="name">Reservation confirmed email template</field>
+        <field name="model_id" ref="Hotel_management.model_hotel_room_reservation" />
+        <field name="email_from">Taj@gmail.com</field>
+        <field name="email_to">{{object.customer_ids[0].email}}</field>
+        <field name="subject">Reservation Confirmed</field>
+        <field name="body_html" type="html">
+            <p>
+                <t>
+                    <t t-foreach="object.rooms_ids" t-as="guests">
+                    Dear <t t-out="object.customer_ids[0].name" />,
+                    <br /><br />
+                    Your reservation for <t
+                            t-out="guests.room_sequence"
+                        /> is confirmed.
+                    <br /><br />
+                    Regards,
+                    <br />
+                    Taj
+                    </t>
+                </t>
+            </p>
+        </field>
+    </record>
+</odoo>

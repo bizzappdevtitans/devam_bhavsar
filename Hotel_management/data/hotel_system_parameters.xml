@@ -1,0 +1,15 @@
+<odoo>
+    <!-- system parameter for room prices based on season #T00471 -->
+    <record id="winter_season_price" model="ir.config_parameter">
+        <field name="key">winter_season_prices</field>
+        <field name="value">1000</field>
+    </record>
+    <record id="summer_season_price" model="ir.config_parameter">
+        <field name="key">summer_season_price</field>
+        <field name="value">1010</field>
+    </record>
+    <record id="monsoon_season_price" model="ir.config_parameter">
+        <field name="key">monsoon_season_price</field>
+        <field name="value">1070</field>
+    </record>
+</odoo>

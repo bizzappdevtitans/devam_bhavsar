@@ -1,4 +1,5 @@
 <odoo>
+    <!-- hotel room tree view #T00471 -->
     <record id="hotel_room_type_tree_view" model="ir.ui.view">
         <field name="name">hotel.room.type.tree</field>
         <field name="model">hotel.room.type</field>
@@ -9,6 +10,7 @@
             </tree>
         </field>
     </record>
+    <!-- hotel room form view #T00471 -->
     <record id="hotel_room_type_form_view" model="ir.ui.view">
         <field name="name">hotel.room.type.form</field>
         <field name="model">hotel.room.type</field>
@@ -18,6 +20,21 @@
                     <field name="room_status" widget="statusbar" />
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- smart button to show guests #T00471 -->
+                        <button
+                            class="oe_stat_button"
+                            type="object"
+                            name="action_show_guests"
+                            icon="fa-users"
+                        >
+                            <field
+                                string="Guests"
+                                name="guests_count"
+                                widget="statinfo"
+                            />
+                        </button>
+                    </div>
                     <div>
                         <h1>
                             <field name="room_sequence" readonly="1" />
@@ -43,6 +60,7 @@
             </form>
         </field>
     </record>
+    <!-- window action #T00471 -->
     <record id="action_hotel_room_type" model="ir.actions.act_window">
         <field name="name">Rooms</field>
         <field name="type">ir.actions.act_window</field>

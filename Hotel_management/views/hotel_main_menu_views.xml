@@ -1,17 +1,21 @@
 <odoo>
-    <menuitem id="hotel_menu_root" name="Taj" />
+    <!-- hotel main menu #T00471 -->
+    <menuitem id="hotel_menu_root" name=" The Taj" />
+    <!-- menu for hotel rooms #T00471 -->
     <menuitem
         id="hotel_room_root"
         name="Rooms"
         parent="hotel_menu_root"
         action="action_hotel_room_type"
     />
+    <!-- menu for room reservations #T00471 -->
     <menuitem
         id="hotel_room_reservation_root"
         name="Reserve room"
         parent="hotel_menu_root"
         action="action_hotel_room_reservation"
     />
+    <!-- Menu for guest #T00471 -->
     <menuitem
         id="hotel_guests"
         name="Guests"
