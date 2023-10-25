@@ -63,7 +63,7 @@ class HotelRoomReservation(models.Model):
         if not room_capacity >= len(self.customer_ids):
             raise ValidationError(_("Room Capcaity exceeded"))
         mail_template = self.env.ref(
-            "Hotel_management.reservation_confirmed_email_template"
+            "Hotel_management.room_reservation_confirmed_email_template"
         )
         mail_template.send_mail(self.id, force_send=True)
         rooms.write({"room_status": "booked", "guests_ids": self.customer_ids.ids})
@@ -110,7 +110,7 @@ class HotelRoomReservation(models.Model):
     def action_reservation_reminder(self):
         """action for cron job to send reservation reminders #T00471"""
         mail_template = self.env.ref(
-            "Hotel_management.reservation_reminder_email_template"
+            "Hotel_management.room_reservation_reminder_email_template"
         )
         for reservations in self.get_reservation():
             mail_template.send_mail(reservations.id, force_send=True)

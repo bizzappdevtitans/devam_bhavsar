@@ -18,7 +18,9 @@ class HotelRoomType(models.Model):
         ],
         required=True,
     )
-    room_price = fields.Float(string="Room price")
+    room_price = fields.Float(
+        string="Room price", compute="_compute_prices_base_on_seasons"
+    )
     room_status = fields.Selection(
         [("vacant", "Vacant"), ("booked", "Booked")],
         default="vacant",
@@ -95,16 +97,56 @@ class HotelRoomType(models.Model):
 
     @api.onchange("room_type")
     def _compute_prices_base_on_seasons(self):
-        """compute method to get room prices based on seasons #T00471"""
-        summer_season = self.env["ir.config_parameter"].get_param("summer_season_price")
-        winter_season = self.env["ir.config_parameter"].get_param("winter_season_price")
-        monsoon_season = self.env["ir.config_parameter"].get_param(
-            "monsoon_season_price"
-        )
+        """compute method to get room prices based on seasons  and multiply the room
+        price based on its type #T00471"""
+        seasons_dict = {
+            "summer": {
+                "start": "09-21",
+                "end": "12-21",
+                "price": float(
+                    self.env["ir.config_parameter"].get_param("summer_season_price")
+                ),
+            },
+            "winter": {
+                "start": "12-22",
+                "end": "04-20",
+                "price": float(
+                    self.env["ir.config_parameter"].get_param("winter_season_price")
+                ),
+            },
+            "monsoon": {
+                "start": "04-21",
+                "end": "09-20",
+                "price": float(
+                    self.env["ir.config_parameter"].get_param("monsoon_season_price")
+                ),
+            },
+        }
+        today_date = date.today().strftime("%m-%d")
         for prices in self:
-            if ("22-12") < date.today().strftime("%d-%m") < ("20-04"):
-                prices.room_price = winter_season
-            if ("21-04") < date.today().strftime("%d-%m") < ("20-09"):
-                prices.room_price = monsoon_season
-            if ("21-09") < date.today().strftime("%d-%m") < ("21-12"):
-                prices.room_price = summer_season
+            for _seasons, dates in seasons_dict.items():
+                if dates["start"] <= today_date <= dates["end"]:
+                    if prices.room_type == "single":
+                        prices.room_price = dates["price"] * float(
+                            self.env["ir.config_parameter"].get_param(
+                                "single_room_price_multiplier"
+                            )
+                        )
+                    elif prices.room_type == "double":
+                        prices.room_price = dates["price"] * float(
+                            self.env["ir.config_parameter"].get_param(
+                                "double_room_price_multiplier"
+                            )
+                        )
+                    elif prices.room_type == "family":
+                        prices.room_price = dates["price"] * float(
+                            self.env["ir.config_parameter"].get_param(
+                                "family_room_price_multiplier"
+                            )
+                        )
+                    elif prices.room_type == "vip":
+                        prices.room_price = dates["price"] * float(
+                            self.env["ir.config_parameter"].get_param(
+                                "vip_room_price_multiplier"
+                            )
+                        )

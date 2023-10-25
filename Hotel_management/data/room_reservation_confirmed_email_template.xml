@@ -1,7 +1,7 @@
 <odoo>
     <!-- Email template for confirmed reservations #T00471 -->
-    <record id="reservation_confirmed_email_template" model="mail.template">
-        <field name="name">Reservation confirmed email template</field>
+    <record id="room_reservation_confirmed_email_template" model="mail.template">
+        <field name="name">Room Reservation confirmed email template</field>
         <field name="model_id" ref="Hotel_management.model_hotel_room_reservation" />
         <field name="email_from">Taj@gmail.com</field>
         <field name="email_to">{{object.customer_ids[0].email}}</field>
@@ -18,7 +18,7 @@
                     <br /><br />
                     Regards,
                     <br />
-                    Taj
+                    The Taj
                     </t>
                 </t>
             </p>

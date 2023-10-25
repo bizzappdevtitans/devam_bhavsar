@@ -1,0 +1,183 @@
+<odoo>
+    <!-- Food demo record #T00471-->
+    <record id="food_margherita" model="food.product">
+        <field name="food_price">7.0</field>
+        <field name="food_name">Margherita</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-pizza.png"
+        />
+    </record>
+    <record id="food_funghi" model="food.product">
+        <field name="food_price">7.0</field>
+        <field name="food_name">Funghi</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-pizza.png"
+        />
+    </record>
+    <record id="food_vege" model="food.product">
+        <field name="food_price">7.0</field>
+        <field name="food_name">Vegetarian</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-pizza.png"
+        />
+    </record>
+    <record id="food_bolo" model="food.product">
+        <field name="food_price">4.5</field>
+        <field name="food_name">Pasta Bolognese</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-pasta.jpg"
+        />
+    </record>
+    <record id="food_4formaggi" model="food.product">
+        <field name="food_price">5.5</field>
+        <field name="food_name">Pasta 4 formaggi </field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-pasta-4f.jpg"
+        />
+    </record>
+    <record id="food_bacon" model="food.product">
+        <field name="food_price">7.5</field>
+        <field name="food_name">Bacon Burger</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-burger.jpg"
+        />
+    </record>
+    <record id="food_cheeseburger" model="food.product">
+        <field name="food_price">7.0</field>
+        <field name="food_name">Cheese Burger</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-cheeseburger.jpg"
+        />
+    </record>
+    <record id="food_chicken" model="food.product">
+        <field name="food_price">3.0</field>
+        <field name="food_name">Chicken Curry Sandwich</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-sandwich.jpg"
+        />
+    </record>
+    <record id="food_tuna" model="food.product">
+        <field name="food_price">3.0</field>
+        <field name="food_name">Spicy Tuna Sandwich</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-tuna.jpg"
+        />
+    </record>
+    <record id="food_mozza" model="food.product">
+        <field name="food_price">3.9</field>
+        <field name="food_name">Mozzarella Sandwich</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-mozza.jpg"
+        />
+    </record>
+    <record id="food_club" model="food.product">
+        <field name="food_price">3.4</field>
+        <field name="food_name">Club Sandwich</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-club.jpg"
+        />
+    </record>
+    <record id="food_maki" model="food.product">
+        <field name="food_price">12.0</field>
+        <field name="food_name">Lunch Maki 18pc</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-maki.jpg"
+        />
+    </record>
+    <record id="food_salmon" model="food.product">
+        <field name="food_price">13.80</field>
+        <field name="food_name">Lunch Salmon 20pc</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-salmon.jpg"
+        />
+    </record>
+    <record id="food_temaki" model="food.product">
+        <field name="food_price">14.0</field>
+        <field name="food_name">Lunch Temaki mix 3pc</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-temaki.jpg"
+        />
+    </record>
+    <record id="food_chirashi" model="food.product">
+        <field name="food_price">9.25</field>
+        <field name="food_name">Salmon and Avocado</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-salmon-avocado.jpg"
+        />
+    </record>
+    <record id="coke" model="food.product">
+        <field name="food_price">2.20</field>
+        <field name="food_name">Coca-Cola</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-coke.jpg"
+        />
+    </record>
+    <record id="water" model="food.product">
+        <field name="food_price">2.20</field>
+        <field name="food_name">Water</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-water.jpg"
+        />
+    </record>
+    <record id="minute_maid" model="food.product">
+        <field name="food_price">2.20</field>
+        <field name="food_name">Minute Maid</field>
+        <field name="food_calory">0.01</field>
+        <field
+            name="food_image"
+            type="base64"
+            file="Hotel_management/static/img/th-minute_maid.jpg"
+        />
+    </record>
+</odoo>

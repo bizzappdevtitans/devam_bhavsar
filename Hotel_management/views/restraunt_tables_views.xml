@@ -1,0 +1,66 @@
+<odoo>
+    <!-- hotel room tree view #T00471 -->
+    <record id="restraunt_tables_tree_view" model="ir.ui.view">
+        <field name="name">restraunt.tables.tree</field>
+        <field name="model">restraunt.tables</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="table_no_seq" />
+                <field name="availability_status" />
+            </tree>
+        </field>
+    </record>
+    <!-- hotel room form view #T00471 -->
+    <record id="restraunt_tables_form_view" model="ir.ui.view">
+        <field name="name">restraunt.tables.form</field>
+        <field name="model">restraunt.tables</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="availability_status" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="table_no_seq" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="capacity" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="restraunt_tables_search_view" model="ir.ui.view">
+        <field name="name">restraunt.tables.search</field>
+        <field name="model">restraunt.tables</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="table_no_seq" />
+                <field name="availability_status" />
+                <!-- filter by status #T00471-->
+                <filter
+                    string="Available"
+                    name="availability_status"
+                    domain="[('availability_status', '=','available')]"
+                />
+                <filter
+                    string="Reserved"
+                    name="availability_status"
+                    domain="[('availability_status', '=','reserved')]"
+                />
+            </search>
+        </field>
+    </record>
+    <!-- window action #T00471 -->
+    <record id="action_restraunt_tables" model="ir.actions.act_window">
+        <field name="name">Tables</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">restraunt.tables</field>
+        <field name='view_mode'>tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add Tables</p>
+        </field>
+    </record>
+</odoo>

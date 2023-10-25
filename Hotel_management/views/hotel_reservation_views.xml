@@ -75,6 +75,34 @@
             </form>
         </field>
     </record>
+    <!-- hotel reservation search view #T00471 -->
+    <record id="hotel_room_type_search_views" model="ir.ui.view">
+        <field name="name">hotel.room.reservation.search</field>
+        <field name="model">hotel.room.reservation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="rooms_ids" />
+                <field name="check_in_date" />
+                <field name="check_out_date" />
+                <!-- filter by status #T00471-->
+                <filter
+                    string="Draft"
+                    name="reservation_status"
+                    domain="[('reservation_status', '=','draft')]"
+                />
+                <filter
+                    string="Reserved"
+                    name="reservation_status"
+                    domain="[('reservation_status', '=','reserved')]"
+                />
+                <filter
+                    string="Cancelled"
+                    name="reservation_status"
+                    domain="[('reservation_status', '=','cancelled')]"
+                />
+            </search>
+        </field>
+    </record>
     <!-- window action #T00471 -->
     <record id="action_hotel_room_reservation" model="ir.actions.act_window">
         <field name="name">Room Reservation</field>

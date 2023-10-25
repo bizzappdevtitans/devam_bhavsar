@@ -8,9 +8,30 @@
     </record>
     <!-- sequence for hotel room reservations #T00471 -->
     <record id="seq_hotel_room_reservation" model="ir.sequence">
-        <field name="name">Room reservation</field>
+        <field name="name">Room reservation number</field>
         <field name="code">hotel.room.reservation</field>
         <field name="prefix">R</field>
+        <field name="padding">4</field>
+    </record>
+    <!-- sequence for restraunt tables #T00471 -->
+    <record id="seq_restraunt_table" model="ir.sequence">
+        <field name="name">Restraunt table number</field>
+        <field name="code">restraunt.tables</field>
+        <field name="prefix">Table-</field>
+        <field name="padding">2</field>
+    </record>
+    <!-- sequence for restraunt reservations #T00471 -->
+    <record id="seq_restraunt_reservation" model="ir.sequence">
+        <field name="name">Restraunt reservation number</field>
+        <field name="code">restaurant.reservation</field>
+        <field name="prefix">Reservation-</field>
+        <field name="padding">4</field>
+    </record>
+    <!-- sequence for room services #T00471 -->
+    <record id="seq_room_service" model="ir.sequence">
+        <field name="name">Room service sequence number</field>
+        <field name="code">hotel.room.services</field>
+        <field name="prefix">S</field>
         <field name="padding">4</field>
     </record>
 </odoo>

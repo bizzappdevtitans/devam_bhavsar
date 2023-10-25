@@ -1,0 +1,54 @@
+<odoo>
+    <!-- Inherited res config setting to add system parameters in setting #T00471 -->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='emails']" position="after">
+                <h2 class="mt32">Seasonal Prices</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="summer_season" />
+                            <div class="text-muted">
+                                <field name="summer_season" />
+                            </div>
+                            <label for="winter_season" />
+                            <div class="text-muted">
+                                <field name="winter_season" />
+                            </div>
+                            <label for="monsoon_season" />
+                            <div class="text-muted">
+                                <field name="monsoon_season" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="mt32">Room price multiplier</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="single_room" />
+                            <div class="text-muted">
+                                <field name="single_room" />
+                            </div>
+                            <label for="double_season" />
+                            <div class="text-muted">
+                                <field name="double_season" />
+                            </div>
+                            <label for="family_season" />
+                            <div class="text-muted">
+                                <field name="family_season" />
+                            </div>
+                            <label for="vip_season" />
+                            <div class="text-muted">
+                                <field name="vip_season" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

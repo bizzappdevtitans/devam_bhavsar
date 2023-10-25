@@ -1,0 +1,42 @@
+<odoo>
+    <!-- form view #T00471-->
+    <record id="hotel_room_services_wizard_form_view" model="ir.ui.view">
+        <field name="name">hotel.room.service.wizard.form</field>
+        <field name="model">hotel.room.service.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="room_id" readonly="1" />
+                    <field name="service_type" widget="radio" />
+                    <field name="food_lines_ids">
+                        <tree editable="bottom">
+                            <field name="food_product_id" />
+                            <field name="food_price" />
+                            <field name="food_calory" />
+                            <field name="food_qty" />
+                            <field name="food_subtotal" />
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                <!-- save and discard  #T00471  -->
+                    <button
+                        name="action_order_food_service"
+                        string="Order Food service"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button special="cancel" string="Discard" class="btn-secondary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!--  window actions #T00471 -->
+    <record id="action_hotel_room_services_wizard" model="ir.actions.act_window">
+        <field name="name">Apply Leave</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hotel.room.service.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

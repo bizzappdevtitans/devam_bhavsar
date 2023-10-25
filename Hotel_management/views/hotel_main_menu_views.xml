@@ -1,19 +1,41 @@
 <odoo>
     <!-- hotel main menu #T00471 -->
     <menuitem id="hotel_menu_root" name=" The Taj" />
-    <!-- menu for hotel rooms #T00471 -->
-    <menuitem
-        id="hotel_room_root"
-        name="Rooms"
-        parent="hotel_menu_root"
-        action="action_hotel_room_type"
-    />
+    <!--sub-menu for hotel rooms #T00471 -->
+    <menuitem id="hotel_room_root" name="Rooms" parent="hotel_menu_root" />
     <!-- menu for room reservations #T00471 -->
     <menuitem
-        id="hotel_room_reservation_root"
+        id="hotel_room_reservation_child"
         name="Reserve room"
-        parent="hotel_menu_root"
+        parent="hotel_room_root"
         action="action_hotel_room_reservation"
+    />
+    <!-- menu for rooms #T00471 -->
+    <menuitem
+        id="hotel_rooms_child"
+        name=" All Rooms"
+        parent="hotel_room_root"
+        action="action_hotel_room_type"
+    />
+    <!-- sub menu for services #T00471-->
+    <menuitem
+        id="hotel_room_services_root"
+        name="Room services"
+        parent="hotel_menu_root"
+    />
+    <!-- child menu for room services #T00471 -->
+    <menuitem
+        id="hotel_room_services_child"
+        name="Services"
+        parent="hotel_room_services_root"
+        action="action_hotel_room_services"
+    />
+    <!-- child menu for food products #T00471 -->
+    <menuitem
+        id="hotel_room_food_services"
+        name="Food"
+        parent="hotel_room_services_root"
+        action="action_food_products"
     />
     <!-- Menu for guest #T00471 -->
     <menuitem
@@ -21,5 +43,21 @@
         name="Guests"
         parent="hotel_menu_root"
         action="base.action_partner_form"
+    />
+    <!-- sub menu for restraunt #T00471 -->
+    <menuitem id="restraunt_root" name="Restraunt" parent="hotel_menu_root" />
+    <!-- menu for restraunt reservation #T00471 -->
+    <menuitem
+        id="restraunt_reservation_child"
+        name="Reservations"
+        parent="restraunt_root"
+        action="action_restraunt_reservation"
+    />
+    <!-- Menu for restraunt tables #T00471 -->
+    <menuitem
+        id="restraunt_tables_child"
+        name="Tables"
+        parent="restraunt_root"
+        action="action_restraunt_tables"
     />
 </odoo>
