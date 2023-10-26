@@ -40,6 +40,11 @@ class HotelRoomType(models.Model):
     guests_count = fields.Integer(
         string="Number of guests", compute="_compute_number_of_guests"
     )
+    occupied_till = fields.Date(string="Room occupied till")
+    room_image = fields.Image(string="Room image")
+    reservation_ref = fields.Many2one(
+        comodel_name="hotel.room.reservation", string="Reservation reference"
+    )
 
     @api.model
     def create(self, value):
@@ -63,7 +68,7 @@ class HotelRoomType(models.Model):
 
     @api.model
     def name_get(self):
-        """overided name_get so that full name of supervisor is Shown #T00471"""
+        """overided name_get so that room number and its type is shown #T00471"""
         result = []
         for combined_names in self:
             if combined_names.room_type:
@@ -150,3 +155,14 @@ class HotelRoomType(models.Model):
                                 "vip_room_price_multiplier"
                             )
                         )
+
+    def action_checkout(self):
+        """action for checkout button #T00471"""
+        for reservations in self.reservation_ref:
+            reservations.write({"reservation_status": "done"})
+        self.write(
+            {
+                "room_status": "vacant",
+                "guests_ids": [(5, 0, 0)],
+            }
+        )

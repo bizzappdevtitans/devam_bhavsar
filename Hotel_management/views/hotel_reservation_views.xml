@@ -7,7 +7,6 @@
             <tree>
                 <field name="reservation_seq" />
                 <field name="reservation_status" />
-                <field name="customer_ids" />
             </tree>
         </field>
     </record>
@@ -55,10 +54,15 @@
                         </h1>
                     </div>
                     <group>
-                        <field name="rooms_ids" widget="many2many_tags" />
-                        <field name="check_in_date" />
-                        <field name="check_out_date" />
-                        <field name="total_days" />
+                        <group>
+                            <field name="rooms_ids" widget="many2many_tags" />
+                            <field name="check_in_date" />
+                            <field name="check_out_date" />
+                            <field name="total_days" />
+                        </group>
+                        <group>
+                            <field name="total_cost" widget="monetary" />
+                        </group>
                     </group>
                     <notebook>
                         <page string="Guests" name="guests">

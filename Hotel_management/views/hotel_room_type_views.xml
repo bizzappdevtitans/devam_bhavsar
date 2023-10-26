@@ -1,4 +1,52 @@
 <odoo>
+    <!-- hotel room kanban view #T00471 -->
+    <record id="hotel_room_type_kanban_view" model="ir.ui.view">
+        <field name="name">hotel.room.type.kanban</field>
+        <field name="model">hotel.room.type</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="hotel_room_type_kanban_view"
+                string="Room Details"
+                sample="1"
+            >
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_content">
+                                <div class="o_kanban_image">
+                                    <field
+                                        name="room_image"
+                                        widget="image"
+                                        class="oe_avatar"
+                                    />
+                                </div>
+                                <div>
+                                    <strong>
+                                        <div>
+                                            Room :
+                                            <field name="room_sequence" />
+                                        </div>
+                                        <div>
+                                            Type :
+                                            <field name="room_type" />
+                                        </div>
+                                        <div>
+                                            Status :
+                                            <field name="room_status" />
+                                        </div>
+                                        <div>
+                                            Guests :
+                                            <field name="guests_count" />
+                                        </div>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
     <!-- hotel room tree view #T00471 -->
     <record id="hotel_room_type_tree_view" model="ir.ui.view">
         <field name="name">hotel.room.type.tree</field>
@@ -21,9 +69,17 @@
                     <field name="room_status" widget="statusbar" />
                     <button
                         name="%(Hotel_management.action_hotel_room_services_wizard)d"
-                        string="Order Food service"
+                        string="Order service"
                         type="action"
                         class="oe_highlight"
+                        attrs="{'invisible': [('room_status', '=', 'vacant')]}"
+                    />
+                    <button
+                        name="action_checkout"
+                        string="Check out"
+                        type="object"
+                        class="oe_highlight"
+                        attrs="{'invisible': [('room_status', '=', 'vacant')]}"
                     />
                 </header>
                 <sheet>
@@ -34,6 +90,7 @@
                             type="object"
                             name="action_show_guests"
                             icon="fa-users"
+                            attrs="{'invisible': [('room_status', '=', 'vacant')]}"
                         >
                             <field
                                 string="Guests"
@@ -45,12 +102,23 @@
                     <div>
                         <h1>
                             <field name="room_sequence" readonly="1" />
+                            <field name="room_image" widget="image" class="oe_avatar" />
                         </h1>
+                    </div>
+                    <div>
                     </div>
                     <group>
                         <field name="room_type" widget="radio" />
                         <field name="room_price" widget="monetary" />
                         <field name="room_capacity" />
+                        <field
+                            name="occupied_till"
+                            attrs="{'invisible': [('room_status', '=', 'vacant')]}"
+                        />
+                        <field
+                            name="reservation_ref"
+                            attrs="{'invisible': [('room_status', '=', 'vacant')]}"
+                        />
                     </group>
                     <notebook>
                         <page string="Guests" name="guests">
@@ -115,7 +183,7 @@
         <field name="name">Rooms</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hotel.room.type</field>
-        <field name='view_mode'>tree,form</field>
+        <field name='view_mode'>kanban,tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Add Rooms</p>
         </field>

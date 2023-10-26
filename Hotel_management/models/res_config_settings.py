@@ -16,12 +16,12 @@ class ResConfigSettings(models.TransientModel):
     single_room = fields.Float(
         string="Single room multiplier", config_parameter="single_room_price_multiplier"
     )
-    double_season = fields.Float(
+    double_room = fields.Float(
         string="Double room multiplier", config_parameter="double_room_price_multiplier"
     )
-    family_season = fields.Float(
+    family_room = fields.Float(
         string="Family room multiplier", config_parameter="family_room_price_multiplier"
     )
-    vip_season = fields.Float(
+    vip_room = fields.Float(
         string="VIP room multiplier", config_parameter="vip_room_price_multiplier"
     )

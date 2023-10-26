@@ -1,8 +1,8 @@
 <odoo>
     <!-- hotel room tree view #T00471 -->
-    <record id="restraunt_tables_tree_view" model="ir.ui.view">
-        <field name="name">restraunt.tables.tree</field>
-        <field name="model">restraunt.tables</field>
+    <record id="restaurant_tables_tree_view" model="ir.ui.view">
+        <field name="name">restaurant.tables.tree</field>
+        <field name="model">restaurant.tables</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="table_no_seq" />
@@ -11,9 +11,9 @@
         </field>
     </record>
     <!-- hotel room form view #T00471 -->
-    <record id="restraunt_tables_form_view" model="ir.ui.view">
-        <field name="name">restraunt.tables.form</field>
-        <field name="model">restraunt.tables</field>
+    <record id="restaurant_tables_form_view" model="ir.ui.view">
+        <field name="name">restaurant.tables.form</field>
+        <field name="model">restaurant.tables</field>
         <field name="arch" type="xml">
             <form>
                 <header>
@@ -27,18 +27,23 @@
                     </div>
                     <group>
                         <field name="capacity" />
+                        <field
+                            name="restaurant_reservation_ref"
+                            attrs="{'invisible': [('availability_status', '=', 'available')]}"
+                        />
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-    <record id="restraunt_tables_search_view" model="ir.ui.view">
-        <field name="name">restraunt.tables.search</field>
-        <field name="model">restraunt.tables</field>
+    <record id="restaurant_tables_search_view" model="ir.ui.view">
+        <field name="name">restaurant.tables.search</field>
+        <field name="model">restaurant.tables</field>
         <field name="arch" type="xml">
             <search>
                 <field name="table_no_seq" />
                 <field name="availability_status" />
+                <field name="restaurant_reservation_ref" />
                 <!-- filter by status #T00471-->
                 <filter
                     string="Available"
@@ -54,10 +59,10 @@
         </field>
     </record>
     <!-- window action #T00471 -->
-    <record id="action_restraunt_tables" model="ir.actions.act_window">
+    <record id="action_restaurant_tables" model="ir.actions.act_window">
         <field name="name">Tables</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">restraunt.tables</field>
+        <field name="res_model">restaurant.tables</field>
         <field name='view_mode'>tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Add Tables</p>

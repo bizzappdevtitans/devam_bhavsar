@@ -1,24 +1,24 @@
 <odoo>
     <!-- Hotel room type tree view #T00471 -->
-    <record id="restraunt_reservation_tree_views" model="ir.ui.view">
+    <record id="restaurant_reservation_tree_views" model="ir.ui.view">
         <field name="name">restaurant.reservation.tree</field>
         <field name="model">restaurant.reservation</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="reservation_no_seq" />
-                <field name="restraunt_reservation_states" />
+                <field name="restaurant_reservation_states" />
             </tree>
         </field>
     </record>
     <!-- Hotel room type form view #T00471 -->
-    <record id="restraunt_reservation_form_views" model="ir.ui.view">
+    <record id="restaurant_reservation_form_views" model="ir.ui.view">
         <field name="name">restaurant.reservation.form</field>
         <field name="model">restaurant.reservation</field>
         <field name="arch" type="xml">
             <form>
                 <header>
                     <!-- Status bar  #T00471-->
-                    <field name="restraunt_reservation_states" widget="statusbar" />
+                    <field name="restaurant_reservation_states" widget="statusbar" />
                     <!-- confirm button #T00471 -->
                     <button
                         name="action_confirm"
@@ -26,7 +26,7 @@
                         class="oe_highlight"
                         type="object"
                         string="Confirm"
-                        attrs="{'invisible': [('restraunt_reservation_states', 'not in', ['draft'])]}"
+                        attrs="{'invisible': [('restaurant_reservation_states', 'not in', ['draft'])]}"
                     />
                     <!-- cancel button #T00471 -->
                     <button
@@ -35,7 +35,7 @@
                         class="oe_highlight"
                         type="object"
                         string="Cancel"
-                        attrs="{'invisible': [('restraunt_reservation_states', 'in', ['cancelled'])]}"
+                        attrs="{'invisible': [('restaurant_reservation_states', 'in', ['cancelled'])]}"
                     />
                     <!-- cancel to draft button #T00471 -->
                     <button
@@ -44,7 +44,7 @@
                         class="oe_highlight"
                         type="object"
                         string="Set to draft"
-                        attrs="{'invisible': [('restraunt_reservation_states', 'not in', ['cancelled'])]}"
+                        attrs="{'invisible': [('restaurant_reservation_states', 'not in', ['cancelled'])]}"
                     />
                 </header>
                 <sheet>
@@ -69,7 +69,7 @@
                         <field name="table_booking_list_ids" widget="many2many_tags" />
                         <field
                             name="room_no_id"
-                            attrs="{'invisible': [('is_direct_reservation', '=', True)]}"
+                            attrs="{'invisible': [('is_direct_reservation', '=', True)],'required': [('is_direct_reservation', '=', False)]}"
                         />
                         <field name="reservation_date" />
                         <field
@@ -107,7 +107,7 @@
             </form>
         </field>
     </record>
-    <record id="restraunt_reservation_search_views" model="ir.ui.view">
+    <record id="restaurant_reservation_search_views" model="ir.ui.view">
         <field name="name">restaurant.reservation.search</field>
         <field name="model">restaurant.reservation</field>
         <field name="arch" type="xml">
@@ -126,25 +126,25 @@
                 <!-- filter by status #T00471-->
                 <filter
                     string="Draft"
-                    name="restraunt_reservation_states"
-                    domain="[('restraunt_reservation_states', '=','draft')]"
+                    name="restaurant_reservation_states"
+                    domain="[('restaurant_reservation_states', '=','draft')]"
                 />
                 <filter
                     string="Reserved"
-                    name="restraunt_reservation_states"
-                    domain="[('restraunt_reservation_states', '=','confirm')]"
+                    name="restaurant_reservation_states"
+                    domain="[('restaurant_reservation_states', '=','confirm')]"
                 />
                 <filter
                     string="Cancelled"
-                    name="restraunt_reservation_states"
-                    domain="[('restraunt_reservation_states', '=','cancelled')]"
+                    name="restaurant_reservation_states"
+                    domain="[('restaurant_reservation_states', '=','cancelled')]"
                 />
             </search>
         </field>
     </record>
     <!-- window action #T00471 -->
-    <record id="action_restraunt_reservation" model="ir.actions.act_window">
-        <field name="name">Restraunt Reservation</field>
+    <record id="action_restaurant_reservation" model="ir.actions.act_window">
+        <field name="name">Restaurant Reservation</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">restaurant.reservation</field>
         <field name="view_mode">tree,form</field>

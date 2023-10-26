@@ -8,21 +8,47 @@
                 <group>
                     <field name="room_id" readonly="1" />
                     <field name="service_type" widget="radio" />
-                    <field name="food_lines_ids">
+                    <field
+                        name="pick_up_location"
+                        attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                    />
+                    <field
+                        name="pick_up_datetime"
+                        attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                    />
+                    <field
+                        name="destination_location"
+                        attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                    />
+                    <field
+                        name="food_lines_ids"
+                        attrs="{'invisible': [('service_type', '!=', 'food')]}"
+                    >
                         <tree editable="bottom">
-                            <field name="food_product_id" />
+                            <field name="food_name" />
                             <field name="food_price" />
                             <field name="food_calory" />
                             <field name="food_qty" />
                             <field name="food_subtotal" />
                         </tree>
                     </field>
+                    <field
+                        name="car_lines_ids"
+                        attrs="{'invisible': [('service_type', '!=', 'transport')]}"
+                    >
+                        <tree editable="bottom">
+                            <field name="car_brand" />
+                            <field name="car_model" />
+                            <field name="car_type" />
+                            <field name="car_capacity" />
+                        </tree>
+                    </field>
                 </group>
                 <footer>
                 <!-- save and discard  #T00471  -->
                     <button
-                        name="action_order_food_service"
-                        string="Order Food service"
+                        name="action_order_service"
+                        string="Order service"
                         type="object"
                         class="btn-primary"
                     />

@@ -1,0 +1,64 @@
+<odoo>
+    <!-- demo data for room reservations #T00471 -->
+    <record id="room_reservation_1" model="hotel.room.reservation">
+        <field name="customer_ids" eval="[(4, ref('base.res_partner_4'))]" />
+        <field name="rooms_ids" eval="[(4, ref('room_2'))]" />
+        <field name="reservation_status">reserved</field>
+        <field
+            name="check_in_date"
+            eval="(DateTime.today() + relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="check_out_date"
+            eval="(DateTime.today() + relativedelta(days=14)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+    <record id="room_reservation_2" model="hotel.room.reservation">
+        <field
+            name="customer_ids"
+            eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18'))]"
+        />
+        <field name="rooms_ids" eval="[(4, ref('room_4'))]" />
+        <field name="reservation_status">reserved</field>
+        <field
+            name="check_in_date"
+            eval="(DateTime.today() + relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="check_out_date"
+            eval="(DateTime.today() + relativedelta(days=14)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+    <record id="room_reservation_3" model="hotel.room.reservation">
+        <field
+            name="customer_ids"
+            eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18')),(4, ref('base.res_partner_12')),(4, ref('base.res_partner_address_10'))]"
+        />
+        <field name="rooms_ids" eval="[(4, ref('room_6'))]" />
+        <field name="reservation_status">reserved</field>
+        <field
+            name="check_in_date"
+            eval="(DateTime.today() + relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="check_out_date"
+            eval="(DateTime.today() + relativedelta(days=14)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+    <record id="room_reservation_4" model="hotel.room.reservation">
+        <field
+            name="customer_ids"
+            eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18'))]"
+        />
+        <field name="rooms_ids" eval="[(4, ref('room_8'))]" />
+        <field name="reservation_status">reserved</field>
+        <field
+            name="check_in_date"
+            eval="(DateTime.today() + relativedelta(days=7)).strftime('%Y-%m-%d %H:%M')"
+        />
+        <field
+            name="check_out_date"
+            eval="(DateTime.today() + relativedelta(days=14)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+</odoo>

@@ -37,6 +37,12 @@
         parent="hotel_room_services_root"
         action="action_food_products"
     />
+    <menuitem
+        id="transport_vehicles"
+        name="Fleet"
+        parent="hotel_room_services_root"
+        action="action_transpor_vehicles"
+    />
     <!-- Menu for guest #T00471 -->
     <menuitem
         id="hotel_guests"
@@ -44,20 +50,20 @@
         parent="hotel_menu_root"
         action="base.action_partner_form"
     />
-    <!-- sub menu for restraunt #T00471 -->
-    <menuitem id="restraunt_root" name="Restraunt" parent="hotel_menu_root" />
-    <!-- menu for restraunt reservation #T00471 -->
+    <!-- sub menu for restaurant #T00471 -->
+    <menuitem id="restaurant_root" name="Restaurant" parent="hotel_menu_root" />
+    <!-- menu for restaurant reservation #T00471 -->
     <menuitem
-        id="restraunt_reservation_child"
+        id="restaurant_reservation_child"
         name="Reservations"
-        parent="restraunt_root"
-        action="action_restraunt_reservation"
+        parent="restaurant_root"
+        action="action_restaurant_reservation"
     />
-    <!-- Menu for restraunt tables #T00471 -->
+    <!-- Menu for restaurant tables #T00471 -->
     <menuitem
-        id="restraunt_tables_child"
+        id="restaurant_tables_child"
         name="Tables"
-        parent="restraunt_root"
-        action="action_restraunt_tables"
+        parent="restaurant_root"
+        action="action_restaurant_tables"
     />
 </odoo>

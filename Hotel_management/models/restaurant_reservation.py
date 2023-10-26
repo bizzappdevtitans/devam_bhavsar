@@ -8,9 +8,15 @@ class RestaurantReservation(models.Model):
     _rec_name = "reservation_no_seq"
 
     reservation_no_seq = fields.Char("Reservation No", default=lambda self: _("New"))
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        string="Company",
+        required=True,
+        default=lambda self: self.env.company,
+    )
     guest_name_ids = fields.Many2many(
         comodel_name="res.partner",
-        relation="guest_with_restraunt_rel",
+        relation="guest_with_restaurant_rel",
         column1="guest_name_ids",
         column2="name",
         string="Guests",
@@ -23,15 +29,15 @@ class RestaurantReservation(models.Model):
         domain="[('room_status', '=', 'booked')]",
     )
     table_booking_list_ids = fields.Many2many(
-        comodel_name="restraunt.tables",
-        relation="restraunt_with_table_rel",
+        comodel_name="restaurant.tables",
+        relation="restaurant_with_table_rel",
         column1="table_booking_list_ids",
         column2="table_no_seq",
         string="Tables",
         required=True,
         domain="[('availability_status', '=', 'available')]",
     )
-    restraunt_reservation_states = fields.Selection(
+    restaurant_reservation_states = fields.Selection(
         [
             ("draft", "Draft"),
             ("confirm", "Confirm"),
@@ -45,7 +51,7 @@ class RestaurantReservation(models.Model):
     guest_name = fields.Char(string="Name")
     guest_email = fields.Char(string="Email")
     guest_phone = fields.Integer(string="Phone no.")
-    total_guests = fields.Integer("Total guests")
+    total_guests = fields.Integer(string="Total guests")
 
     @api.onchange("room_no_id")
     def get_guests_from_room(self):
@@ -54,28 +60,37 @@ class RestaurantReservation(models.Model):
 
     def action_confirm(self):
         """action to confirm reservation and send email #T00471"""
-        self.write({"restraunt_reservation_states": "confirm"})
+        self.write({"restaurant_reservation_states": "confirm"})
+        for tables in self.table_booking_list_ids:
+            tables.write(
+                {
+                    "availability_status": "reserved",
+                    "restaurant_reservation_ref": self.id,
+                }
+            )
         if not self.is_direct_reservation:
             mail_template = self.env.ref(
-                "Hotel_management.restraunt_guests_reservation_confirmed_email_template"
+                "Hotel_management.restaurant_guests_reservation_confirmed_email_template"
             )
             mail_template.send_mail(self.id, force_send=True)
         mail_template = self.env.ref(
-            "Hotel_management.restraunt_direct_reservation_confirmed_email_template"
+            "Hotel_management.restaurant_direct_reservation_confirmed_email_template"
         )
         mail_template.send_mail(self.id, force_send=True)
-        for tables in self.table_booking_list_ids:
-            tables.write({"availability_status": "reserved"})
 
     def action_cancel(self):
         """action to cancel reservation #T00471s"""
-        self.write({"restraunt_reservation_states": "cancelled"})
+        self.write({"restaurant_reservation_states": "cancelled"})
         for tables in self.table_booking_list_ids:
-            tables.write({"availability_status": "available"})
+            tables.write(
+                {
+                    "availability_status": "available",
+                }
+            )
 
     def action_cancel_to_draft(self):
         """action to set status to draft after cancellation #T00471"""
-        self.write({"restraunt_reservation_states": "draft"})
+        self.write({"restaurant_reservation_states": "draft"})
 
     @api.model
     def create(self, value):

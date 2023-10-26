@@ -7,16 +7,34 @@ class HotelRoomServices(models.Model):
     _rec_name = "service_order_number_seq"
 
     service_type = fields.Selection(
-        [("food", "Food service"), ("room_keeping", "Room Keeping service")]
-    )
-    room_id = fields.Many2one(comodel_name="hotel.room.type", string="Room number")
-    food_lines_ids = fields.One2many(
-        comodel_name="hotel.room.service.food.line",
-        inverse_name="food_service_id",
-        string="Food",
+        [("food", "Food service"), ("transport", "Transportation service")],
+        required=True,
     )
     service_order_number_seq = fields.Char(
         string="Service order number", default=lambda self: _("New")
+    )
+    room_id = fields.Many2one(
+        comodel_name="hotel.room.type", string="Room number", required=True
+    )
+
+    food_lines_ids = fields.Many2many(
+        comodel_name="food.product",
+        relation="food_and_service_rel",
+        column1="room_id",
+        column2="food_name",
+        string="Food",
+        required=True,
+    )
+    pick_up_location = fields.Char(string="Pick up from")
+    pick_up_datetime = fields.Datetime(string="Pick up date and time")
+    destination_location = fields.Char(string="Destination")
+    car_lines_ids = fields.Many2many(
+        comodel_name="transport.vehicle",
+        relation="transport_and_service_rel",
+        column1="room_id",
+        column2="car_brand",
+        string="Transport",
+        required=True,
     )
 
     @api.model

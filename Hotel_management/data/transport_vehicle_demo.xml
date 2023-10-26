@@ -1,0 +1,36 @@
+<odoo>
+    <!-- Demo data for cars in transport vehicle #T00471 -->
+    <record id="toyota_camry" model="transport.vehicle">
+        <field name="car_brand">Toyota</field>
+        <field name="car_model">Camry</field>
+        <field name="car_type">sedan</field>
+        <field name="car_capacity">4</field>
+        <field
+            name="car_image"
+            type="base64"
+            file="Hotel_management/static/img/toyota-camry.png"
+        />
+    </record>
+    <record id="toyota_fortuner" model="transport.vehicle">
+        <field name="car_brand">Toyota</field>
+        <field name="car_model">Fortuner</field>
+        <field name="car_type">suv</field>
+        <field name="car_capacity">6</field>
+        <field
+            name="car_image"
+            type="base64"
+            file="Hotel_management/static/img/toyota-fortuner.png"
+        />
+    </record>
+    <record id="volvo_s60" model="transport.vehicle">
+        <field name="car_brand">Volvo</field>
+        <field name="car_model">S60</field>
+        <field name="car_type">sedan</field>
+        <field name="car_capacity">4</field>
+        <field
+            name="car_image"
+            type="base64"
+            file="Hotel_management/static/img/volvo-s60.png"
+        />
+    </record>
+</odoo>

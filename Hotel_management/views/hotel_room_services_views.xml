@@ -25,16 +25,46 @@
                     <group>
                         <field name="service_type" widget="radio" />
                         <field name="room_id" />
+                        <field
+                            name="pick_up_location"
+                            attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                        />
+                        <field
+                            name="pick_up_datetime"
+                            attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                        />
+                        <field
+                            name="destination_location"
+                            attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                        />
                     </group>
                     <notebook>
-                        <page string="Food" name="food_service">
+                        <page
+                            string="Food"
+                            name="food_service"
+                            attrs="{'invisible': [('service_type', '!=', 'food')]}"
+                        >
                             <field name="food_lines_ids">
                                 <tree editable="bottom">
-                                    <field name="food_product_id" />
+                                    <field name="food_name" />
                                     <field name="food_price" />
                                     <field name="food_calory" />
                                     <field name="food_qty" />
                                     <field name="food_subtotal" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page
+                            string="Transport"
+                            name="transport_service"
+                            attrs="{'invisible': [('service_type', '!=', 'transport')]}"
+                        >
+                            <field name="car_lines_ids">
+                                <tree editable="bottom">
+                                    <field name="car_brand" />
+                                    <field name="car_model" />
+                                    <field name="car_type" />
+                                    <field name="car_capacity" />
                                 </tree>
                             </field>
                         </page>

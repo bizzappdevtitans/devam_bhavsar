@@ -1,0 +1,108 @@
+<odoo>
+    <!-- transport vehicle tree view #T00471 -->
+    <record id="transpor_vehicle_kanban_view" model="ir.ui.view">
+        <field name="name">transport.vehicle.kanban</field>
+        <field name="model">transport.vehicle</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="transpor_vehicle_kanban_view"
+                string="Food Details"
+                sample="1"
+            >
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_content">
+                                <div class="o_kanban_image">
+                                    <field
+                                        name="car_image"
+                                        widget="image"
+                                        class="oe_avatar"
+                                    />
+                                </div>
+                                <div>
+                                    <strong>
+                                        <div>
+                                            Brand :
+                                            <field name="car_brand" />
+                                        </div>
+                                        <div>
+                                            Model :
+                                            <field name="car_model" />
+                                        </div>
+                                        <div>
+                                            Capacity :
+                                            <field name="car_capacity" />
+                                        </div>
+                                        <div>
+                                            Type :
+                                            <field name="car_type" />
+                                        </div>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!-- transport vehicle tree view #T00471 -->
+    <record id="transpor_vehicle_tree_view" model="ir.ui.view">
+        <field name="name">transport.vehicle.tree</field>
+        <field name="model">transport.vehicle</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="car_brand" />
+                <field name="car_model" />
+                <field name="car_type" />
+                <field name="car_capacity" />
+            </tree>
+        </field>
+    </record>
+    <!-- transport vehicle form view #T00471 -->
+    <record id="transpor_vehicle_form_view" model="ir.ui.view">
+        <field name="name">transport.vehicle.form</field>
+        <field name="model">transport.vehicle</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="car_image" widget="image" class="oe_avatar" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="car_brand" />
+                        <field name="car_model" />
+                        <field name="car_type" widget="radio" />
+                        <field name="car_capacity" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- transport vehicle search view #T00471 -->
+    <record id="transpor_vehicle_search_view" model="ir.ui.view">
+        <field name="name">transport.vehicle.search</field>
+        <field name="model">transport.vehicle</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="car_brand" />
+                <field name="car_model" />
+                <field name="car_type" widget="radio" />
+                <field name="car_capacity" />
+            </search>
+        </field>
+    </record>
+    <!-- window action #T00471 -->
+    <record id="action_transpor_vehicles" model="ir.actions.act_window">
+        <field name="name">Transport vehicles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">transport.vehicle</field>
+        <field name='view_mode'>kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add Vehicles</p>
+        </field>
+    </record>
+</odoo>

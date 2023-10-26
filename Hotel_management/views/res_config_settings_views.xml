@@ -33,17 +33,17 @@
                             <div class="text-muted">
                                 <field name="single_room" />
                             </div>
-                            <label for="double_season" />
+                            <label for="double_room" />
                             <div class="text-muted">
-                                <field name="double_season" />
+                                <field name="double_room" />
                             </div>
-                            <label for="family_season" />
+                            <label for="family_room" />
                             <div class="text-muted">
-                                <field name="family_season" />
+                                <field name="family_room" />
                             </div>
-                            <label for="vip_season" />
+                            <label for="vip_room" />
                             <div class="text-muted">
-                                <field name="vip_season" />
+                                <field name="vip_room" />
                             </div>
                         </div>
                     </div>

@@ -12,7 +12,9 @@ class HotelRoomReservation(models.Model):
     _inherit = ["mail.thread"]
     _rec_name = "reservation_seq"
 
-    reservation_seq = fields.Char(string="Room Number", default=lambda self: _("New"))
+    reservation_seq = fields.Char(
+        string="Reservation number", default=lambda self: _("New")
+    )
     customer_ids = fields.Many2many(
         comodel_name="res.partner",
         relation="guest_with_room_rel",
@@ -20,6 +22,12 @@ class HotelRoomReservation(models.Model):
         column2="name",
         string="Guests",
         required=True,
+    )
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        string="Company",
+        required=True,
+        default=lambda self: self.env.company,
     )
     rooms_ids = fields.Many2many(
         comodel_name="hotel.room.type",
@@ -31,7 +39,12 @@ class HotelRoomReservation(models.Model):
         required=True,
     )
     reservation_status = fields.Selection(
-        [("draft", "Draft"), ("reserved", "Reserved"), ("cancelled", "Cancelled")],
+        [
+            ("draft", "Draft"),
+            ("reserved", "Reserved"),
+            ("cancelled", "Cancelled"),
+            ("done", "Done"),
+        ],
         default="draft",
     )
     check_in_date = fields.Date(string="Check in on", required=True)
@@ -39,8 +52,11 @@ class HotelRoomReservation(models.Model):
     total_days = fields.Integer(
         string="Total staying days",
         compute="_compute_total_days",
-        inverse="_inverse_calculate_date_from_total_days",
+        inverse="_inverse_calculate_check_out_date_from_total_days",
         required=True,
+    )
+    total_cost = fields.Float(
+        string="Total cost of stay", compute="_compute_total_cost"
     )
 
     @api.model
@@ -58,6 +74,14 @@ class HotelRoomReservation(models.Model):
         room_capacity = 0
         for rooms in self.rooms_ids:
             room_capacity += rooms.room_capacity
+            rooms.write(
+                {
+                    "room_status": "booked",
+                    "guests_ids": self.customer_ids.ids,
+                    "occupied_till": self.check_out_date,
+                    "reservation_ref": self.id,
+                }
+            )
         # checks if there are more guests than allowed capacity of room if
         # false raise error
         if not room_capacity >= len(self.customer_ids):
@@ -66,7 +90,14 @@ class HotelRoomReservation(models.Model):
             "Hotel_management.room_reservation_confirmed_email_template"
         )
         mail_template.send_mail(self.id, force_send=True)
-        rooms.write({"room_status": "booked", "guests_ids": self.customer_ids.ids})
+
+    @api.onchange("total_days")
+    def _compute_total_cost(self):
+        """computes total cost of stay #T00471"""
+        total_cost = 0
+        for rooms in self.rooms_ids:
+            total_cost += rooms.room_price * self.total_days
+            self.total_cost = total_cost
 
     def action_cancel(self):
         """action for cancel button #T00471"""
@@ -92,7 +123,7 @@ class HotelRoomReservation(models.Model):
                 dates.total_days = (dates.check_out_date - dates.check_in_date).days
 
     @api.onchange("total_days", "check_in_date")
-    def _inverse_calculate_date_from_total_days(self):
+    def _inverse_calculate_check_out_date_from_total_days(self):
         """Inverse of compute method to set check_out_date from check_in_date and
         total_days #T00471"""
         for dates in self:

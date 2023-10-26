@@ -1,0 +1,21 @@
+<odoo>
+    <!-- demo data for restaurant table #T00471 -->
+    <record id="table_1" model="restaurant.tables">
+        <field name="capacity">4</field>
+        <field name="availability_status">available</field>
+    </record>
+    <record id="table_2" model="restaurant.tables">
+        <field name="capacity">5</field>
+        <field name="availability_status">available</field>
+    </record>
+    <record id="table_3" model="restaurant.tables">
+        <field name="capacity">2</field>
+        <field name="availability_status">reserved</field>
+        <field name="restaurant_reservation_ref" ref="restaurant_reservation_1" />
+    </record>
+    <record id="table_4" model="restaurant.tables">
+        <field name="capacity">4</field>
+        <field name="availability_status">reserved</field>
+        <field name="restaurant_reservation_ref" ref="restaurant_reservation_2" />
+    </record>
+</odoo>

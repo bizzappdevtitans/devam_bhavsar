@@ -13,16 +13,16 @@
         <field name="prefix">R</field>
         <field name="padding">4</field>
     </record>
-    <!-- sequence for restraunt tables #T00471 -->
-    <record id="seq_restraunt_table" model="ir.sequence">
-        <field name="name">Restraunt table number</field>
-        <field name="code">restraunt.tables</field>
+    <!-- sequence for restaurant tables #T00471 -->
+    <record id="seq_restaurant_table" model="ir.sequence">
+        <field name="name">restaurant table number</field>
+        <field name="code">restaurant.tables</field>
         <field name="prefix">Table-</field>
         <field name="padding">2</field>
     </record>
-    <!-- sequence for restraunt reservations #T00471 -->
-    <record id="seq_restraunt_reservation" model="ir.sequence">
-        <field name="name">Restraunt reservation number</field>
+    <!-- sequence for restaurant reservations #T00471 -->
+    <record id="seq_restaurant_reservation" model="ir.sequence">
+        <field name="name">restaurant reservation number</field>
         <field name="code">restaurant.reservation</field>
         <field name="prefix">Reservation-</field>
         <field name="padding">4</field>
