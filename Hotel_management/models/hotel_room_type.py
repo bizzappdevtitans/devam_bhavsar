@@ -34,7 +34,6 @@ class HotelRoomType(models.Model):
         column1="guests_ids",
         column2="name",
         string="Guests",
-        required=True,
         readonly=True,
     )
     guests_count = fields.Integer(

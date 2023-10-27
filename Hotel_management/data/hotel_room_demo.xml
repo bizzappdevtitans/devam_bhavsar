@@ -13,7 +13,6 @@
         <field name="room_type">single</field>
         <field name="room_status">booked</field>
         <field name="guests_ids" eval="[(4, ref('base.res_partner_4'))]" />
-        <field name="reservation_ref" ref="room_reservation_1" />
         <field
             name="room_image"
             type="base64"
@@ -36,7 +35,6 @@
             name="guests_ids"
             eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18'))]"
         />
-        <field name="reservation_ref" ref="room_reservation_2" />
         <field
             name="room_image"
             type="base64"
@@ -59,7 +57,6 @@
             name="guests_ids"
             eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18')),(4, ref('base.res_partner_12')),(4, ref('base.res_partner_address_10'))]"
         />
-        <field name="reservation_ref" ref="room_reservation_3" />
         <field
             name="room_image"
             type="base64"
@@ -82,7 +79,6 @@
             name="guests_ids"
             eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18'))]"
         />
-        <field name="reservation_ref" ref="room_reservation_4" />
         <field
             name="room_image"
             type="base64"

@@ -31,9 +31,9 @@
     "demo": [
         "data/food_demo.xml",
         "data/transport_vehicle_demo.xml",
-        "data/hotel_room_reservation_demo.xml",
         "data/hotel_room_demo.xml",
-        "data/restaurant_reservation_demo.xml",
+        "data/hotel_room_reservation_demo.xml",
         "data/restaurant_tables_demo.xml",
+        "data/restaurant_reservation_demo.xml",
     ],
 }

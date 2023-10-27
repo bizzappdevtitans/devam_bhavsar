@@ -56,7 +56,8 @@ class HotelRoomReservation(models.Model):
         required=True,
     )
     total_cost = fields.Float(
-        string="Total cost of stay", compute="_compute_total_cost"
+        string="Total cost of stay",
+        compute="_compute_total_cost",
     )
 
     @api.model
@@ -132,11 +133,14 @@ class HotelRoomReservation(models.Model):
                     days=dates.total_days
                 )
 
-    @api.constrains("total_days")
+    @api.constrains("check_out_date", "check_in_date")
     def _check_total_days(self):
-        """Validates check-in and check-out date by total_days #T00471"""
-        if self.total_days < 1:
-            raise ValidationError(_("Please enter proper dates"))
+        """Validates check-in and check-out date #T00471"""
+        if self.check_in_date >= self.check_out_date:
+            raise ValidationError(_("Please enter proper check out date!"))
+
+        if self.check_in_date < fields.Date.today():
+            raise ValidationError(_("Please enter proper check in date"))
 
     def action_reservation_reminder(self):
         """action for cron job to send reservation reminders #T00471"""
@@ -151,6 +155,6 @@ class HotelRoomReservation(models.Model):
         #T00471"""
         reservations = self.search([]).filtered(
             lambda dates: dates.reservation_status == "reserved"
-            and (dates.check_in_date - relativedelta(weeks=1)) == date.today()
+            and (dates.check_in_date - relativedelta(days=7)) == date.today()
         )
         return reservations

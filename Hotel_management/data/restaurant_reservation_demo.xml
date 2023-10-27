@@ -11,14 +11,19 @@
             eval="(DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
         />
         <field name="room_no_id" ref="room_4" />
-        <field name="table_booking_list_ids" eval="[(4, ref('table_3'))]" />
+        <field name="table_booking_list_ids" eval="[(4, ref('restaurant_table_3'))]" />
         <field name="restaurant_reservation_states">confirm</field>
     </record>
     <record id="restaurant_reservation_2" model="restaurant.reservation">
         <field name="is_direct_reservation">True</field>
+        <field name="table_booking_list_ids" eval="[(4, ref('restaurant_table_4'))]" />
         <field name="guest_name">Kent C. Strait</field>
+        <field
+            name="reservation_date"
+            eval="(DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
+        />
         <field name="guest_email">kentcstrait@eyes.com</field>
-        <field name="guest_phone">9999999999</field>
+        <field name="guest_phone">9999999</field>
         <field name="total_guests">4</field>
     </record>
 </odoo>
