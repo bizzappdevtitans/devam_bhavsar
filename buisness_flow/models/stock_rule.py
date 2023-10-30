@@ -9,6 +9,9 @@ class StockRule(models.Model):
         purchase_order_vals = super(StockRule, self)._prepare_purchase_order(
             company_id, origins, values
         )
+        # for getting the sale order id and field value we use
+        # values[0].get("sale").purchase_order_description and then pass value to PO
+        # T00387
         purchase_order_vals["purchase_order_description"] = (
             values[0].get("sale").purchase_order_description
         )
@@ -39,6 +42,9 @@ class StockRule(models.Model):
             values,
             bom,
         )
+        # for getting the sale order id and field value from stock move we use
+        # values.get("manufacturing_order_description") and then pass value to MO
+        # T00396
         manufacture_order_vals["manufacturing_order_description"] = values.get(
             "manufacturing_order_description"
         )

@@ -9,6 +9,7 @@ class SaleOrderLine(models.Model):
         project_vals = super(
             SaleOrderLine, self
         )._timesheet_create_project_prepare_values()
+        # passing values from SO to SOL to project using order_id #T00390
         project_vals.update(
             {"project_requirements": self.order_id.project_requirements}
         )
@@ -19,5 +20,6 @@ class SaleOrderLine(models.Model):
         task_vals = super(SaleOrderLine, self)._timesheet_create_task_prepare_values(
             project
         )
+        # passing values from SO to SOL to task using order_id #T00390
         task_vals.update({"task_requirements": self.order_id.task_requirements})
         return task_vals
