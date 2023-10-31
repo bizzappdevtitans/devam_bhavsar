@@ -35,14 +35,22 @@ class HotelRoomServiceWizard(models.TransientModel):
 
     @api.model
     def _default_room_number(self):
-        """function to get default name of teacher in wizard #T00348"""
+        """function to get default name of teacher in wizard #T00471"""
         context = dict(self._context) or {}
         room_no = self.env["hotel.room.type"].browse(context.get("active_id", False))
         return room_no and room_no.id
 
     def action_order_service(self):
         """action to create a food service order #T00471"""
-        if not self.service_type == "food":
+        if self.service_type == "food":
+            self.env["hotel.room.services"].create(
+                {
+                    "room_id": self.room_id.id,
+                    "service_type": self.service_type,
+                    "food_lines_ids": self.food_lines_ids,
+                }
+            )
+        else:
             self.env["hotel.room.services"].create(
                 {
                     "pick_up_location": self.pick_up_location,
@@ -50,13 +58,6 @@ class HotelRoomServiceWizard(models.TransientModel):
                     "destination_location": self.destination_location,
                     "room_id": self.room_id.id,
                     "service_type": self.service_type,
-                    "car_lines_ids": self.car_lines_ids.ids,
+                    "car_lines_ids": self.car_lines_ids,
                 }
             )
-        self.env["hotel.room.services"].create(
-            {
-                "room_id": self.room_id.id,
-                "service_type": self.service_type,
-                "food_lines_ids": self.food_lines_ids.ids,
-            }
-        )

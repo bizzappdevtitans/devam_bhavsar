@@ -12,6 +12,7 @@ class HotelRoomReservation(models.Model):
     _inherit = ["mail.thread"]
     _rec_name = "reservation_seq"
 
+    # Added required fields #T00471
     reservation_seq = fields.Char(
         string="Reservation number", default=lambda self: _("New")
     )

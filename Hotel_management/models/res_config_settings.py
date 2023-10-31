@@ -4,6 +4,7 @@ from odoo import fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
+    # Added required fields #T00471
     summer_season = fields.Float(
         string="Summer season prices", config_parameter="summer_season_price"
     )

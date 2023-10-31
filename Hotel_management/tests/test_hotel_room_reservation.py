@@ -17,8 +17,8 @@ class TestHotelRoomReservation(TransactionCase):
             {
                 "customer_ids": self.env.ref("base.res_partner_4"),
                 "rooms_ids": self.room_single.ids,
-                "check_in_date": date.today() + relativedelta(days=1),
-                "check_out_date": date.today() + relativedelta(days=3),
+                "check_in_date": date.today() + relativedelta(weeks=1),
+                "check_out_date": date.today() + relativedelta(days=13),
             }
         )
         partner = self.env["res.partner"].search([], limit=3)
@@ -53,31 +53,17 @@ class TestHotelRoomReservation(TransactionCase):
             "success",
         )
         # checks if the computed field total_cost has intended value #T00471
-        self.assertEqual(self.room_reservation_single.total_cost, 2020.0, "Fail")
+        self.assertEqual(self.room_reservation_single.total_cost, 6060.0, "Fail")
         self.room_reservation_single.action_cancel()
         self.room_reservation_single.action_cancel_to_draft()
-        reservations = (
-            self.env["hotel.room.reservation"]
-            .search([])
-            .filtered(
-                lambda dates: dates.reservation_status == "reserved"
-                and (dates.check_in_date - relativedelta(weeks=1)) == date.today()
-            )
-        )
-        # checks if the records are searched for cron job are correct #T00471
-        self.assertEqual(
-            self.room_reservation_single.get_reservation(),
-            reservations,
-            "Fail",
-        )
 
-    def test_room_reservation_double(self):
+    def test_action_confirm(self):
         """Function that for testing double type room reservation #T00471"""
         # checks room_capacity constrain #T00471
         with self.assertRaises(ValidationError):
             self.room_reservation_double.action_confirm()
 
-    def test_room_reservation_family(self):
+    def test_check_proper_dates(self):
         """Function that for testing family type room reservation #T00471"""
         # checks if check in date is proper or not #T00471
         with self.assertRaises(ValidationError):
@@ -92,3 +78,20 @@ class TestHotelRoomReservation(TransactionCase):
                     "check_out_date": date.today(),
                 }
             )
+
+    def test_action_reservation_reminder(self):
+        """Checks f the records are searched for cron job are correct #T00471"""
+        reservations = (
+            self.env["hotel.room.reservation"]
+            .search([])
+            .filtered(
+                lambda dates: dates.reservation_status == "reserved"
+                and (dates.check_in_date - relativedelta(weeks=1)) == date.today()
+            )
+        )
+        self.assertEqual(
+            self.room_reservation_single.get_reservation(),
+            reservations,
+            "Fail",
+        )
+        self.room_reservation_single.action_reservation_reminder()

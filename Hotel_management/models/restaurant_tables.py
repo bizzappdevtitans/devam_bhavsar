@@ -6,6 +6,7 @@ class RestaurantTable(models.Model):
     _description = "restaurant Tables"
     _rec_name = "table_no_seq"
 
+    # Added required fields #T00471
     table_no_seq = fields.Char("Table No", default=lambda self: _("New"))
     capacity = fields.Integer(string="Capacity")
     availability_status = fields.Selection(

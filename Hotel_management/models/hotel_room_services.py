@@ -6,6 +6,7 @@ class HotelRoomServices(models.Model):
     _description = "Hotel room services"
     _rec_name = "service_order_number_seq"
 
+    # Added required fields #T00471
     service_type = fields.Selection(
         [("food", "Food service"), ("transport", "Transportation service")],
         required=True,

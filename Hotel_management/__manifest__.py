@@ -2,7 +2,7 @@
     "name": "Hotel_management",
     "version": "15.0.1.0.0",
     "depends": ["base", "mail"],
-    "author": "bizzappdev",
+    "author": "Odoo Community Association (OCA),bizzappdev",
     "website": "https://www.bizzappdev.com",
     "category": "Administration",
     "summary": "Hotel management tool",

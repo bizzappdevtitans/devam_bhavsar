@@ -5,6 +5,7 @@ class TransportVehicle(models.Model):
     _name = "transport.vehicle"
     _description = "Tranportation vehicles"
 
+    # Added required fields #T00471
     car_model = fields.Char(string="Model")
     car_brand = fields.Char(string="Brand")
     car_type = fields.Selection([("sedan", "Sedan"), ("suv", "SUV")], string="Type")

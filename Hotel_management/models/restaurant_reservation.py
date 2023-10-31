@@ -7,6 +7,7 @@ class RestaurantReservation(models.Model):
     _description = "Restaurant Booking"
     _rec_name = "reservation_no_seq"
 
+    # Added required fields #T00471
     reservation_no_seq = fields.Char("Reservation No", default=lambda self: _("New"))
     company_id = fields.Many2one(
         comodel_name="res.company",
@@ -55,6 +56,7 @@ class RestaurantReservation(models.Model):
 
     @api.onchange("room_no_id")
     def get_guests_from_room(self):
+        """function to get all the guest ids from a room #T00471"""
         if self.room_no_id:
             self.guest_name_ids = self.room_no_id.guests_ids.ids
 
@@ -79,7 +81,7 @@ class RestaurantReservation(models.Model):
         mail_template.send_mail(self.id, force_send=True)
 
     def action_cancel(self):
-        """action to cancel reservation #T00471s"""
+        """action to cancel reservation #T00471"""
         self.write({"restaurant_reservation_states": "cancelled"})
         for tables in self.table_booking_list_ids:
             tables.write(

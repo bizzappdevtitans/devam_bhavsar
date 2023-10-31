@@ -12,6 +12,7 @@
         <field name="key">monsoon_season_price</field>
         <field name="value">1070</field>
     </record>
+    <!-- System parameters for room price multipliers #T00471 -->
     <record id="vip_room_price_multiplier" model="ir.config_parameter">
         <field name="key">vip_room_price_multiplier</field>
         <field name="value">4</field>

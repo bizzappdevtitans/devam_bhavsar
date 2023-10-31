@@ -8,6 +8,7 @@ class HotelRoomType(models.Model):
     _description = "Hotel room type"
     _rec_name = "room_sequence"
 
+    # Added required fields #T00471
     room_sequence = fields.Char(string="Room Number", default=lambda self: _("New"))
     room_type = fields.Selection(
         [

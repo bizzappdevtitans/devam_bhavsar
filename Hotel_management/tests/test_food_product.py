@@ -3,6 +3,7 @@ from odoo.tests.common import TransactionCase
 
 class TestFoodProduct(TransactionCase):
     def setUp(self):
+        """Created a single food item to test for its methods #T00471"""
         self.food_item_1 = self.env["food.product"].create(
             {
                 "food_name": "test",
