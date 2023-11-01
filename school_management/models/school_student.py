@@ -137,8 +137,8 @@ class SchoolStudent(models.Model):
     def _unlink_check_payment(self):
         """at time of delete will check if theres any fees paid and if true then
         raise error #T00335"""
-        for payments in self:
-            if payments.fees_students_ids:
+        for records in self:
+            if records.fees_students_ids:
                 raise ValidationError(_("Can't delete record with fees paid!"))
 
     @api.model
@@ -150,19 +150,6 @@ class SchoolStudent(models.Model):
             "school.student"
         )
         return super(SchoolStudent, self).create(value)
-
-    def unlink(self):
-        """Inherited delete so that at time of deletion if the student has a division it
-        will raise error #T00335"""
-        if self.division_of_students_id:
-            raise ValidationError(_("Cant delete a student with assigned Division"))
-        return super(SchoolStudent, self).unlink()
-
-    def copy(self):
-        """Inherited copy so at time of duplication the default value of rollno will be 69
-        #T00335"""
-        self.rollno = self.rollno + 1
-        return super(SchoolStudent, self).copy()
 
     @api.onchange("today_date")
     def _onchange_calculate_feespayment_date(self):
