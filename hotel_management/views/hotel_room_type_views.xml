@@ -68,7 +68,7 @@
                 <header>
                     <field name="room_status" widget="statusbar" />
                     <button
-                        name="%(Hotel_management.action_hotel_room_services_wizard)d"
+                        name="%(hotel_management.action_hotel_room_services_wizard)d"
                         string="Order service"
                         type="action"
                         class="oe_highlight"
@@ -109,8 +109,13 @@
                     </div>
                     <group>
                         <field name="room_type" widget="radio" />
-                        <field name="room_price" widget="monetary" />
-                        <field name="room_capacity" />
+                        <field
+                            name="room_price"
+                            widget="monetary"
+                            readonly="1"
+                            force_save="1"
+                        />
+                        <field name="room_capacity" readonly="1" force_save="1" />
                         <field
                             name="occupied_till"
                             attrs="{'invisible': [('room_status', '=', 'vacant')]}"

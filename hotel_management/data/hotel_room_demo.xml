@@ -6,7 +6,7 @@
         <field
             name="room_image"
             type="base64"
-            file="Hotel_management/static/img/single-room.png"
+            file="hotel_management/static/img/single-room.png"
         />
     </record>
     <record id="room_2" model="hotel.room.type">
@@ -16,7 +16,7 @@
         <field
             name="room_image"
             type="base64"
-            file="Hotel_management/static/img/single-room.png"
+            file="hotel_management/static/img/single-room.png"
         />
     </record>
     <record id="room_3" model="hotel.room.type">
@@ -25,7 +25,7 @@
         <field
             name="room_image"
             type="base64"
-            file="Hotel_management/static/img/double-room.png"
+            file="hotel_management/static/img/double-room.png"
         />
     </record>
     <record id="room_4" model="hotel.room.type">
@@ -38,7 +38,7 @@
         <field
             name="room_image"
             type="base64"
-            file="Hotel_management/static/img/double-room.png"
+            file="hotel_management/static/img/double-room.png"
         />
     </record>
     <record id="room_5" model="hotel.room.type">
@@ -47,7 +47,7 @@
         <field
             name="room_image"
             type="base64"
-            file="Hotel_management/static/img/family-room.png"
+            file="hotel_management/static/img/family-room.png"
         />
     </record>
     <record id="room_6" model="hotel.room.type">
@@ -60,7 +60,7 @@
         <field
             name="room_image"
             type="base64"
-            file="Hotel_management/static/img/family-room.png"
+            file="hotel_management/static/img/family-room.png"
         />
     </record>
     <record id="room_7" model="hotel.room.type">
@@ -69,7 +69,7 @@
         <field
             name="room_image"
             type="base64"
-            file="Hotel_management/static/img/vip-room.png"
+            file="hotel_management/static/img/vip-room.png"
         />
     </record>
     <record id="room_8" model="hotel.room.type">
@@ -82,7 +82,7 @@
         <field
             name="room_image"
             type="base64"
-            file="Hotel_management/static/img/vip-room.png"
+            file="hotel_management/static/img/vip-room.png"
         />
     </record>
 </odoo>

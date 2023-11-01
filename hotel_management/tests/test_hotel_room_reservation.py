@@ -52,7 +52,8 @@ class TestHotelRoomReservation(TransactionCase):
             self.room_reservation_single.id,
             "success",
         )
-        # checks if the computed field total_cost has intended value #T00471
+        self.room_reservation_single._onchange_total_cost()
+        # checks if the field total_cost has intended value #T00471
         self.assertEqual(self.room_reservation_single.total_cost, 6060.0, "Fail")
         self.room_reservation_single.action_cancel()
         self.room_reservation_single.action_cancel_to_draft()

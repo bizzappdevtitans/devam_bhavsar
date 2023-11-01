@@ -61,7 +61,12 @@
                             <field name="total_days" />
                         </group>
                         <group>
-                            <field name="total_cost" widget="monetary" />
+                            <field
+                                name="total_cost"
+                                widget="monetary"
+                                readonly="1"
+                                force_save="1"
+                            />
                         </group>
                     </group>
                     <notebook>
@@ -85,7 +90,6 @@
         <field name="model">hotel.room.reservation</field>
         <field name="arch" type="xml">
             <search>
-                <field name="rooms_ids" />
                 <field name="check_in_date" />
                 <field name="check_out_date" />
                 <!-- filter by status #T00471-->

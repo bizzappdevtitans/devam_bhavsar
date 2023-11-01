@@ -7,7 +7,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-pizza.png"
+            file="hotel_management/static/img/th-pizza.png"
         />
     </record>
     <record id="food_funghi" model="food.product">
@@ -17,7 +17,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-pizza.png"
+            file="hotel_management/static/img/th-pizza.png"
         />
     </record>
     <record id="food_vege" model="food.product">
@@ -27,7 +27,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-pizza.png"
+            file="hotel_management/static/img/th-pizza.png"
         />
     </record>
     <record id="food_bolo" model="food.product">
@@ -37,7 +37,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-pasta.jpg"
+            file="hotel_management/static/img/th-pasta.jpg"
         />
     </record>
     <record id="food_4formaggi" model="food.product">
@@ -47,7 +47,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-pasta-4f.jpg"
+            file="hotel_management/static/img/th-pasta-4f.jpg"
         />
     </record>
     <record id="food_bacon" model="food.product">
@@ -57,7 +57,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-burger.jpg"
+            file="hotel_management/static/img/th-burger.jpg"
         />
     </record>
     <record id="food_cheeseburger" model="food.product">
@@ -67,7 +67,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-cheeseburger.jpg"
+            file="hotel_management/static/img/th-cheeseburger.jpg"
         />
     </record>
     <record id="food_chicken" model="food.product">
@@ -77,7 +77,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-sandwich.jpg"
+            file="hotel_management/static/img/th-sandwich.jpg"
         />
     </record>
     <record id="food_tuna" model="food.product">
@@ -87,7 +87,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-tuna.jpg"
+            file="hotel_management/static/img/th-tuna.jpg"
         />
     </record>
     <record id="food_mozza" model="food.product">
@@ -97,7 +97,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-mozza.jpg"
+            file="hotel_management/static/img/th-mozza.jpg"
         />
     </record>
     <record id="food_club" model="food.product">
@@ -107,7 +107,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-club.jpg"
+            file="hotel_management/static/img/th-club.jpg"
         />
     </record>
     <record id="food_maki" model="food.product">
@@ -117,7 +117,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-maki.jpg"
+            file="hotel_management/static/img/th-maki.jpg"
         />
     </record>
     <record id="food_salmon" model="food.product">
@@ -127,7 +127,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-salmon.jpg"
+            file="hotel_management/static/img/th-salmon.jpg"
         />
     </record>
     <record id="food_temaki" model="food.product">
@@ -137,7 +137,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-temaki.jpg"
+            file="hotel_management/static/img/th-temaki.jpg"
         />
     </record>
     <record id="food_chirashi" model="food.product">
@@ -147,7 +147,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-salmon-avocado.jpg"
+            file="hotel_management/static/img/th-salmon-avocado.jpg"
         />
     </record>
     <record id="coke" model="food.product">
@@ -157,7 +157,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-coke.jpg"
+            file="hotel_management/static/img/th-coke.jpg"
         />
     </record>
     <record id="water" model="food.product">
@@ -167,7 +167,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-water.jpg"
+            file="hotel_management/static/img/th-water.jpg"
         />
     </record>
     <record id="minute_maid" model="food.product">
@@ -177,7 +177,7 @@
         <field
             name="food_image"
             type="base64"
-            file="Hotel_management/static/img/th-minute_maid.jpg"
+            file="hotel_management/static/img/th-minute_maid.jpg"
         />
     </record>
 </odoo>

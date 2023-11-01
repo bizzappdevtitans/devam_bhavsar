@@ -90,7 +90,7 @@
             <search>
                 <field name="car_brand" />
                 <field name="car_model" />
-                <field name="car_type" widget="radio" />
+                <field name="car_type" />
                 <field name="car_capacity" />
             </search>
         </field>

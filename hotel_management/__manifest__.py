@@ -1,5 +1,5 @@
 {
-    "name": "Hotel_management",
+    "name": "hotel_management",
     "version": "15.0.1.0.0",
     "depends": ["base", "mail"],
     "author": "Odoo Community Association (OCA),bizzappdev",

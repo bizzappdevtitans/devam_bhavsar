@@ -8,7 +8,7 @@
         <field
             name="car_image"
             type="base64"
-            file="Hotel_management/static/img/toyota-camry.png"
+            file="hotel_management/static/img/toyota-camry.png"
         />
     </record>
     <record id="toyota_fortuner" model="transport.vehicle">
@@ -19,7 +19,7 @@
         <field
             name="car_image"
             type="base64"
-            file="Hotel_management/static/img/toyota-fortuner.png"
+            file="hotel_management/static/img/toyota-fortuner.png"
         />
     </record>
     <record id="volvo_s60" model="transport.vehicle">
@@ -30,7 +30,7 @@
         <field
             name="car_image"
             type="base64"
-            file="Hotel_management/static/img/volvo-s60.png"
+            file="hotel_management/static/img/volvo-s60.png"
         />
     </record>
 </odoo>

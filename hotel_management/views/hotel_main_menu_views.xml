@@ -5,14 +5,14 @@
     <menuitem id="hotel_room_root" name="Rooms" parent="hotel_menu_root" />
     <!-- menu for room reservations #T00471 -->
     <menuitem
-        id="hotel_room_reservation_child"
+        id="hotel_room_reservation"
         name="Reserve room"
         parent="hotel_room_root"
         action="action_hotel_room_reservation"
     />
     <!-- menu for rooms #T00471 -->
     <menuitem
-        id="hotel_rooms_child"
+        id="hotel_rooms"
         name=" All Rooms"
         parent="hotel_room_root"
         action="action_hotel_room_type"
@@ -25,7 +25,7 @@
     />
     <!-- child menu for room services #T00471 -->
     <menuitem
-        id="hotel_room_services_child"
+        id="hotel_room_services"
         name="Services"
         parent="hotel_room_services_root"
         action="action_hotel_room_services"
@@ -54,14 +54,14 @@
     <menuitem id="restaurant_root" name="Restaurant" parent="hotel_menu_root" />
     <!-- menu for restaurant reservation #T00471 -->
     <menuitem
-        id="restaurant_reservation_child"
+        id="restaurant_reservation"
         name="Reservations"
         parent="restaurant_root"
         action="action_restaurant_reservation"
     />
     <!-- Menu for restaurant tables #T00471 -->
     <menuitem
-        id="restaurant_tables_child"
+        id="restaurant_tables"
         name="Tables"
         parent="restaurant_root"
         action="action_restaurant_tables"

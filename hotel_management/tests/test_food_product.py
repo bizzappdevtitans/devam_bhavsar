@@ -15,5 +15,5 @@ class TestFoodProduct(TransactionCase):
         super(TestFoodProduct, self).setUp()
 
     def test_subtotal(self):
-        """Checks if the computed method gives intended value #T00471"""
+        """Checks if the method gives intended value #T00471"""
         self.assertEqual(self.food_item_1.food_subtotal, 100, "Fail")

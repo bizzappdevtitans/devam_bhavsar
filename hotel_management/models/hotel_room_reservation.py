@@ -56,10 +56,7 @@ class HotelRoomReservation(models.Model):
         inverse="_inverse_calculate_check_out_date_from_total_days",
         required=True,
     )
-    total_cost = fields.Float(
-        string="Total cost of stay",
-        compute="_compute_total_cost",
-    )
+    total_cost = fields.Float(string="Total cost of stay")
 
     @api.model
     def create(self, value):
@@ -72,7 +69,6 @@ class HotelRoomReservation(models.Model):
 
     def action_confirm(self):
         """action for confirm button #T00471"""
-        self.write({"reservation_status": "reserved"})
         room_capacity = 0
         for rooms in self.rooms_ids:
             room_capacity += rooms.room_capacity
@@ -89,13 +85,14 @@ class HotelRoomReservation(models.Model):
         if not room_capacity >= len(self.customer_ids):
             raise ValidationError(_("Room Capcaity exceeded"))
         mail_template = self.env.ref(
-            "Hotel_management.room_reservation_confirmed_email_template"
+            "hotel_management.room_reservation_confirmed_email_template"
         )
         mail_template.send_mail(self.id, force_send=True)
+        self.write({"reservation_status": "reserved"})
 
-    @api.onchange("total_days")
-    def _compute_total_cost(self):
-        """computes total cost of stay #T00471"""
+    @api.onchange("total_days", "rooms_ids")
+    def _onchange_total_cost(self):
+        """calculates total cost of stay #T00471"""
         total_cost = 0
         for rooms in self.rooms_ids:
             total_cost += rooms.room_price * self.total_days
@@ -103,7 +100,7 @@ class HotelRoomReservation(models.Model):
 
     def action_cancel(self):
         """action for cancel button #T00471"""
-        self.write({"reservation_status": "cancelled"})
+
         for rooms in self.rooms_ids:
             rooms.write(
                 {
@@ -111,42 +108,47 @@ class HotelRoomReservation(models.Model):
                     "guests_ids": [(5, 0, 0)],
                 }
             )
+        self.write({"reservation_status": "cancelled"})
 
     def action_cancel_to_draft(self):
         """action to set status to draft after cancellation #T00471"""
         self.write({"reservation_status": "draft"})
 
-    @api.onchange("check_out_date", "check_in_date")
+    @api.depends("check_out_date", "check_in_date")
     def _compute_total_days(self):
-        """compute method to count total leave days based on check_in_date and
-        check_out_date #T00471"""
+        """calculates total days based on check_in_date and check_out_date #T00471"""
         for dates in self:
-            if dates.check_in_date and dates.check_out_date:
-                dates.total_days = (dates.check_out_date - dates.check_in_date).days
+            if not (dates.check_in_date and dates.check_out_date):
+                continue
+            dates.total_days = (dates.check_out_date - dates.check_in_date).days
 
     @api.onchange("total_days", "check_in_date")
     def _inverse_calculate_check_out_date_from_total_days(self):
-        """Inverse of compute method to set check_out_date from check_in_date and
-        total_days #T00471"""
+        """Inverse method set check_out_date from check_in_date and total_days #T00471"""
         for dates in self:
-            if dates.check_in_date and dates.total_days:
-                dates.check_out_date = dates.check_in_date + relativedelta(
-                    days=dates.total_days
-                )
+            if not (dates.check_in_date and dates.total_days):
+                continue
+            dates.check_out_date = dates.check_in_date + relativedelta(
+                days=dates.total_days
+            )
 
     @api.constrains("check_out_date", "check_in_date")
-    def _check_total_days(self):
+    def _check_checkin_and_checkout_date(self):
         """Validates check-in and check-out date #T00471"""
         if self.check_in_date >= self.check_out_date:
-            raise ValidationError(_("Please enter proper check out date!"))
+            raise ValidationError(
+                _(f"Invalid checkout date!, It should be after {self.check_in_date}")
+            )
 
         if self.check_in_date < fields.Date.today():
-            raise ValidationError(_("Please enter proper check in date"))
+            raise ValidationError(
+                _(f"Invalid checkout date, it cannot be {date.today()} ")
+            )
 
     def action_reservation_reminder(self):
         """action for cron job to send reservation reminders #T00471"""
         mail_template = self.env.ref(
-            "Hotel_management.room_reservation_reminder_email_template"
+            "hotel_management.room_reservation_reminder_email_template"
         )
         for reservations in self.get_reservation():
             mail_template.send_mail(reservations.id, force_send=True)

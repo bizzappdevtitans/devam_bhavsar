@@ -20,8 +20,8 @@ class TestRestaurantReservation(TransactionCase):
         self.table_1 = self.env["restaurant.tables"].create({"capacity": 2})
         self.guest_reservation_1 = self.env["restaurant.reservation"].create(
             {
-                "guest_name_ids": self.room_1.guests_ids.ids,
-                "room_no_id": self.room_1.id,
+                "guest_ids": self.room_1.guests_ids.ids,
+                "room_id": self.room_1.id,
                 "table_booking_list_ids": self.table_1.ids,
                 "reservation_date": date.today() + relativedelta(days=1),
             }

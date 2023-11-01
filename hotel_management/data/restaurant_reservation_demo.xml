@@ -3,14 +3,14 @@
     <record id="restaurant_reservation_1" model="restaurant.reservation">
         <field name="is_direct_reservation">False</field>
         <field
-            name="guest_name_ids"
+            name="guest_ids"
             eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18'))]"
         />
         <field
             name="reservation_date"
             eval="(DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d %H:%M')"
         />
-        <field name="room_no_id" ref="room_4" />
+        <field name="room_id" ref="room_4" />
         <field name="table_booking_list_ids" eval="[(4, ref('restaurant_table_3'))]" />
         <field name="restaurant_reservation_states">confirm</field>
     </record>

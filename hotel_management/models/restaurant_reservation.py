@@ -15,16 +15,16 @@ class RestaurantReservation(models.Model):
         required=True,
         default=lambda self: self.env.company,
     )
-    guest_name_ids = fields.Many2many(
+    guest_ids = fields.Many2many(
         comodel_name="res.partner",
         relation="guest_with_restaurant_rel",
-        column1="guest_name_ids",
+        column1="guest_ids",
         column2="name",
         string="Guests",
         required=True,
     )
     reservation_date = fields.Datetime(string="Date", required=True)
-    room_no_id = fields.Many2one(
+    room_id = fields.Many2one(
         comodel_name="hotel.room.type",
         string="Room Number",
         domain="[('room_status', '=', 'booked')]",
@@ -54,14 +54,24 @@ class RestaurantReservation(models.Model):
     guest_phone = fields.Integer(string="Phone no.")
     total_guests = fields.Integer(string="Total guests")
 
-    @api.onchange("room_no_id")
-    def get_guests_from_room(self):
+    @api.onchange("room_id")
+    def _onchange_get_guests_from_room(self):
         """function to get all the guest ids from a room #T00471"""
-        if self.room_no_id:
-            self.guest_name_ids = self.room_no_id.guests_ids.ids
+        if self.room_id:
+            self.guest_ids = self.room_id.guests_ids.ids
 
     def action_confirm(self):
         """action to confirm reservation and send email #T00471"""
+
+        if not self.is_direct_reservation:
+            mail_template = self.env.ref(
+                "hotel_management.restaurant_guests_reservation_confirmed_email_template"
+            )
+            mail_template.send_mail(self.id, force_send=True)
+        mail_template = self.env.ref(
+            "hotel_management.restaurant_direct_reservation_confirmed_email_template"
+        )
+        mail_template.send_mail(self.id, force_send=True)
         self.write({"restaurant_reservation_states": "confirm"})
         for tables in self.table_booking_list_ids:
             tables.write(
@@ -70,25 +80,16 @@ class RestaurantReservation(models.Model):
                     "restaurant_reservation_ref": self.id,
                 }
             )
-        if not self.is_direct_reservation:
-            mail_template = self.env.ref(
-                "Hotel_management.restaurant_guests_reservation_confirmed_email_template"
-            )
-            mail_template.send_mail(self.id, force_send=True)
-        mail_template = self.env.ref(
-            "Hotel_management.restaurant_direct_reservation_confirmed_email_template"
-        )
-        mail_template.send_mail(self.id, force_send=True)
 
     def action_cancel(self):
         """action to cancel reservation #T00471"""
-        self.write({"restaurant_reservation_states": "cancelled"})
         for tables in self.table_booking_list_ids:
             tables.write(
                 {
                     "availability_status": "available",
                 }
             )
+        self.write({"restaurant_reservation_states": "cancelled"})
 
     def action_cancel_to_draft(self):
         """action to set status to draft after cancellation #T00471"""

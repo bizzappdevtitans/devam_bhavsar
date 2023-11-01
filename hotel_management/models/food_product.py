@@ -14,12 +14,8 @@ class HotelRoomServiceFood(models.Model):
     food_qty = fields.Integer(string="Food Quantity", default=1)
     food_subtotal = fields.Float(string="Subtotal", compute="_compute_total_cost")
 
-    @api.onchange("food_qty")
+    @api.depends("food_qty")
     def _compute_total_cost(self):
         """compute method to calculate the total price #T00471"""
         for food in self:
-            food.update(
-                {
-                    "food_subtotal": food.food_qty * food.food_price,
-                }
-            )
+            food.food_subtotal = food.food_qty * food.food_price

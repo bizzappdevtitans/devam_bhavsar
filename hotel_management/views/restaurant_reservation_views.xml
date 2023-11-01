@@ -68,7 +68,7 @@
                     <group>
                         <field name="table_booking_list_ids" widget="many2many_tags" />
                         <field
-                            name="room_no_id"
+                            name="room_id"
                             attrs="{'invisible': [('is_direct_reservation', '=', True)],'required': [('is_direct_reservation', '=', False)]}"
                         />
                         <field name="reservation_date" />
@@ -94,7 +94,7 @@
                         attrs="{'invisible': [('is_direct_reservation', '=', True)]}"
                     >
                         <page string="Guests" name="guests">
-                            <field name="guest_name_ids">
+                            <field name="guest_ids">
                                 <tree>
                                     <field name="name" />
                                     <field name="phone" />
@@ -113,9 +113,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="reservation_no_seq" />
-                <field name="table_booking_list_ids" />
                 <field name="guest_name" />
-                <field name="room_no_id" />
                 <field name="reservation_date" />
                 <!-- filter by  is_direct_reservation #T00471-->
                 <filter
