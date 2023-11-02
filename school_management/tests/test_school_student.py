@@ -60,3 +60,31 @@ class TestSchoolStudent(TransactionCase):
         """test if validation error is raised when deleteing a record #T00475"""
         with self.assertRaises(ValidationError):
             self.student_1.unlink()
+
+    def test_onchange_calculate_feespayment_date(self):
+        """tests _onchange_calculate_feespayment_date method #T00475"""
+        self.student_1._onchange_calculate_feespayment_date()
+        month_diff = self.env["ir.config_parameter"].get_param(
+            "allowed_time_period_for_feespayment"
+        )
+        self.assertEqual(
+            self.student_1.last_date_for_fees_payment,
+            self.student_1.today_date + relativedelta(months=int(month_diff)),
+            "Fail",
+        )
+
+    def test_search_age(self):
+        """tests search_age method #T00475"""
+        # case:1 the method returns empty list #T00475
+        self.student_1._search_age(value=16, operator="in")
+        # case:2 the method returns list of ids #T00475
+        # loops through self.student_1._search_age(value=15, operator="in") twice and
+        # using [0] gives output in a single list #T00475
+        self.assertIn(
+            self.student_1.id,
+            [
+                item
+                for record in self.student_1._search_age(value=15, operator="in")[0]
+                for item in record
+            ],
+        )

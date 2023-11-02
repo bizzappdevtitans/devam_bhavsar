@@ -126,6 +126,7 @@ class SchoolStudent(models.Model):
             "domain": [("name_student_id", "=", self.id)],
         }
 
+    @api.depends("date_of_birth")
     def _compute_age(self):
         """computes the age of student based on date of birth #T00335"""
         for dates in self:

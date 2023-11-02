@@ -8,5 +8,9 @@
             <field name="key">allowed_time_period_for_feespayment</field>
             <field name="value">2</field>
         </record>
+        <record id="student_1st_standard_fees" model="ir.config_parameter">
+            <field name="key">1st_standard_fees</field>
+            <field name="value">5000</field>
+        </record>
     </data>
 </odoo>

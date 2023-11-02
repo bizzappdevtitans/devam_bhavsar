@@ -7,6 +7,7 @@ from odoo.tests.common import TransactionCase
 
 class TestSchoolPrincipl(TransactionCase):
     def setUp(self):
+        """Created a principal and student record #T00475"""
         self.principal_1 = self.env["school.principal"].create(
             {
                 "principal_first_name": "TEST",

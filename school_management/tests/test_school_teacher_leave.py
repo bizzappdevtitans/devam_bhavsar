@@ -27,3 +27,13 @@ class TestSchoolTeacherLeave(TransactionCase):
     def test_compute_total_days(self):
         """tests the computed field compute_total_days #T00475"""
         self.assertEqual(self.teacher_leave_1.total_days, 3, "Fail")
+
+    def test_inverse_calculate_date_from_total_days(self):
+        """tests inverse_calculate_date_from_total_days method #T00475"""
+        self.teacher_leave_1.write({"total_days": 10})
+        self.assertEqual(
+            self.teacher_leave_1.leave_date_to,
+            self.teacher_leave_1.leave_date_from
+            + relativedelta(days=self.teacher_leave_1.total_days),
+            "Fail",
+        )

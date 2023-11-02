@@ -48,7 +48,8 @@ class SchoolTeacher(models.Model):
     @api.depends("assigned_student_ids")
     def _compute_number_of_students(self):
         """computes the number of student a teacher has #T00335"""
-        for count_of_student in self:  # counts the number of students
+        # counts the number of students
+        for count_of_student in self:
             count_of_student.student_count = len(count_of_student.assigned_student_ids)
 
     def action_show_number_of_students(self):
@@ -69,7 +70,7 @@ class SchoolTeacher(models.Model):
         for digits in self:
             # checks if phone is inputed or not if true checks the length anf if more
             # than 10 raise error
-            if digits.phone_no_teacher and len(digits.phone_no_teacher) != 10:
+            if digits.phone_no_teacher and len(str(digits.phone_no_teacher)) != 10:
                 raise ValidationError(
                     _("enter Phone number and number should not exceed 10 digits")
                 )

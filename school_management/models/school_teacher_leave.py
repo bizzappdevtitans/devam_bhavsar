@@ -28,7 +28,7 @@ class SchoolTeacherLeave(models.Model):
         ]
     )
 
-    @api.onchange("leave_date_to", "leave_date_from")
+    @api.depends("leave_date_to", "leave_date_from")
     def _compute_total_days(self):
         """compute method to count total leave days based on leave_from and leave_to
         #T00435"""

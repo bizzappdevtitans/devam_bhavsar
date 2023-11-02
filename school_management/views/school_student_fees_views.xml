@@ -33,6 +33,7 @@
                             sum="total_fees"
                             widget="monetary"
                             readonly="1"
+                            force_save="1"
                         />
                         <field name="remaning_fees" widget="monetary" />
                     </group>
