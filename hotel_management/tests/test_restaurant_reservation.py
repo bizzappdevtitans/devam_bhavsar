@@ -20,7 +20,6 @@ class TestRestaurantReservation(TransactionCase):
         self.table_1 = self.env["restaurant.tables"].create({"capacity": 2})
         self.guest_reservation_1 = self.env["restaurant.reservation"].create(
             {
-                "guest_ids": self.room_1.guests_ids.ids,
                 "room_id": self.room_1.id,
                 "table_booking_list_ids": self.table_1.ids,
                 "reservation_date": date.today() + relativedelta(days=1),
@@ -36,10 +35,18 @@ class TestRestaurantReservation(TransactionCase):
         )
         super(TestRestaurantReservation, self).setUp()
 
+    def test_onchange_get_guests_from_room(self):
+        """checks if the onchange methods works properly #T00475"""
+        self.guest_reservation_1._onchange_get_guests_from_room()
+        self.assertEqual(
+            self.guest_reservation_1.guest_ids.ids,
+            self.room_1.guests_ids.ids,
+        )
+
     def test_action_confirm(self):
         """Checks if action confirm works properly by checking if tables status has
         changed or not #T00471"""
-
+        self.guest_reservation_1._onchange_get_guests_from_room()
         self.guest_reservation_1.action_confirm()
         self.assertEqual(
             self.guest_reservation_1.table_booking_list_ids.availability_status,

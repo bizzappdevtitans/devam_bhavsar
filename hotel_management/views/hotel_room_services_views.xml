@@ -59,7 +59,7 @@
                             name="transport_service"
                             attrs="{'invisible': [('service_type', '!=', 'transport')]}"
                         >
-                            <field name="car_lines_ids">
+                            <field name="car_lines_ids" mode="kanban">
                                 <tree editable="bottom">
                                     <field name="car_brand" />
                                     <field name="car_model" />

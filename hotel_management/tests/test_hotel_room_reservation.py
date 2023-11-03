@@ -17,7 +17,7 @@ class TestHotelRoomReservation(TransactionCase):
             {
                 "customer_ids": self.env.ref("base.res_partner_4"),
                 "rooms_ids": self.room_single.ids,
-                "check_in_date": date.today() + relativedelta(weeks=1),
+                "check_in_date": date.today() + relativedelta(days=1),
                 "check_out_date": date.today() + relativedelta(days=13),
             }
         )
@@ -50,12 +50,13 @@ class TestHotelRoomReservation(TransactionCase):
         self.assertEqual(
             self.room_single.reservation_ref.id,
             self.room_reservation_single.id,
-            "success",
+            "Fail",
         )
         self.room_reservation_single._onchange_total_cost()
         # checks if the field total_cost has intended value #T00471
-        self.assertEqual(self.room_reservation_single.total_cost, 6060.0, "Fail")
+        self.assertEqual(self.room_reservation_single.total_cost, 12120.0, "Fail")
         self.room_reservation_single.action_cancel()
+        self.assertEqual(self.room_single.room_status, "vacant", "Fail")
         self.room_reservation_single.action_cancel_to_draft()
 
     def test_action_confirm(self):
@@ -81,13 +82,13 @@ class TestHotelRoomReservation(TransactionCase):
             )
 
     def test_action_reservation_reminder(self):
-        """Checks f the records are searched for cron job are correct #T00471"""
+        """Checks if the records are searched for cron job are correct #T00471"""
         reservations = (
             self.env["hotel.room.reservation"]
             .search([])
             .filtered(
                 lambda dates: dates.reservation_status == "reserved"
-                and (dates.check_in_date - relativedelta(weeks=1)) == date.today()
+                and (dates.check_in_date - relativedelta(days=7)) == date.today()
             )
         )
         self.assertEqual(

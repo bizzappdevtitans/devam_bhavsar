@@ -18,7 +18,10 @@ class TestHotelRoomType(TransactionCase):
         )
         self.room_double = self.env["hotel.room.type"].create({"room_type": "double"})
         self.room_family = self.env["hotel.room.type"].create({"room_type": "family"})
-        self.room_vip = self.env["hotel.room.type"].create({"room_type": "vip"})
+        partners = self.env["res.partner"].search([], limit=2)
+        self.room_vip = self.env["hotel.room.type"].create(
+            {"room_type": "vip", "guests_ids": partners}
+        )
         self.room_reservation_1 = self.env["hotel.room.reservation"].create(
             {
                 "customer_ids": self.env.ref("base.res_partner_4"),
@@ -53,7 +56,14 @@ class TestHotelRoomType(TransactionCase):
 
     def test_action_show_guests(self):
         """Function to check action of smart button #T00471"""
-        self.room_single.action_show_guests()
+        self.assertIn(
+            self.room_vip.guests_ids.ids,
+            [
+                item
+                for record in self.room_vip.action_show_guests().get("domain")
+                for item in record
+            ],
+        )
 
     def test_action_checkout(self):
         """Checks if the checkout button works as intended #T00471"""
