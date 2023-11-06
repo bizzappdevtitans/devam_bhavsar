@@ -1,0 +1,30 @@
+<odoo>
+    <record id="sale_order_split_quotation" model="ir.ui.view">
+        <field name="name">sale.order.split.quotation.form</field>
+        <field name="model">sale.order.split.quotation</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="sale_order_id" readonly="1" />
+                    <field name="is_split_so_based_on_category" />
+                </group>
+                <footer>
+                    <button
+                        string="Split sale quotation"
+                        name="action_confirm"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button string="Cancel" class="oe_highlight" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_sale_order_split_quotation" model="ir.actions.act_window">
+        <field name="name">Split sale quatation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order.split.quotation</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
