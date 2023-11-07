@@ -4,7 +4,7 @@
     "depends": ["base", "sale_management"],
     "author": "bizzappdev",
     "website": "https://www.bizzappdev.com",
-    "category": "Administration",
+    "category": "Sales/Sales",
     "summary": "Module that sets delivery address in a sale orders based on conditions",
     "data": ["views/res_partner_views.xml"],
     "installable": True,
