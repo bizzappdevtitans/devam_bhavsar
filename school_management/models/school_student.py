@@ -130,8 +130,6 @@ class SchoolStudent(models.Model):
         """computes the age of student based on date of birth #T00335"""
         for dates in self:
             today = date.today()
-            if not dates.date_of_birth:
-                continue
             dates.age_of_student = today.year - dates.date_of_birth.year
 
     @api.ondelete(at_uninstall=False)

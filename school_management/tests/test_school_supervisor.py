@@ -38,3 +38,14 @@ class TestSchoolSupervisor(TransactionCase):
         self.assertEqual(
             res[0][0], self.supervisor_1.id, "name_get function dosent work"
         )
+
+    def test_name_search(self):
+        """tests name_search function #T00475"""
+        supervisor_name = self.supervisor_1.name_search(
+            name=self.supervisor_1.supervisor_last_name
+        )
+        self.assertEqual(
+            supervisor_name[0][1],
+            self.supervisor_1.display_name,
+            "name_search function dosent work",
+        )
