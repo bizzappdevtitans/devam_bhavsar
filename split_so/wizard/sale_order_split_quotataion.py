@@ -1,4 +1,5 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class SaleOrderSplitQuotation(models.TransientModel):
@@ -15,9 +16,9 @@ class SaleOrderSplitQuotation(models.TransientModel):
 
     def action_confirm(self):
         """confirm action of wizard #T00478"""
-        if self.is_split_so_based_on_category:
-            for products in self.sale_order_id:
-                products.prepare_split_vals()
+        if not self.is_split_so_based_on_category:
+            raise ValidationError(_("Please select a criteria to split sale orders on"))
+        self.sale_order_id.create_split_so()
 
     @api.model
     def _default_sale_order(self):
