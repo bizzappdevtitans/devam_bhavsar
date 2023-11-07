@@ -8,6 +8,7 @@ from odoo.tests.common import TransactionCase
 class TestSchoolPrincipl(TransactionCase):
     def setUp(self):
         """Created a principal and student record #T00475"""
+        super(TestSchoolPrincipl, self).setUp()
         self.principal_1 = self.env["school.principal"].create(
             {
                 "principal_first_name": "TEST",
@@ -25,11 +26,12 @@ class TestSchoolPrincipl(TransactionCase):
                 "standard": "standard1",
             }
         )
-        super(TestSchoolPrincipl, self).setUp()
 
     def test_compute_principal_age(self):
         """tests computed field age_principal #T00475"""
-        self.assertEqual(self.principal_1.age_principal, 69, "Fail")
+        self.assertEqual(
+            self.principal_1.age_principal, 69, "Principal age does not match"
+        )
 
     def test_action_change_state_to_confirm_info(self):
         """tests action_change_state_to_confirm_info method #T00475"""
@@ -38,7 +40,11 @@ class TestSchoolPrincipl(TransactionCase):
         students = self.env["school.student"].search([("is_confirm_info", "=", True)])
         self.principal_1.action_change_state_to_confirm_info()
         # checks if the searched records states has changed #T00475
-        self.assertEqual(students.admission_state, "confirm_info", "Fail")
+        self.assertEqual(
+            students.admission_state,
+            "confirm_info",
+            "Student admission state not changed",
+        )
 
     def test_action_change_state_to_confirm_admission(self):
         """tests action_change_state_to_confirm_info method #T00475"""
@@ -49,4 +55,6 @@ class TestSchoolPrincipl(TransactionCase):
         )
         self.principal_1.action_change_state_to_confirm_admission()
         # checks if the searched records states has changed #T00475
-        self.assertEqual(students.admission_state, "admitted", "Fail")
+        self.assertEqual(
+            students.admission_state, "admitted", "Student admission state not changed"
+        )

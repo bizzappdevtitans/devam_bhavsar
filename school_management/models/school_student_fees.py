@@ -29,8 +29,6 @@ class SchoolStudentFees(models.Model):
                 payments.total_fees = self.env["ir.config_parameter"].get_param(
                     "1st_standard_fees"
                 )
-                if not payments.paid_fees:
-                    continue
                 payments.remaning_fees = payments.total_fees - payments.paid_fees
                 if payments.remaning_fees < 0:
                     raise ValidationError(_("Please enter proper information"))

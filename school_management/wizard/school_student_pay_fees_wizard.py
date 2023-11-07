@@ -20,20 +20,22 @@ class StudentPayfeesWizard(models.TransientModel):
     )
     paid_date = fields.Date(string="Date of Payment", store=True, default=date.today())
     paid_fees = fields.Monetary(string="Paid fees", store=True)
-    total_fees = fields.Monetary(string="Total fees", default="5000")
+    total_fees = fields.Monetary(string="Total fees")
     remaning_fees = fields.Monetary(
         string="Remaining fees",
-        compute="_compute_student_fees",
     )
 
-    @api.onchange("paid_fees", "total_fees", "remaning_fees")
-    def _compute_student_fees(self):
-        """calculate student fees and if given invalid details raise error #T00348"""
-        for payments in self:
-            if payments.paid_fees <= payments.total_fees:
+    @api.onchange("name_student", "paid_fees")
+    def _onchange_student_fees(self):
+        """calculate student fees and if given invalid details raise error #T00335"""
+        if self.name_student.standard == "standard1":
+            for payments in self:
+                payments.total_fees = self.env["ir.config_parameter"].get_param(
+                    "1st_standard_fees"
+                )
                 payments.remaning_fees = payments.total_fees - payments.paid_fees
-            elif payments.remaning_fees < 0:
-                raise ValidationError(_("Please enter proper information"))
+                if payments.remaning_fees < 0:
+                    raise ValidationError(_("Please enter proper information"))
 
     def action_pay_fees(self):
         """when clicked submit this will create a record in school.student.fees

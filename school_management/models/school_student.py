@@ -126,13 +126,13 @@ class SchoolStudent(models.Model):
             "domain": [("name_student_id", "=", self.id)],
         }
 
-    @api.depends("date_of_birth")
     def _compute_age(self):
         """computes the age of student based on date of birth #T00335"""
         for dates in self:
             today = date.today()
-            if dates.date_of_birth:
-                dates.age_of_student = today.year - dates.date_of_birth.year
+            if not dates.date_of_birth:
+                continue
+            dates.age_of_student = today.year - dates.date_of_birth.year
 
     @api.ondelete(at_uninstall=False)
     def _unlink_check_payment(self):
@@ -177,24 +177,23 @@ class SchoolStudent(models.Model):
         subjects["subject_list_ids"] = default_subjects
         return subjects
 
-    def action_archive_students_records(self):
+    def archive_students_records(self):
         """server action to turn is_status_active field False and #T00404"""
         self.write({"is_status_active": False})
 
-    def action_unarchive_students_records(self):
-        """server action to turn is_status_active field True #T00404"""
-        self.write({"is_status_active": True})
-
-    def action_archive_record_if_in_given_states(self):
+    def archive_record_if_in_given_states(self):
         """logic for  automated action to change a record state if state is in applied or
         admitted #T00408"""
-        return self.search(
+
+        students = self.search(
             [
                 "|",
                 ("admission_state", "=", "applied"),
                 ("admission_state", "=", "confirm_info"),
             ]
-        ).write({"admission_state": "cancelled", "is_status_active": False})
+        )
+        if students:
+            students.write({"admission_state": "cancelled", "is_status_active": False})
 
     def _search_age(self, operator, value):
         """search method for computed field age_of_student #T00438"""

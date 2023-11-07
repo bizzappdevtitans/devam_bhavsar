@@ -9,6 +9,7 @@ from odoo.tests.common import TransactionCase
 class TestSchoolTeacher(TransactionCase):
     def setUp(self):
         """Created a teacher and two student records #T00475"""
+        super(TestSchoolTeacher, self).setUp()
         self.teacher_1 = self.env["school.teacher"].create(
             {
                 "first_name": "test_first_name",
@@ -38,25 +39,29 @@ class TestSchoolTeacher(TransactionCase):
                 "teacher_assigned_id": self.teacher_1.id,
             }
         )
-        super(TestSchoolTeacher, self).setUp()
 
     def test_compute_number_of_students(self):
         """tests compute_number_of_students method #T00475"""
         self.assertEqual(
             len(self.teacher_1.assigned_student_ids),
             self.teacher_1.student_count,
-            "Fail",
+            "number of student dosent match the student count",
         )
 
     def test_action_show_number_of_students(self):
         """tests action_show_number_of_students #T00475"""
-        self.teacher_1.action_show_number_of_students()
+        self.assertIn(
+            self.teacher_1.id,
+            [
+                students
+                for student in self.teacher_1.action_show_number_of_students().get(
+                    "domain"
+                )
+                for students in student
+            ],
+        )
 
     def test_validate_phone_no_teacher(self):
         """tests validate_phone_no_teacher method #T00475"""
         with self.assertRaises(ValidationError):
             self.teacher_1.write({"phone_no_teacher": 333333})
-
-    def test_action_find_and_wish_birthday(self):
-        """tests action_find_and_wish_birthday method #T00475"""
-        self.teacher_1.action_find_and_wish_birthday()

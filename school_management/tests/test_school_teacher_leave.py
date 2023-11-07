@@ -8,6 +8,7 @@ from odoo.tests.common import TransactionCase
 class TestSchoolTeacherLeave(TransactionCase):
     def setUp(self):
         """created a teacher and teacher leave record #T00475"""
+        super(TestSchoolTeacherLeave, self).setUp()
         self.teacher_1 = self.env["school.teacher"].create(
             {
                 "first_name": "test_first_name",
@@ -22,11 +23,10 @@ class TestSchoolTeacherLeave(TransactionCase):
                 "leave_date_to": date.today() + relativedelta(days=4),
             }
         )
-        super(TestSchoolTeacherLeave, self).setUp()
 
     def test_compute_total_days(self):
         """tests the computed field compute_total_days #T00475"""
-        self.assertEqual(self.teacher_leave_1.total_days, 3, "Fail")
+        self.assertEqual(self.teacher_leave_1.total_days, 3, "Total days dosent match")
 
     def test_inverse_calculate_date_from_total_days(self):
         """tests inverse_calculate_date_from_total_days method #T00475"""
@@ -35,5 +35,5 @@ class TestSchoolTeacherLeave(TransactionCase):
             self.teacher_leave_1.leave_date_to,
             self.teacher_leave_1.leave_date_from
             + relativedelta(days=self.teacher_leave_1.total_days),
-            "Fail",
+            "leave date to dosent match",
         )

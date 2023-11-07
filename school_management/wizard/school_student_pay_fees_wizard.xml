@@ -9,12 +9,18 @@
                     <field name="currency_id" invisible='1' />
                     <field name="name_student" readonly="1" />
                     <field name="paid_date" readonly="1" />
-                    <field name="paid_fees" widget="monetary" string="Enter amount" />
+                    <field
+                        name="paid_fees"
+                        widget="monetary"
+                        string="Enter amount"
+                        required="1"
+                    />
                     <field
                         name="total_fees"
                         sum="total_fees"
                         widget="monetary"
                         readonly="1"
+                        force_save="1"
                     />
                     <field name="remaning_fees" widget="monetary" />
                 </group>

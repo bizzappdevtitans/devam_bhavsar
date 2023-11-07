@@ -12,7 +12,7 @@
                 name="nextcall"
                 eval="(datetime.now() + timedelta(days=0)).strftime('%Y-%m-%d 23:59:59')"
             />
-            <field name="code">model.action_find_and_wish_birthday()</field>
+            <field name="code">model.cron_find_and_wish_birthday()</field>
             <field name="state">code</field>
         </record>
     </data>

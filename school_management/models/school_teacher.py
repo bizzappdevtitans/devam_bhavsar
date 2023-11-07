@@ -84,7 +84,8 @@ class SchoolTeacher(models.Model):
         )
         return super(SchoolTeacher, self).create(value)
 
-    def action_find_and_wish_birthday(self):
+    @api.model
+    def cron_find_and_wish_birthday(self):
         """action of cron job to search and find teachers whose birthday is today and
         wish them happy bday in birthday channel #T00398"""
         dates = self.search(

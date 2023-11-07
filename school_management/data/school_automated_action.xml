@@ -18,7 +18,7 @@
             <field name="trg_date_range">2</field>
             <field name="trg_date_range_type">month</field>
             <field name="state">code</field>
-            <field name="code">model.action_archive_record_if_in_given_states()</field>
+            <field name="code">model.archive_record_if_in_given_states()</field>
         </record>
     </data>
 </odoo>

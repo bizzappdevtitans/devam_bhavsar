@@ -27,6 +27,7 @@
                             name="paid_fees"
                             widget="monetary"
                             string="Enter amount"
+                            required="1"
                         />
                         <field
                             name="total_fees"
