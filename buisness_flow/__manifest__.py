@@ -1,0 +1,25 @@
+{
+    "name": "buisness_flow",
+    "version": "15.0.1.0.0",
+    "depends": [
+        "sale_management",
+        "account",
+        "purchase",
+        "project",
+        "mrp",
+    ],
+    "author": "bizzappdev",
+    "website": "https://www.bizzappdev.com",
+    "category": "Sales/Sales",
+    "summary": "Module to pass values from SO to Invoice,PO,DO,MO,project and task",
+    "data": [
+        "views/sale_order.xml",
+        "views/account_move.xml",
+        "views/purchase_order.xml",
+        "views/stock_picking.xml",
+        "views/project_views.xml",
+        "views/mrp_production_views.xml",
+    ],
+    "installable": True,
+    "license": "LGPL-3",
+}
