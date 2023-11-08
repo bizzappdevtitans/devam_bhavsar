@@ -1,5 +1,5 @@
 {
-    "name": "last_5_so_&_po",
+    "name": "last_five_so_po",
     "version": "15.0.1.0.0",
     "depends": ["purchase", "sale_management"],
     "author": "Odoo Community Association (OCA),bizzappdev",

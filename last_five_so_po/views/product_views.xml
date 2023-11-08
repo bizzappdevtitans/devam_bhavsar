@@ -5,9 +5,12 @@
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_normal_form_view" />
         <field name="arch" type="xml">
-            <xpath expr="/form/sheet/notebook/page[@name='sales']" position="after">
-                <page string="Last 5 PO and SO" name="last_5_purchase_orders">
-                    <group string="Last 5 Purchase Orders">
+            <xpath expr="/form/sheet/notebook/page[@name='invoicing']" position="after">
+                <page string="Product Details" name="product_details">
+                    <group
+                        string="Last 5 Purchase Orders"
+                        attrs="{'invisible': [('last_5_po_ids', '=', [])]}"
+                    >
                         <field name="last_5_po_ids">
                             <tree>
                                 <field name="name" />
@@ -15,8 +18,15 @@
                             </tree>
                         </field>
                     </group>
-                    <group string="Last 5 Sales Orders">
-                        <field name="last_5_so_ids" />
+                    <group
+                        string="Last 5 Sales Orders"
+                        attrs="{'invisible': [('last_5_so_ids', '=', [])]}"
+                    >
+                        <field name="last_5_so_ids">
+                            <tree>
+                                <field name="name" />
+                            </tree>
+                        </field>
                     </group>
                 </page>
             </xpath>
