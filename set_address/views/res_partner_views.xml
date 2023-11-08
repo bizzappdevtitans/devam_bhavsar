@@ -1,0 +1,16 @@
+<odoo>
+     <!-- Inherted form view from res.partner and added required fields #T00460 -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/group/group/field[@name='vat']" position="after">
+                <field
+                    name="is_delivery_address"
+                    attrs="{'invisible': ['|',('company_type','=', 'company'),('type','!=','delivery')]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
