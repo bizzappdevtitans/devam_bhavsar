@@ -13,9 +13,8 @@ class SaleOrder(models.Model):
         get more than one then the first employee will be shown if no condition is
         fullfilled and than the employees who have not selected address type : delivery
         than partner_shipping_id will be the company address #T00460"""
-        company = self.env["res.partner"].browse(self.partner_id.id)
-        employees = company.child_ids
-        if company and employees:
+        employees = self.partner_id.child_ids
+        if employees:
             if employee_has_set_is_delivery_addr := employees.filtered(
                 lambda field: field.is_delivery_address and field.type == "delivery"
             ):

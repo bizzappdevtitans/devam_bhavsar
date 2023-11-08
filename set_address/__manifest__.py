@@ -1,7 +1,7 @@
 {
     "name": "set_address",
     "version": "15.0.1.0.0",
-    "depends": ["base", "sale_management"],
+    "depends": ["sale_management"],
     "author": "bizzappdev",
     "website": "https://www.bizzappdev.com",
     "category": "Sales/Sales",
