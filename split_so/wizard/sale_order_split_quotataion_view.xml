@@ -7,7 +7,18 @@
             <form>
                 <group>
                     <field name="sale_order_id" readonly="1" />
-                    <field name="is_split_so_based_on_category" />
+                    <field name="split_so_options" widget="radio" />
+                    <field
+                        name="sale_order_line_ids"
+                        attrs="{'invisible': [('split_so_options', '!=', 'selected_lines')]}"
+                    >
+                        <tree>
+                            <field name="product_id" />
+                            <field name="product_uom_qty" />
+                            <field name="price_unit" />
+                            <field name="price_subtotal" />
+                        </tree>
+                    </field>
                 </group>
                 <footer>
                     <button
