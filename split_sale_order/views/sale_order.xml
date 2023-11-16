@@ -8,11 +8,11 @@
             <xpath expr="//button[@name='action_confirm']" position="after">
                 <!-- wizard to split sale orders #T00478 -->
                 <button
-                    name="%(split_so.action_sale_order_split_quotation)d"
+                    name="%(split_sale_order.action_sale_order_split_quotation)d"
                     string="Split Quotation"
                     type="action"
                     class="btn-primary"
-                    attrs="{'invisible': [('state', '!=', 'draft')]}"
+                    attrs="{'invisible': ['|',('state', '!=', 'draft'),('parent_sale_order_id','!=',False)]}"
                 />
             </xpath>
             <xpath expr="//group[@name='order_details']" position="inside">

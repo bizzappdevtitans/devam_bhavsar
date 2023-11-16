@@ -1,4 +1,5 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class SaleOrderSplitQuotation(models.TransientModel):
@@ -25,7 +26,7 @@ class SaleOrderSplitQuotation(models.TransientModel):
         column1="sale_order_line_ids",
         column2="order_id",
         string="Sale order lines",
-        default=lambda self: self.get_order_lines(),
+        domain=lambda self: [("id", "in", self.get_order_lines().ids)],
     )
 
     @api.model
@@ -36,18 +37,33 @@ class SaleOrderSplitQuotation(models.TransientModel):
         return sale_order
 
     def get_order_lines(self):
+        """Function to get order_lines from current sale order #T00478"""
         sale_orders = self._default_sale_order()
         order_lines = sale_orders.mapped("order_line")
         return order_lines
 
     def split_so_by_selected_line(self):
-        """Function that creates a sale order from selectedlines #T00478"""
+        """Function that creates a sale order from selected lines #T00478"""
+        if not self.sale_order_line_ids:
+            raise ValidationError(_("Please select products"))
         for lines in self.sale_order_line_ids:
+            new_lines = []
+            for product in lines:
+                new_lines.append(
+                    (
+                        0,
+                        0,
+                        {
+                            "product_id": product.product_id.id,
+                            "product_uom_qty": product.product_uom_qty,
+                        },
+                    )
+                )
             self.env["sale.order"].create(
                 {
                     "parent_sale_order_id": self.sale_order_id.id,
                     "partner_id": self.sale_order_id.partner_id.id,
-                    "order_line": lines,
+                    "order_line": new_lines,
                 }
             )
 
@@ -57,3 +73,5 @@ class SaleOrderSplitQuotation(models.TransientModel):
             self.sale_order_id.split_so_by_category()
         if self.split_so_options == "selected_lines":
             self.split_so_by_selected_line()
+        if self.split_so_options == "one_line_per_order":
+            self.sale_order_id.split_so_per_line()

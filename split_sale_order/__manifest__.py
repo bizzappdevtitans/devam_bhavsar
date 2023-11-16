@@ -1,5 +1,5 @@
 {
-    "name": "split_so",
+    "name": "split_sale_order",
     "version": "15.0.1.0.0",
     "depends": ["sale_management"],
     "author": "Odoo Community Association (OCA),bizzappdev",
