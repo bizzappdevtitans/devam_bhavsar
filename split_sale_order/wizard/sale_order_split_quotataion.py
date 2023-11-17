@@ -80,11 +80,13 @@ class SaleOrderSplitQuotation(models.TransientModel):
     def split_so_by_selected_line(self):
         """Function that creates a sale order from selected lines #T00478"""
         if not self.sale_order_line_ids:
-            raise ValidationError(_("Please select products"))
+            raise ValidationError(
+                _("Select the sale order lines that needs to be split")
+            )
         if len(self.sale_order_line_ids) <= 1:
             raise ValidationError(
                 _(
-                    "Can't split,only one "
+                    "Can't split, there's only one "
                     f"product {self.sale_order_line_ids.product_id.name}"
                 )
             )

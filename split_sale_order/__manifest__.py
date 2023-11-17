@@ -2,7 +2,7 @@
     "name": "split_sale_order",
     "version": "15.0.1.0.0",
     "depends": ["sale_management"],
-    "author": "Odoo Community Association (OCA),BizzAppDev",
+    "author": "bizzappdev",
     "website": "https://www.bizzappdev.com",
     "category": "Sales/Sales",
     "summary": "Module to split sale orders based on criteria",
