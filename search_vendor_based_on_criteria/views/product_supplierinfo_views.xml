@@ -1,12 +1,23 @@
 <odoo>
-    <!-- Inherited product.supplierinfo view to add required field #T00485-->
+    <!-- Inherited product.supplierinfo form view to add required field #T00485-->
     <record id="product_supplierinfo_form_view" model="ir.ui.view">
         <field name="name">product.supplierinfo.form.view</field>
         <field name="model">product.supplierinfo</field>
         <field name="inherit_id" ref="product.product_supplierinfo_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//group[@name='vendor']" position="inside">
-                <field name="sequence" />
+                <field name="vendor_sequence" />
+            </xpath>
+        </field>
+    </record>
+    <!-- Inherited product.supplierinfo tree view to add required field #T00485-->
+    <record id="product_supplierinfo_tree_view" model="ir.ui.view">
+        <field name="name">product.supplierinfo.tree.view</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="vendor_sequence" />
             </xpath>
         </field>
     </record>

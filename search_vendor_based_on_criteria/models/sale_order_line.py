@@ -12,10 +12,18 @@ class SaleOrderLine(models.Model):
 
     @api.onchange("product_id")
     def _onchange_product_vendor(self):
-        """Onchange function to get vendors based on criterias #T00485"""
-        if self.product_id:
+        """Onchange function to get vendors based on criteria:
+        1.The vendor with lowest price will be selected
+        2.If multiple vendors of same product has minimum or same price, then
+        the vendor with  minimum delivery lead time will be selected
+        3.If both price and delivery lead time is same then the vendor with the lowest
+        vendor_sequence will be selected #T00485"""
+        for product in self:
+            if not product.product_id.seller_ids:
+                product.vendor_id = False
             vendors = self.env["product.supplierinfo"].search(
-                [("product_id", "=", self.product_id.id)]
+                [("id", "in", self.product_id.seller_ids.ids)],
+                order="price asc , delay asc, vendor_sequence asc",
+                limit=1,
             )
-            sort_vendor_by_price = vendors.sorted(key=lambda product: product.price)
-            self.vendor_id = sort_vendor_by_price[0]
+            product.vendor_id = vendors
