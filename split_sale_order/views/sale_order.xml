@@ -1,0 +1,42 @@
+<odoo>
+    <!-- Inherted form view from sale order and added required fields #T00478 -->
+    <record id="sale_order_form_view" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_confirm']" position="after">
+                <!-- wizard to split sale orders #T00478 -->
+                <button
+                    name="%(split_sale_order.action_sale_order_split_quotation)d"
+                    string="Split Quotation"
+                    type="action"
+                    class="btn-primary"
+                    attrs="{'invisible': ['|',('state', '!=', 'draft'),('parent_sale_order_id','!=',False)]}"
+                />
+            </xpath>
+            <xpath expr="//group[@name='order_details']" position="inside">
+                <field
+                    name="parent_sale_order_id"
+                    attrs="{'invisible': [('parent_sale_order_id', '=', False)]}"
+                />
+            </xpath>
+            <!-- smart button to show child sale orders #T00478 -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    class="oe_stat_button"
+                    name="action_show_child_so"
+                    type="object"
+                    icon="fa-sitemap"
+                    attrs="{'invisible': [('child_so_count', '=',0 )]}"
+                >
+                    <field
+                        name="child_so_count"
+                        string="Sale orders"
+                        widget="statinfo"
+                    />
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
