@@ -83,11 +83,11 @@ class SaleOrderSplitQuotation(models.TransientModel):
             raise ValidationError(
                 _("Select the sale order lines that needs to be split")
             )
-        if len(self.sale_order_line_ids) <= 1:
+        if len(self._default_sale_order().order_line) <= 1:
             raise ValidationError(
                 _(
                     "Can't split, there's only one "
-                    f"product {self.sale_order_line_ids.product_id.name}"
+                    f"product {self._default_sale_order().order_line.product_id.name}"
                 )
             )
         for lines in self.sale_order_line_ids:
