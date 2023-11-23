@@ -1,0 +1,1364 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* school_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-23 09:59+0000\n"
+"PO-Revision-Date: 2023-11-23 09:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__first_name
+msgid " First Name"
+msgstr "પ્રથમ નામ"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard10
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard10
+msgid "10th"
+msgstr "10મી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard11
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard11
+msgid "11th"
+msgstr "11મી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard12
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard12
+msgid "12th"
+msgstr "12મી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard1
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard1
+msgid "1st"
+msgstr "1લી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard2
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard2
+msgid "2nd"
+msgstr "2જી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard3
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard3
+msgid "3rd"
+msgstr "3જી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard4
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard4
+msgid "4th"
+msgstr "4થી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard5
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard5
+msgid "5th"
+msgstr "5મી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard6
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard6
+msgid "6th"
+msgstr "6ઠ્ઠી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard7
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard7
+msgid "7th"
+msgstr "7મી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard8
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard8
+msgid "8th"
+msgstr "8મી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__standard9
+#: model:ir.model.fields.selection,name:school_management.selection__school_student_classes__class_standard__standard9
+msgid "9th"
+msgstr "9મી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_receipt_template
+msgid "<strong>Address</strong>"
+msgstr "<strong>સરનામું</strong>"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_receipt_template
+msgid "<strong>Enrollement number: </strong>"
+msgstr "<strong>નોંધણી નંબર: </strong>"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_receipt_template
+msgid "<strong>Standard: </strong>"
+msgstr "<strong>ધોરણ: </strong>"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_needaction
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_needaction
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_needaction
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_needaction
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_needaction
+msgid "Action Needed"
+msgstr "ક્રિયા જરૂરી"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__is_status_active
+#: model:ir.model.fields,field_description:school_management.field_school_student__is_status_active
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__is_status_check
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__is_status_active
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search_view
+msgid "Active"
+msgstr "સક્રિય"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_ids
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_ids
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_ids
+msgid "Activities"
+msgstr "પ્રવૃત્તિઓ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_exception_decoration
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_exception_decoration
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_exception_decoration
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_exception_decoration
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "પ્રવૃત્તિ અપવાદ શણગાર"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_state
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_state
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_state
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_state
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_state
+msgid "Activity State"
+msgstr "પ્રવૃત્તિ સ્થિતિ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_type_icon
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_type_icon
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_type_icon
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_type_icon
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "પ્રવૃત્તિ પ્રકાર આયકન"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+msgid "Additional information"
+msgstr "વધારાની માહિતી"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__admission_state
+msgid "Admission State"
+msgstr "પ્રવેશ રાજ્ય"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__admission_state__admitted
+msgid "Admitted"
+msgstr "સ્વીકાર્યું"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__age_principal
+#: model:ir.model.fields,field_description:school_management.field_school_student__age_of_student
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__age_supervisor
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__age_teacher
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_graph_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_pivot_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search_view
+msgid "Age"
+msgstr "ઉંમર"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__admission_state__applied
+msgid "Applied"
+msgstr "લાગુ"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_teacher_leave_wizard
+msgid "Apply Leave"
+msgstr "રજા લાગુ કરો"
+
+#. module: school_management
+#: model:ir.actions.server,name:school_management.action_to_archive_students_records
+msgid "Archive Student records"
+msgstr "આર્કાઇવ વિદ્યાર્થી રેકોર્ડ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search_view
+msgid "Archived"
+msgstr "આર્કાઇવ કરેલ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_attachment_count
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_attachment_count
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_attachment_count
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_attachment_count
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_attachment_count
+msgid "Attachment Count"
+msgstr "જોડાણ ગણતરી"
+
+#. module: school_management
+#: model:mail.channel,name:school_management.school_teacher_birthday_announcements
+msgid "Birthdays"
+msgstr "જન્મદિવસો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_calendar_view
+msgid "Calendar"
+msgstr "કેલેન્ડર"
+
+#. module: school_management
+#: code:addons/school_management/models/school_student.py:0
+msgid "Can't delete record with fees paid!"
+msgstr "ચૂકવેલ ફી સાથે રેકોર્ડ કાઢી શકતા નથી!"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__admission_state__cancelled
+msgid "Cancelled"
+msgstr "રદ કરેલ"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher_leave__leave_types__casual_leave
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher_leave_wizard__leave_type__casual_leave
+msgid "Casual leave"
+msgstr "કેઝ્યુઅલ રજા"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__teacher_assigned_id
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__class_teacher_id
+msgid "Class Teacher"
+msgstr "વર્ગ શિક્ષક"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_student_classes
+msgid "Class details"
+msgstr "વર્ગ વિગતો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+msgid "Class information"
+msgstr "વર્ગ માહિતી"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_classes
+#: model:ir.ui.menu,name:school_management.school_management_menu_classes
+msgid "Classes"
+msgstr "વર્ગો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__is_confirm_admission
+msgid "Confirm Admision"
+msgstr "પ્રવેશ કન્ફર્મ કરો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__is_confirm_info
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__admission_state__confirm_info
+msgid "Confirm Information"
+msgstr "માહિતીની પુષ્ટિ કરો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_principal_form_view
+msgid "Confirm admission"
+msgstr "પ્રવેશની પુષ્ટિ કરો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_principal_form_view
+msgid "Confirm information"
+msgstr "માહિતીની પુષ્ટિ કરો"
+
+#. module: school_management
+#: model_terms:ir.actions.act_window,help:school_management.action_school_principal
+msgid "Create Principal Record"
+msgstr "મુખ્ય રેકોર્ડ બનાવો"
+
+#. module: school_management
+#: model_terms:ir.actions.act_window,help:school_management.action_school_student
+msgid "Create Student Record"
+msgstr "વિદ્યાર્થી રેકોર્ડ બનાવો"
+
+#. module: school_management
+#: model_terms:ir.actions.act_window,help:school_management.action_school_teacher
+msgid "Create Teacher Record"
+msgstr "શિક્ષક રેકોર્ડ બનાવો"
+
+#. module: school_management
+#: model_terms:ir.actions.act_window,help:school_management.action_school_classes
+msgid "Create class Record"
+msgstr "વર્ગ રેકોર્ડ બનાવો"
+
+#. module: school_management
+#: model_terms:ir.actions.act_window,help:school_management.action_school_fees
+msgid "Create fees Record"
+msgstr "ફી રેકોર્ડ બનાવો"
+
+#. module: school_management
+#: model_terms:ir.actions.act_window,help:school_management.action_school_subjects
+msgid "Create subject Record"
+msgstr "વિષય રેકોર્ડ બનાવો"
+
+#. module: school_management
+#: model_terms:ir.actions.act_window,help:school_management.action_school_supervisor
+msgid "Create supervisor Record"
+msgstr "સુપરવાઇઝર રેકોર્ડ બનાવો"
+
+#. module: school_management
+#: model_terms:ir.actions.act_window,help:school_management.action_school_teacher_leave
+msgid "Create teacher leave Record"
+msgstr "શિક્ષક રજા રેકોર્ડ બનાવો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__create_uid
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__create_uid
+msgid "Created by"
+msgstr "દ્વારા બનાવવામાં"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_student__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__create_date
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__create_date
+msgid "Created on"
+msgstr "ના રોજ બનાવ્યું"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__currency_id
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__currency_id
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__currency_id
+msgid "Currency"
+msgstr "ચલણ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__paid_date
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__paid_date
+msgid "Date of Payment"
+msgstr "ચુકવણીની તારીખ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__date_of_birth
+#: model:ir.model.fields,field_description:school_management.field_school_student__date_of_birth
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__date_of_birth
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__date_of_birth
+msgid "Date of birth"
+msgstr "જન્મ તારીખ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_pay_fees_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_leave_wizard_form_view
+msgid "Discard"
+msgstr "કાઢી નાખો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_student__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__display_name
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__display_name
+msgid "Display Name"
+msgstr "ડિસ્પ્લે નામ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__division_of_students_id
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__division
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_classes_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search_view
+msgid "Division"
+msgstr "વિભાગ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban_view
+msgid "Division:"
+msgstr "વિભાગ:"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__principal_email
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__email_supervisor
+msgid "Email"
+msgstr "ઈમેલ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_tree_view
+msgid "Employee Number"
+msgstr "કર્મચારી નંબર"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_kanban_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_kanban_view
+msgid "Employee Number  :"
+msgstr "કર્મચારી નંબર  :"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_form_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_pay_fees_wizard_form_view
+msgid "Enter amount"
+msgstr "રકમ દાખલ કરો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__father_name_student
+msgid "Father Fullname"
+msgstr "પિતાનું પૂરું નામ"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu_fees
+msgid "Fees"
+msgstr "ફી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_receipt_template
+msgid "Fees Paid"
+msgstr "ફી ચૂકવી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+msgid "Fees information"
+msgstr "ફી માહિતી"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_principal__gender__female
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__gender__female
+#: model:ir.model.fields.selection,name:school_management.selection__school_supervisor__gender__female
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher__gender__female
+msgid "Female"
+msgstr "સ્ત્રી"
+
+#. module: school_management
+#: model:ir.actions.server,name:school_management.ir_cron_find_and_wish_birthday_ir_actions_server
+#: model:ir.cron,cron_name:school_management.ir_cron_find_and_wish_birthday
+#: model:ir.cron,name:school_management.ir_cron_find_and_wish_birthday
+msgid "Find and wish birthdays of teachers"
+msgstr "શિક્ષકોના જન્મદિવસ શોધો અને શુભેચ્છા પાઠવો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__principal_first_name
+#: model:ir.model.fields,field_description:school_management.field_school_student__student_first_name
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__supervisor_first_name
+msgid "First Name"
+msgstr "પ્રથમ નામ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_kanban_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_kanban_view
+msgid "First Name :"
+msgstr "પ્રથમ નામ :"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_principal_tree_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_tree_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_tree_view
+msgid "First name"
+msgstr "પ્રથમ નામ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_follower_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_follower_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_follower_ids
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_follower_ids
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_follower_ids
+msgid "Followers"
+msgstr "અનુયાયીઓ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_partner_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_partner_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_partner_ids
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_partner_ids
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "અનુયાયીઓ (ભાગીદારો)"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__activity_type_icon
+#: model:ir.model.fields,help:school_management.field_school_student__activity_type_icon
+#: model:ir.model.fields,help:school_management.field_school_student_classes__activity_type_icon
+#: model:ir.model.fields,help:school_management.field_school_supervisor__activity_type_icon
+#: model:ir.model.fields,help:school_management.field_school_teacher__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "ફોન્ટ અદ્ભુત આયકન દા.ત. એફએ-ટાસ્ક"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__gender
+#: model:ir.model.fields,field_description:school_management.field_school_student__gender
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__gender
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__gender
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search_view
+msgid "Gender"
+msgstr "જાતિ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_classes_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search_view
+msgid "Group By"
+msgstr "દ્વારા જૂથ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__has_message
+#: model:ir.model.fields,field_description:school_management.field_school_student__has_message
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__has_message
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__has_message
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__has_message
+msgid "Has Message"
+msgstr "સંદેશ છે"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__address_student
+msgid "Home Address"
+msgstr "ઘરનું સરનામું"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__id
+#: model:ir.model.fields,field_description:school_management.field_school_student__id
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__id
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__id
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__id
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__id
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__id
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__id
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__id
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_exception_icon
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_exception_icon
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_exception_icon
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_exception_icon
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_exception_icon
+msgid "Icon"
+msgstr "ચિહ્ન"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__activity_exception_icon
+#: model:ir.model.fields,help:school_management.field_school_student__activity_exception_icon
+#: model:ir.model.fields,help:school_management.field_school_student_classes__activity_exception_icon
+#: model:ir.model.fields,help:school_management.field_school_supervisor__activity_exception_icon
+#: model:ir.model.fields,help:school_management.field_school_teacher__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "અપવાદ પ્રવૃત્તિ સૂચવવા માટેનું ચિહ્ન."
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__message_needaction
+#: model:ir.model.fields,help:school_management.field_school_principal__message_unread
+#: model:ir.model.fields,help:school_management.field_school_student__message_needaction
+#: model:ir.model.fields,help:school_management.field_school_student__message_unread
+#: model:ir.model.fields,help:school_management.field_school_student_classes__message_needaction
+#: model:ir.model.fields,help:school_management.field_school_student_classes__message_unread
+#: model:ir.model.fields,help:school_management.field_school_supervisor__message_needaction
+#: model:ir.model.fields,help:school_management.field_school_supervisor__message_unread
+#: model:ir.model.fields,help:school_management.field_school_teacher__message_needaction
+#: model:ir.model.fields,help:school_management.field_school_teacher__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "જો ચકાસાયેલ હોય, તો નવા સંદેશાઓ માટે તમારું ધ્યાન જરૂરી છે."
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__message_has_error
+#: model:ir.model.fields,help:school_management.field_school_student__message_has_error
+#: model:ir.model.fields,help:school_management.field_school_student_classes__message_has_error
+#: model:ir.model.fields,help:school_management.field_school_supervisor__message_has_error
+#: model:ir.model.fields,help:school_management.field_school_teacher__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "જો ચેક કરેલ હોય, તો કેટલાક સંદેશાઓમાં ડિલિવરી ભૂલ છે."
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_is_follower
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_is_follower
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_is_follower
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_is_follower
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_is_follower
+msgid "Is Follower"
+msgstr "અનુયાયી છે"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_student____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_teacher____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard____last_update
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard____last_update
+msgid "Last Modified on"
+msgstr "છેલ્લે સંશોધિત"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__student_last_name
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__last_name
+msgid "Last Name"
+msgstr "છેલ્લું નામ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__principal_last_name
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__supervisor_last_name
+msgid "Last Name "
+msgstr "છેલ્લું નામ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_kanban_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_kanban_view
+msgid "Last Name :"
+msgstr "છેલ્લું નામ :"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__write_uid
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__write_uid
+msgid "Last Updated by"
+msgstr "દ્વારા છેલ્લે અપડેટ કરવામાં આવ્યું હતું"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_student__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__write_date
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__write_date
+msgid "Last Updated on"
+msgstr "છેલ્લે અપડેટ થયેલ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__last_date_for_fees_payment
+msgid "Last date for fees payment"
+msgstr "ફી ભરવાની છેલ્લી તારીખ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_principal_tree_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_tree_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_tree_view
+msgid "Last name"
+msgstr "છેલ્લું નામ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_form_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_leave_wizard_form_view
+msgid "Leave"
+msgstr "છોડો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__leave_type
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_leave_form_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_leave_tree_view
+msgid "Leave Type"
+msgstr "છોડો પ્રકાર"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__leave_types
+msgid "Leave Types"
+msgstr "છોડો પ્રકાર"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__leave_date_from
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__leave_date_from
+msgid "Leave from"
+msgstr "થી છોડો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__leave_reason
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__leave_reason
+msgid "Leave reason"
+msgstr "કારણ છોડો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__leave_date_to
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__leave_date_to
+msgid "Leave to"
+msgstr "માટે છોડી દો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_main_attachment_id
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_main_attachment_id
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_main_attachment_id
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_main_attachment_id
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "મુખ્ય જોડાણ"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_principal__gender__male
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__gender__male
+#: model:ir.model.fields.selection,name:school_management.selection__school_supervisor__gender__male
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher__gender__male
+msgid "Male"
+msgstr "પુરુષ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__is_mandatory_subject
+msgid "Mandatory subject"
+msgstr "ફરજિયાત વિષય"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__marksheet_file
+msgid "Marksheet"
+msgstr "માર્કશીટ"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher_leave__leave_types__medical_leave_
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher_leave_wizard__leave_type__medical_leave_
+msgid "Medical leave"
+msgstr "તબીબી રજા"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_has_error
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_has_error
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_has_error
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_has_error
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_has_error
+msgid "Message Delivery error"
+msgstr "સંદેશ વિતરણ ભૂલ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_ids
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_ids
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_ids
+msgid "Messages"
+msgstr "સંદેશાઓ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__mother_name_student
+msgid "Mother Fullname"
+msgstr "માતાનું પૂરું નામ"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__principal_email
+#: model:ir.model.fields,help:school_management.field_school_supervisor__email_supervisor
+msgid "Must have @"
+msgstr "હોવી જ જોઈએ @"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__my_activity_date_deadline
+#: model:ir.model.fields,field_description:school_management.field_school_student__my_activity_date_deadline
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__my_activity_date_deadline
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__my_activity_date_deadline
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "મારી પ્રવૃત્તિની અંતિમ તારીખ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__name_student_id
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__teacher_name_id
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__name_student
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_leave_form_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_leave_tree_view
+msgid "Name"
+msgstr "નામ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_date_deadline
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_date_deadline
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_date_deadline
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_date_deadline
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "આગલી પ્રવૃત્તિની અંતિમ તારીખ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_summary
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_summary
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_summary
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_summary
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_summary
+msgid "Next Activity Summary"
+msgstr "આગામી પ્રવૃત્તિ સારાંશ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_type_id
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_type_id
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_type_id
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_type_id
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_type_id
+msgid "Next Activity Type"
+msgstr "આગામી પ્રવૃત્તિ પ્રકાર"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_needaction_counter
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_needaction_counter
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_needaction_counter
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_needaction_counter
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_needaction_counter
+msgid "Number of Actions"
+msgstr "ક્રિયાઓની સંખ્યા"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_has_error_counter
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_has_error_counter
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_has_error_counter
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_has_error_counter
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_has_error_counter
+msgid "Number of errors"
+msgstr "ભૂલોની સંખ્યા"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__message_needaction_counter
+#: model:ir.model.fields,help:school_management.field_school_student__message_needaction_counter
+#: model:ir.model.fields,help:school_management.field_school_student_classes__message_needaction_counter
+#: model:ir.model.fields,help:school_management.field_school_supervisor__message_needaction_counter
+#: model:ir.model.fields,help:school_management.field_school_teacher__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "સંદેશાઓની સંખ્યા જેને ક્રિયાની જરૂર છે"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__message_has_error_counter
+#: model:ir.model.fields,help:school_management.field_school_student__message_has_error_counter
+#: model:ir.model.fields,help:school_management.field_school_student_classes__message_has_error_counter
+#: model:ir.model.fields,help:school_management.field_school_supervisor__message_has_error_counter
+#: model:ir.model.fields,help:school_management.field_school_teacher__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "વિતરણ ભૂલ સાથે સંદેશાઓની સંખ્યા"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__message_unread_counter
+#: model:ir.model.fields,help:school_management.field_school_student__message_unread_counter
+#: model:ir.model.fields,help:school_management.field_school_student_classes__message_unread_counter
+#: model:ir.model.fields,help:school_management.field_school_supervisor__message_unread_counter
+#: model:ir.model.fields,help:school_management.field_school_teacher__message_unread_counter
+msgid "Number of unread messages"
+msgstr "ન વાંચેલા સંદેશાઓની સંખ્યા"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_principal__gender__others
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__gender__others
+#: model:ir.model.fields.selection,name:school_management.selection__school_supervisor__gender__others
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher__gender__others
+msgid "Others"
+msgstr "અન્ય"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_receipt_template
+msgid "Paid date"
+msgstr "ચૂકવેલ તારીખ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__paid_fees
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__paid_fees
+msgid "Paid fees"
+msgstr "ફી ચૂકવી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+msgid "Pay Fees"
+msgstr "ફી ચૂકવો"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_student_pay_fees_wizard
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_pay_fees_wizard_form_view
+msgid "Pay fees"
+msgstr "ફી ચૂકવો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__payment_count
+msgid "Payment Count"
+msgstr "ચુકવણીની ગણતરી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+msgid "Payments"
+msgstr "ચુકવણીઓ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__phone_no_principal
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__phone_no_teacher
+msgid "Phone number"
+msgstr "ફોન નંબર"
+
+#. module: school_management
+#: code:addons/school_management/models/school_student_fees.py:0
+#: code:addons/school_management/wizard/school_student_pay_fees_wizard.py:0
+msgid "Please enter proper information"
+msgstr "કૃપા કરીને યોગ્ય માહિતી દાખલ કરો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__assigned_principal_id
+#: model:res.groups,name:school_management.access_school_principal_group
+msgid "Principal"
+msgstr "આચાર્યશ્રી"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_principal
+msgid "Principal Details"
+msgstr "મુખ્ય વિગતો"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu_principal
+msgid "Principal Management"
+msgstr "પ્રિન્સિપલ મેનેજમેન્ટ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__principal_photo
+msgid "Principal Photo"
+msgstr "મુખ્ય ફોટો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+msgid "Receipt"
+msgstr "રસીદ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_receipt_template
+msgid "Remaining Fees"
+msgstr "બાકીની ફી"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__remaning_fees
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__remaning_fees
+msgid "Remaining fees"
+msgstr "બાકીની ફી"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__activity_user_id
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_user_id
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__activity_user_id
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__activity_user_id
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__activity_user_id
+msgid "Responsible User"
+msgstr "જવાબદાર વપરાશકર્તા"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__rollno
+msgid "Roll Number"
+msgstr "રોલ નંબર"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban_view
+msgid "Roll no :"
+msgstr "રોલ નંબર:"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu_root
+msgid "School Management"
+msgstr "શાળા સંચાલન"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__selected_subject_ids
+msgid "Selected Subject"
+msgstr "પસંદ કરેલ વિષય"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__principal_sequence
+msgid "Sequence Number"
+msgstr "ક્રમ નંબર"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__sequence_enrol_no
+msgid "Sequential Enrollement number"
+msgstr "ક્રમિક નોંધણી નંબર"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__sequence_supervisor_number
+msgid "Sequential supervisor number"
+msgstr "ક્રમિક સુપરવાઇઝર નંબર"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__sequence_teacher_number
+msgid "Sequential teacher number"
+msgstr "ક્રમિક શિક્ષક નંબર"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__standard
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__class_standard
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_classes_search_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search_view
+msgid "Standard"
+msgstr "ધોરણ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban_view
+msgid "Standard:"
+msgstr "ધોરણ:"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__activity_state
+#: model:ir.model.fields,help:school_management.field_school_student__activity_state
+#: model:ir.model.fields,help:school_management.field_school_student_classes__activity_state
+#: model:ir.model.fields,help:school_management.field_school_supervisor__activity_state
+#: model:ir.model.fields,help:school_management.field_school_teacher__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"પ્રવૃત્તિઓ પર આધારિત સ્થિતિ\n"
+"ઓવરડ્યુ: નિયત તારીખ પહેલેથી જ પસાર થઈ ગઈ છે\n"
+"આજે: પ્રવૃત્તિની તારીખ આજે છે\n"
+"આયોજિત: ભાવિ પ્રવૃત્તિઓ."
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__strength_of_class
+msgid "Strength of class"
+msgstr "વર્ગની તાકાત"
+
+#. module: school_management
+#: model:res.groups,name:school_management.access_school_student_group
+msgid "Student"
+msgstr "વિદ્યાર્થી"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__student_count
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__student_count
+msgid "Student Count"
+msgstr "વિદ્યાર્થી સંખ્યા"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_student
+#: model:ir.ui.menu,name:school_management.school_management_menu_student_details
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban_view
+msgid "Student Details"
+msgstr "વિદ્યાર્થીની વિગતો"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_student_fees
+msgid "Student Fees details"
+msgstr "વિદ્યાર્થી ફી વિગતો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_tree_view
+msgid "Student First name"
+msgstr "વિદ્યાર્થીનું પ્રથમ નામ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_tree_view
+msgid "Student Last name"
+msgstr "વિદ્યાર્થીનું છેલ્લું નામ"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu_student_root
+msgid "Student Management"
+msgstr "સ્ટુડન્ટ મેનેજમેન્ટ"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_student
+msgid "Student details"
+msgstr "વિદ્યાર્થી વિગતો"
+
+#. module: school_management
+#: model:ir.actions.report,name:school_management.action_student_fees_receipt
+msgid "Student fees receipt"
+msgstr "વિદ્યાર્થીની ફીની રસીદ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_form_view
+msgid "Student information"
+msgstr "વિદ્યાર્થી માહિતી"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__student_photo
+msgid "Student photo"
+msgstr "વિદ્યાર્થી ફોટો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__class_students_ids
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__assigned_student_ids
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_classes_form_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_form_view
+msgid "Students"
+msgstr "વિદ્યાર્થીઓ"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_subjects_form_view
+msgid "Students Information"
+msgstr "વિદ્યાર્થીઓની માહિતી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_classes_form_view
+msgid "Students information"
+msgstr "વિદ્યાર્થીઓની માહિતી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_subjects_form_view
+msgid "Students who selected this subject"
+msgstr "જે વિદ્યાર્થીઓએ આ વિષય પસંદ કર્યો છે"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__subject_teacher_id
+msgid "Subject"
+msgstr "વિષય"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__subject_count
+msgid "Subject Count"
+msgstr "વિષય ગણતરી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_subjects_form_view
+msgid "Subject Teacher information"
+msgstr "વિષય શિક્ષક માહિતી"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__subject_teacher_ids
+msgid "Subject Teachers"
+msgstr "વિષય શિક્ષકો"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_student_subjects
+msgid "Subject details"
+msgstr "વિષય વિગતો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+msgid "Subject information"
+msgstr "વિષય માહિતી"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_kanban_view
+msgid "Subject:"
+msgstr "વિષય:"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_subjects
+#: model:ir.model.fields,field_description:school_management.field_school_student__subject_list_ids
+#: model:ir.model.fields,field_description:school_management.field_school_student_subjects__subjects_name
+#: model:ir.ui.menu,name:school_management.school_management_menu_subjects
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_form_view
+msgid "Subjects"
+msgstr "વિષયો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__assigned_supervisor_id
+#: model:res.groups,name:school_management.access_school_supervisor_group
+msgid "Supervisor"
+msgstr "સુપરવાઇઝર"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_supervisor
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_kanban_view
+msgid "Supervisor Details"
+msgstr "સુપરવાઇઝર વિગતો"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu_supervisor
+msgid "Supervisor Management"
+msgstr "સુપરવાઇઝર મેનેજમેન્ટ"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_supervisor
+msgid "Supervisor details"
+msgstr "સુપરવાઇઝર વિગતો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_principal_form_view
+msgid "Supervisor information"
+msgstr "સુપરવાઇઝર માહિતી"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__supervisor_photo
+msgid "Supervisor photo"
+msgstr "સુપરવાઇઝર ફોટો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__assigned_supervisors_of_principal_ids
+msgid "Supervisors"
+msgstr "સુપરવાઇઝર"
+
+#. module: school_management
+#: model:res.groups,name:school_management.access_school_teacher_group
+msgid "Teacher"
+msgstr "શિક્ષક"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_teacher
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_kanban_view
+msgid "Teacher Details"
+msgstr "શિક્ષક વિગતો"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu_teacher_leave
+msgid "Teacher Leave"
+msgstr "શિક્ષક રજા"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_teacher_leave_wizard
+msgid "Teacher Leave Wizard"
+msgstr "શિક્ષક રજા વિઝાર્ડ"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_teacher_leave
+msgid "Teacher Leave details"
+msgstr "શિક્ષક રજા વિગતો"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu_teacher_root
+msgid "Teacher Management"
+msgstr "શિક્ષક વ્યવસ્થાપન"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_teacher
+msgid "Teacher details"
+msgstr "શિક્ષક વિગતો"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_supervisor_form_view
+msgid "Teacher information"
+msgstr "શિક્ષક માહિતી"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_teacher_leave
+msgid "Teacher leave details"
+msgstr "શિક્ષક રજા વિગતો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__teacher_name_id
+msgid "Teacher name"
+msgstr "શિક્ષકનું નામ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__teacher_photo
+msgid "Teacher photo"
+msgstr "શિક્ષકનો ફોટો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__assigned_teachers_of_supervisor_ids
+#: model:ir.ui.menu,name:school_management.school_management_menu_teacher_child
+msgid "Teachers"
+msgstr "શિક્ષકો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__today_date
+msgid "Today"
+msgstr "આજે"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave__total_days
+#: model:ir.model.fields,field_description:school_management.field_school_teacher_leave_wizard__total_days
+msgid "Total days"
+msgstr "કુલ દિવસો"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_fees__total_fees
+#: model:ir.model.fields,field_description:school_management.field_student_payfees_wizard__total_fees
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_receipt_template
+msgid "Total fees"
+msgstr "કુલ ફી"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_principal__activity_exception_decoration
+#: model:ir.model.fields,help:school_management.field_school_student__activity_exception_decoration
+#: model:ir.model.fields,help:school_management.field_school_student_classes__activity_exception_decoration
+#: model:ir.model.fields,help:school_management.field_school_supervisor__activity_exception_decoration
+#: model:ir.model.fields,help:school_management.field_school_teacher__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "રેકોર્ડ પર અપવાદ પ્રવૃત્તિનો પ્રકાર."
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher_leave__leave_types__unpaid_leave
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher_leave_wizard__leave_type__unpaid_leave
+msgid "Unpaid leave"
+msgstr "અવેતન રજા"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_unread
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_unread
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_unread
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_unread
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_unread
+msgid "Unread Messages"
+msgstr "ન વાંચેલા સંદેશાઓ"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_principal__message_unread_counter
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_unread_counter
+#: model:ir.model.fields,field_description:school_management.field_school_student_classes__message_unread_counter
+#: model:ir.model.fields,field_description:school_management.field_school_supervisor__message_unread_counter
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "ન વાંચેલા સંદેશાઓનું કાઉન્ટર"
+
+#. module: school_management
+#: model:base.automation,name:school_management.automated_action_to_change_state_record_if_in_any_given_state
+#: model:ir.actions.server,name:school_management.automated_action_to_change_state_record_if_in_any_given_state_ir_actions_server
+msgid ""
+"archive the record if in applied or in admitted state for a time period "
+msgstr ""
+"રેકોર્ડને આર્કાઇવ કરો જો લાગુ કરેલ હોય અથવા સમય ગાળા માટે દાખલ સ્થિતિમાં હોય"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__email_teacher
+msgid "email"
+msgstr "ઇમેઇલ"
+
+#. module: school_management
+#: code:addons/school_management/models/school_teacher.py:0
+msgid "enter Phone number and number should not exceed 10 digits"
+msgstr "ફોન નંબર દાખલ કરો અને નંબર 10 અંકથી વધુ ન હોવો જોઈએ"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_fees
+#: model:ir.model.fields,field_description:school_management.field_school_student__fees_students_ids
+msgid "fees"
+msgstr "ફી"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_principal
+msgid "principal details"
+msgstr "મુખ્ય વિગતો"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_student_payfees_wizard
+msgid "student pay fees"
+msgstr "વિદ્યાર્થી ફી ચૂકવે છે"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_fees_form_view
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_pay_fees_wizard_form_view
+msgid "total_fees"
+msgstr "કુલ_ફી"
