@@ -1,0 +1,1002 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hotel_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-22 11:04+0000\n"
+"PO-Revision-Date: 2023-11-22 11:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hotel_management
+#: model:ir.ui.menu,name:hotel_management.hotel_rooms
+msgid " All Rooms"
+msgstr "Alle kamers"
+
+#. module: hotel_management
+#: model:mail.template,subject:hotel_management.restaurant_guests_reservation_confirmed_email_template
+msgid " Table Reservation Confirmed"
+msgstr "Tafelreservering bevestigd"
+
+#. module: hotel_management
+#: model:ir.ui.menu,name:hotel_management.hotel_menu_root
+msgid " The Taj"
+msgstr ""
+
+#. module: hotel_management
+#: model:mail.template,body_html:hotel_management.room_reservation_confirmed_email_template
+msgid ""
+"<p>\n"
+"                <t>\n"
+"                    <t t-foreach=\"object.rooms_ids\" t-as=\"guests\">\n"
+"                    Dear <t t-out=\"object.customer_ids[0].name\"/>,\n"
+"                    <br/><br/>\n"
+"                    Your reservation for <t t-out=\"guests.room_sequence\"/> is confirmed.\n"
+"                    <br/><br/>\n"
+"                    Regards,\n"
+"                    <br/>\n"
+"                    The Taj\n"
+"                    </t>\n"
+"                </t>\n"
+"            </p>\n"
+"        "
+msgstr ""
+
+#. module: hotel_management
+#: model:mail.template,body_html:hotel_management.restaurant_guests_reservation_confirmed_email_template
+msgid ""
+"<p>\n"
+"                <t>\n"
+"                    <t t-foreach=\"object.table_booking_list_ids\" t-as=\"tables\">\n"
+"                    Dear <t t-out=\"object.guest_ids[0].name\"/>,\n"
+"                    <br/><br/>\n"
+"                    Your reservation for <t t-out=\"tables.table_no_seq\"/> on <t t-out=\"object.reservation_date\"/> is confirmed.\n"
+"                    <br/><br/>\n"
+"                    Regards,\n"
+"                    <br/>\n"
+"                    The Taj\n"
+"                    </t>\n"
+"                </t>\n"
+"            </p>\n"
+"        "
+msgstr ""
+
+#. module: hotel_management
+#: model:mail.template,body_html:hotel_management.restaurant_direct_reservation_confirmed_email_template
+msgid ""
+"<p>\n"
+"                <t>\n"
+"                    <t t-foreach=\"object.table_booking_list_ids\" t-as=\"tables\">\n"
+"                    Dear <t t-out=\"object.guest_name\"/>,\n"
+"                    <br/><br/>\n"
+"                    Your reservation for <t t-out=\"tables.table_no_seq\"/> on <t t-out=\"object.reservation_date\"/> is confirmed.\n"
+"                    <br/><br/>\n"
+"                    Regards,\n"
+"                    <br/>\n"
+"                    The Taj\n"
+"                    </t>\n"
+"                </t>\n"
+"            </p>\n"
+"        "
+msgstr ""
+
+#. module: hotel_management
+#: model:mail.template,body_html:hotel_management.room_reservation_reminder_email_template
+msgid ""
+"<p>\n"
+"                Dear <t t-out=\"object.customer_ids[0].name\"/>,\n"
+"                <br/><br/>\n"
+"                We are excited for your upcoming stay at The Taj.\n"
+"                <br/>\n"
+"                As a reminder, check-in date is on <t t-out=\"object.check_in_date\"/> and check-out date is <t t-out=\"object.check_out_date\"/> with your stay totaling at <t t-out=\"object.total_days\"/> days.\n"
+"                <br/>\n"
+"                Thank you and we look forward to seeing you soon.\n"
+"                <br/><br/>\n"
+"                Regards,\n"
+"                <br/>\n"
+"                The Taj\n"
+"            </p>\n"
+"        "
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hotel_management
+#: model_terms:ir.actions.act_window,help:hotel_management.action_food_products
+msgid "Add Food items"
+msgstr "Voedselitems toevoegen"
+
+#. module: hotel_management
+#: model_terms:ir.actions.act_window,help:hotel_management.action_hotel_room_services
+#: model_terms:ir.actions.act_window,help:hotel_management.action_hotel_room_type
+msgid "Add Rooms"
+msgstr "Kamers toevoegen"
+
+#. module: hotel_management
+#: model_terms:ir.actions.act_window,help:hotel_management.action_restaurant_tables
+msgid "Add Tables"
+msgstr "Tabellen toevoegen"
+
+#. module: hotel_management
+#: model_terms:ir.actions.act_window,help:hotel_management.action_transpor_vehicles
+msgid "Add Vehicles"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.actions.act_window,name:hotel_management.action_hotel_room_services_wizard
+msgid "Apply Leave"
+msgstr "Voertuigen toevoegen"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__availability_status
+msgid "Availability Status"
+msgstr "Beschikbaarheid Status"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__restaurant_tables__availability_status__available
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_tables_search_view
+msgid "Available"
+msgstr "Beschikbaar"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_type__room_status__booked
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_view
+msgid "Booked"
+msgstr "Geboekt"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__car_brand
+msgid "Brand"
+msgstr "Merk"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.transpor_vehicle_kanban_view
+msgid "Brand :"
+msgstr "Merk :"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__food_calory
+msgid "Calory"
+msgstr "Calory"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__restaurant_reservation__restaurant_reservation_states__cancelled
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_form_views
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_reservation_form_views
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_reservation__reservation_status__cancelled
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_views
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_reservation_search_views
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__capacity
+msgid "Capacity"
+msgstr "Capaciteit"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.transpor_vehicle_kanban_view
+msgid "Capacity :"
+msgstr "Capaciteit :"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__car_image
+msgid "Car Image"
+msgstr "Auto afbeelding"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__check_in_date
+msgid "Check in on"
+msgstr "Inchecken op"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_form_view
+msgid "Check out"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__check_out_date
+msgid "Check out on"
+msgstr "Bekijk op"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__company_id
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuratie instellingen"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__restaurant_reservation__restaurant_reservation_states__confirm
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_form_views
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_reservation_form_views
+msgid "Confirm"
+msgstr "Bevestigen"
+
+#. module: hotel_management
+#: model_terms:ir.actions.act_window,help:hotel_management.action_hotel_room_reservation
+#: model_terms:ir.actions.act_window,help:hotel_management.action_restaurant_reservation
+msgid "Create Reservations"
+msgstr "Reserveringen maken"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__create_uid
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__create_uid
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__create_uid
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__create_uid
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__create_uid
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__create_uid
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__create_uid
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__create_date
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__create_date
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__create_date
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__create_date
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__create_date
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__create_date
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__create_date
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__reservation_date
+msgid "Date"
+msgstr "Datum"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__destination_location
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__destination_location
+msgid "Destination"
+msgstr "Bestemming"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__is_direct_reservation
+msgid "Direct Reservation"
+msgstr "Directe reservering"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_reservation_search_views
+msgid "Direct reservations"
+msgstr "Directe reserveringen"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_services_wizard_form_view
+msgid "Discard"
+msgstr "Weggooien"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__display_name
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__display_name
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__display_name
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__display_name
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__display_name
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__display_name
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__display_name
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_reservation__reservation_status__done
+msgid "Done"
+msgstr "klaar"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_type__room_type__double
+msgid "Double"
+msgstr "dubbele"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_res_config_settings__double_room
+msgid "Double room multiplier"
+msgstr "Multiplier voor dubbele kamers"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_view
+msgid "Double rooms"
+msgstr "Dubbele kamers"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_reservation__reservation_status__draft
+#: model:ir.model.fields.selection,name:hotel_management.selection__restaurant_reservation__restaurant_reservation_states__draft
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_views
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_reservation_search_views
+msgid "Draft"
+msgstr "Voorlopige versie"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__guest_email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_type__room_type__family
+msgid "Family"
+msgstr "Familie"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_res_config_settings__family_room
+msgid "Family room multiplier"
+msgstr "Multiplier voor familiekamers"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_view
+msgid "Family rooms"
+msgstr "Familie kamers"
+
+#. module: hotel_management
+#: model:ir.ui.menu,name:hotel_management.transport_vehicles
+msgid "Fleet"
+msgstr "Vloot"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__food_lines_ids
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__food_lines_ids
+#: model:ir.ui.menu,name:hotel_management.hotel_room_food_services
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_services_form_view
+msgid "Food"
+msgstr ""
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.food_product_kanban_view
+#: model_terms:ir.ui.view,arch_db:hotel_management.transpor_vehicle_kanban_view
+msgid "Food Details"
+msgstr "Voedsel"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__food_image
+msgid "Food Image"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.actions.act_window,name:hotel_management.action_food_products
+msgid "Food Items"
+msgstr "Etenswaren"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__food_qty
+msgid "Food Quantity"
+msgstr "Hoeveelheid voedsel"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_service_wizard__service_type__food
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_services__service_type__food
+msgid "Food service"
+msgstr "Food Service"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__customer_ids
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__guests_ids
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__guest_ids
+#: model:ir.ui.menu,name:hotel_management.hotel_guests
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_form_view
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_form_views
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_reservation_form_views
+msgid "Guests"
+msgstr "Gasten"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_kanban_view
+msgid "Guests :"
+msgstr "Gasten :"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_food_product
+msgid "Hotel room food service"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_hotel_room_service_wizard
+msgid "Hotel room service wizard"
+msgstr "Hotelkamer foodservice"
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_hotel_room_services
+msgid "Hotel room services"
+msgstr "Hotel kamer diensten"
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_hotel_room_type
+msgid "Hotel room type"
+msgstr "Type hotel kamer"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__id
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__id
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__id
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__id
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__id
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__id
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__id
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__id
+msgid "ID"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,help:hotel_management.field_hotel_room_reservation__message_needaction
+#: model:ir.model.fields,help:hotel_management.field_hotel_room_reservation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,help:hotel_management.field_hotel_room_reservation__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product____last_update
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation____last_update
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard____last_update
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services____last_update
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type____last_update
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation____last_update
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables____last_update
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__write_uid
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__write_uid
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__write_uid
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__write_uid
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__write_uid
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__write_uid
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__write_uid
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__write_date
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__write_date
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__write_date
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__write_date
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__write_date
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__write_date
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__write_date
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__car_model
+msgid "Model"
+msgstr ""
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.transpor_vehicle_kanban_view
+msgid "Model :"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_res_config_settings__monsoon_season
+msgid "Monsoon season prices"
+msgstr "Prijzen van het moessonseizoen"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__guest_name
+msgid "Name"
+msgstr "Naam"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.food_product_kanban_view
+msgid "Name :"
+msgstr "Naam :"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__food_name
+msgid "Name of item"
+msgstr "Naam van artikel"
+
+#. module: hotel_management
+#: code:addons/hotel_management/models/hotel_room_reservation.py:0
+#: code:addons/hotel_management/models/hotel_room_services.py:0
+#: code:addons/hotel_management/models/hotel_room_type.py:0
+#: code:addons/hotel_management/models/restaurant_reservation.py:0
+#: code:addons/hotel_management/models/restaurant_tables.py:0
+#, python-format
+msgid "New"
+msgstr "Nieuw"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__guests_count
+msgid "Number of guests"
+msgstr "Aantal gasten"
+
+#. module: hotel_management
+#: model:ir.model.fields,help:hotel_management.field_hotel_room_reservation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,help:hotel_management.field_hotel_room_reservation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,help:hotel_management.field_hotel_room_reservation__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_services_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_form_view
+msgid "Order service"
+msgstr "Bestel service"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__guest_phone
+msgid "Phone no."
+msgstr "Telefoon nr."
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__pick_up_datetime
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__pick_up_datetime
+msgid "Pick up date and time"
+msgstr "Datum en tijd ophalen"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__pick_up_location
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__pick_up_location
+msgid "Pick up from"
+msgstr "Oppakken van"
+
+#. module: hotel_management
+#: code:addons/hotel_management/models/restaurant_reservation.py:0
+#, python-format
+msgid "Voer de juiste reserveringsdatum in"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__food_price
+msgid "Price"
+msgstr "Prijs"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.food_product_kanban_view
+msgid "Price :"
+msgstr "Prijs :"
+
+#. module: hotel_management
+#: model:mail.template,subject:hotel_management.room_reservation_confirmed_email_template
+msgid "Reservering bevestigd"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__reservation_no_seq
+msgid "Reservation No"
+msgstr "Reservering bevestigd"
+
+#. module: hotel_management
+#: model:mail.template,subject:hotel_management.room_reservation_reminder_email_template
+msgid "Reservation Reminder"
+msgstr "Reserverings herinnering"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__reservation_status
+msgid "Reservation Status"
+msgstr "Reserverings status"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__restaurant_reservation_ref
+msgid "Reservation no."
+msgstr "Reservering nr."
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__reservation_seq
+msgid "Reservation number"
+msgstr "Reserverings nummer"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__reservation_ref
+msgid "Reservation reference"
+msgstr "Reserverings referentie"
+
+#. module: hotel_management
+#: model:ir.actions.server,name:hotel_management.reservation_reminder_ir_actions_server
+#: model:ir.cron,cron_name:hotel_management.reservation_reminder
+#: model:ir.cron,name:hotel_management.reservation_reminder
+msgid "Reservation reminder"
+msgstr "Reserverings herinnering"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__restaurant_reservation_states
+msgid "Reservation status"
+msgstr "Reserverings status"
+
+#. module: hotel_management
+#: model:ir.ui.menu,name:hotel_management.restaurant_reservation
+msgid "Reservations"
+msgstr "Reserveringen"
+
+#. module: hotel_management
+#: model:ir.ui.menu,name:hotel_management.hotel_room_reservation
+msgid "Reserve room"
+msgstr "Kamer reserveren"
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_hotel_room_reservation
+msgid "Reserve rooms"
+msgstr "Reserveer kamer"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_reservation__reservation_status__reserved
+#: model:ir.model.fields.selection,name:hotel_management.selection__restaurant_tables__availability_status__reserved
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_views
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_reservation_search_views
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_tables_search_view
+msgid "Reserved"
+msgstr "Gereserveerd"
+
+#. module: hotel_management
+#: model:ir.ui.menu,name:hotel_management.restaurant_root
+msgid "Restaurant"
+msgstr "Restaurant"
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_restaurant_reservation
+msgid "Restaurant Booking"
+msgstr "Restaurant boeking"
+
+#. module: hotel_management
+#: model:ir.actions.act_window,name:hotel_management.action_restaurant_reservation
+msgid "Restaurant Reservation"
+msgstr "Restaurant reservering"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_kanban_view
+msgid "Room :"
+msgstr "Kamer :"
+
+#. module: hotel_management
+#: code:addons/hotel_management/models/hotel_room_reservation.py:0
+#, python-format
+msgid "Room Capcaity exceeded"
+msgstr "Kamer capaciteit overschreden"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_kanban_view
+msgid "Room Details"
+msgstr "Kamer details"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__room_sequence
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__room_id
+msgid "Room Number"
+msgstr "Kamer nummer"
+
+#. module: hotel_management
+#: model:ir.actions.act_window,name:hotel_management.action_hotel_room_reservation
+msgid "Room Reservation"
+msgstr "Kamer reservatie"
+
+#. module: hotel_management
+#: model:mail.template,name:hotel_management.room_reservation_confirmed_email_template
+msgid "Room Reservation confirmed email template"
+msgstr ""
+
+#. module: hotel_management
+#: model:mail.template,name:hotel_management.room_reservation_reminder_email_template
+msgid "Room Reservation reminder email template"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__room_status
+msgid "Room Status"
+msgstr "Kamer status"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__room_type
+msgid "Room Type"
+msgstr "Kamer type"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__room_image
+msgid "Room image"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__room_id
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__room_id
+msgid "Room number"
+msgstr "Kamer nummer"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__occupied_till
+msgid "Room occupied till"
+msgstr "Kamer bezet tot"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__room_price
+msgid "Room price"
+msgstr "Kamer prijs"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.res_config_settings_view_form
+msgid "Room price multiplier"
+msgstr "Kamer prijs multiplier"
+
+#. module: hotel_management
+#: model:ir.actions.act_window,name:hotel_management.action_hotel_room_services
+msgid "Room service"
+msgstr "Kamer dienst"
+
+#. module: hotel_management
+#: model:ir.ui.menu,name:hotel_management.hotel_room_services_root
+msgid "Room services"
+msgstr "Kamer dienst"
+
+#. module: hotel_management
+#: model:ir.actions.act_window,name:hotel_management.action_hotel_room_type
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__rooms_ids
+#: model:ir.ui.menu,name:hotel_management.hotel_room_root
+msgid "Rooms"
+msgstr "Kamers"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__transport_vehicle__car_type__suv
+msgid "SUV"
+msgstr "SUV"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.res_config_settings_view_form
+msgid "Seasonal Prices"
+msgstr "Seizoensgebonden prijzen"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__transport_vehicle__car_type__sedan
+msgid "Sedan"
+msgstr "Sedan"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__service_type
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__service_type
+msgid "Service Type"
+msgstr "Dienst Type"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__service_order_number_seq
+msgid "Service order number"
+msgstr "Dienst volgorde nummer"
+
+#. module: hotel_management
+#: model:ir.ui.menu,name:hotel_management.hotel_room_services
+msgid "Services"
+msgstr "Diensten"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_form_views
+#: model_terms:ir.ui.view,arch_db:hotel_management.restaurant_reservation_form_views
+msgid "Set to draft"
+msgstr "Instellen op concept"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_type__room_type__single
+msgid "Single"
+msgstr "Enkel"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_view
+msgid "Single Rooms"
+msgstr "Eenpersoons kamers"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_res_config_settings__single_room
+msgid "Single room multiplier"
+msgstr "Multiplier voor eenpersoons kamers"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_kanban_view
+msgid "Status :"
+msgstr "Toestand :"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_food_product__food_subtotal
+msgid "Subtotal"
+msgstr "Subtotaal"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_res_config_settings__summer_season
+msgid "Summer season prices"
+msgstr "Prijzen zomerseizoen"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_tables__table_no_seq
+msgid "Table No"
+msgstr "Tabel Nr"
+
+#. module: hotel_management
+#: model:mail.template,subject:hotel_management.restaurant_direct_reservation_confirmed_email_template
+msgid "Table Reservation Confirmed"
+msgstr "Tafelreservering bevestigd"
+
+#. module: hotel_management
+#: model:ir.actions.act_window,name:hotel_management.action_restaurant_tables
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__table_booking_list_ids
+#: model:ir.ui.menu,name:hotel_management.restaurant_tables
+msgid "Tables"
+msgstr "Tafels"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__total_cost
+msgid "Total cost of stay"
+msgstr "Totale verblijfskosten"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_restaurant_reservation__total_guests
+msgid "Total guests"
+msgstr "Totale verblijfskosten"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_type__room_capacity
+msgid "Total room capacity"
+msgstr "Totale capaciteit van de kamer"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__car_capacity
+msgid "Total seats"
+msgstr "Totaal aantal zetels"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__total_days
+msgid "Total staying days"
+msgstr "Totaal verblijfsdagen"
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_transport_vehicle
+msgid "Tranportation vehicles"
+msgstr "Transport voertuigen"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_service_wizard__car_lines_ids
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_services__car_lines_ids
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_services_form_view
+msgid "Transport"
+msgstr "Vervoer"
+
+#. module: hotel_management
+#: model:ir.actions.act_window,name:hotel_management.action_transpor_vehicles
+msgid "Transport vehicles"
+msgstr "Transport voertuigen"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_service_wizard__service_type__transport
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_services__service_type__transport
+msgid "Transportation service"
+msgstr "Transport dienst"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_transport_vehicle__car_type
+msgid "Type"
+msgstr "Type"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_kanban_view
+#: model_terms:ir.ui.view,arch_db:hotel_management.transpor_vehicle_kanban_view
+msgid "Type :"
+msgstr "Type :"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_hotel_room_reservation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_type__room_type__vip
+msgid "VIP"
+msgstr "VIP"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_res_config_settings__vip_room
+msgid "VIP room multiplier"
+msgstr "Multiplier voor VIP-kamers"
+
+#. module: hotel_management
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_view
+msgid "VIP rooms"
+msgstr "VIP-kamers"
+
+#. module: hotel_management
+#: model:ir.model.fields.selection,name:hotel_management.selection__hotel_room_type__room_status__vacant
+#: model_terms:ir.ui.view,arch_db:hotel_management.hotel_room_type_search_view
+msgid "Vacant"
+msgstr "Vrijgekomen"
+
+#. module: hotel_management
+#: model:ir.model.fields,field_description:hotel_management.field_res_config_settings__winter_season
+msgid "Winter season prices"
+msgstr "Winter seizoen prijzen"
+
+#. module: hotel_management
+#: model:ir.model,name:hotel_management.model_restaurant_tables
+msgid "restaurant Tables"
+msgstr "restaurant tafels"
+
+#. module: hotel_management
+#: model:mail.template,name:hotel_management.restaurant_direct_reservation_confirmed_email_template
+msgid "restaurant direct Reservation confirmed email template"
+msgstr ""
+
+#. module: hotel_management
+#: model:mail.template,name:hotel_management.restaurant_guests_reservation_confirmed_email_template
+msgid "restaurant guest Reservation confirmed email template"
+msgstr ""

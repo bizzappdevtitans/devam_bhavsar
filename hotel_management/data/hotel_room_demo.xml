@@ -1,0 +1,88 @@
+<odoo>
+    <!-- Demo data for rooms #T00471 -->
+    <record id="room_1" model="hotel.room.type">
+        <field name="room_type">single</field>
+        <field name="room_status">vacant</field>
+        <field
+            name="room_image"
+            type="base64"
+            file="hotel_management/static/img/single-room.png"
+        />
+    </record>
+    <record id="room_2" model="hotel.room.type">
+        <field name="room_type">single</field>
+        <field name="room_status">booked</field>
+        <field name="guests_ids" eval="[(4, ref('base.res_partner_4'))]" />
+        <field
+            name="room_image"
+            type="base64"
+            file="hotel_management/static/img/single-room.png"
+        />
+    </record>
+    <record id="room_3" model="hotel.room.type">
+        <field name="room_type">double</field>
+        <field name="room_status">vacant</field>
+        <field
+            name="room_image"
+            type="base64"
+            file="hotel_management/static/img/double-room.png"
+        />
+    </record>
+    <record id="room_4" model="hotel.room.type">
+        <field name="room_type">double</field>
+        <field name="room_status">booked</field>
+        <field
+            name="guests_ids"
+            eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18'))]"
+        />
+        <field
+            name="room_image"
+            type="base64"
+            file="hotel_management/static/img/double-room.png"
+        />
+    </record>
+    <record id="room_5" model="hotel.room.type">
+        <field name="room_type">family</field>
+        <field name="room_status">vacant</field>
+        <field
+            name="room_image"
+            type="base64"
+            file="hotel_management/static/img/family-room.png"
+        />
+    </record>
+    <record id="room_6" model="hotel.room.type">
+        <field name="room_type">family</field>
+        <field name="room_status">booked</field>
+        <field
+            name="guests_ids"
+            eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18')),(4, ref('base.res_partner_12')),(4, ref('base.res_partner_address_10'))]"
+        />
+        <field
+            name="room_image"
+            type="base64"
+            file="hotel_management/static/img/family-room.png"
+        />
+    </record>
+    <record id="room_7" model="hotel.room.type">
+        <field name="room_type">vip</field>
+        <field name="room_status">vacant</field>
+        <field
+            name="room_image"
+            type="base64"
+            file="hotel_management/static/img/vip-room.png"
+        />
+    </record>
+    <record id="room_8" model="hotel.room.type">
+        <field name="room_type">vip</field>
+        <field name="room_status">booked</field>
+        <field
+            name="guests_ids"
+            eval="[(4, ref('base.res_partner_4')), (4, ref('base.res_partner_18'))]"
+        />
+        <field
+            name="room_image"
+            type="base64"
+            file="hotel_management/static/img/vip-room.png"
+        />
+    </record>
+</odoo>

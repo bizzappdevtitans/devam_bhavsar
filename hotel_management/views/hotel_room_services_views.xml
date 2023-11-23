@@ -1,0 +1,97 @@
+<odoo>
+    <!-- hotel room services tree view #T00471 -->
+    <record id="hotel_room_services_tree_view" model="ir.ui.view">
+        <field name="name">hotel.room.services.tree</field>
+        <field name="model">hotel.room.services</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="service_type" />
+                <field name="room_id" />
+            </tree>
+        </field>
+    </record>
+    <!-- hotel room services form view #T00471 -->
+    <record id="hotel_room_services_form_view" model="ir.ui.view">
+        <field name="name">hotel.room.services.form</field>
+        <field name="model">hotel.room.services</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="service_order_number_seq" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="service_type" widget="radio" />
+                        <field name="room_id" />
+                        <field
+                            name="pick_up_location"
+                            attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                        />
+                        <field
+                            name="pick_up_datetime"
+                            attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                        />
+                        <field
+                            name="destination_location"
+                            attrs="{'invisible': [('service_type', '!=', 'transport')],'required': [('service_type', '=', 'transport')]}"
+                        />
+                    </group>
+                    <notebook>
+                        <page
+                            string="Food"
+                            name="food_service"
+                            attrs="{'invisible': [('service_type', '!=', 'food')]}"
+                        >
+                            <field name="food_lines_ids">
+                                <tree editable="bottom">
+                                    <field name="food_name" />
+                                    <field name="food_price" />
+                                    <field name="food_calory" />
+                                    <field name="food_qty" />
+                                    <field name="food_subtotal" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page
+                            string="Transport"
+                            name="transport_service"
+                            attrs="{'invisible': [('service_type', '!=', 'transport')]}"
+                        >
+                            <field name="car_lines_ids" mode="kanban">
+                                <tree editable="bottom">
+                                    <field name="car_brand" />
+                                    <field name="car_model" />
+                                    <field name="car_type" />
+                                    <field name="car_capacity" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- hotel room services search view #T00471 -->
+    <record id="hotel_room_services_search_view" model="ir.ui.view">
+        <field name="name">hotel.room.services.search</field>
+        <field name="model">hotel.room.services</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="room_id" />
+                <field name="service_type" />
+            </search>
+        </field>
+    </record>
+    <!-- window action #T00471 -->
+    <record id="action_hotel_room_services" model="ir.actions.act_window">
+        <field name="name">Room service</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hotel.room.services</field>
+        <field name='view_mode'>tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add Rooms</p>
+        </field>
+    </record>
+</odoo>

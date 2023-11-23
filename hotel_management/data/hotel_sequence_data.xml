@@ -1,0 +1,37 @@
+<odoo>
+    <!-- sequence for hotel rooms #T00471 -->
+    <record id="seq_hotel_room" model="ir.sequence">
+        <field name="name">Room number</field>
+        <field name="code">hotel.room.type</field>
+        <field name="prefix">Room-</field>
+        <field name="padding">3</field>
+    </record>
+    <!-- sequence for hotel room reservations #T00471 -->
+    <record id="seq_hotel_room_reservation" model="ir.sequence">
+        <field name="name">Room reservation number</field>
+        <field name="code">hotel.room.reservation</field>
+        <field name="prefix">R</field>
+        <field name="padding">4</field>
+    </record>
+    <!-- sequence for restaurant tables #T00471 -->
+    <record id="seq_restaurant_table" model="ir.sequence">
+        <field name="name">restaurant table number</field>
+        <field name="code">restaurant.tables</field>
+        <field name="prefix">Table-</field>
+        <field name="padding">2</field>
+    </record>
+    <!-- sequence for restaurant reservations #T00471 -->
+    <record id="seq_restaurant_reservation" model="ir.sequence">
+        <field name="name">restaurant reservation number</field>
+        <field name="code">restaurant.reservation</field>
+        <field name="prefix">Reservation-</field>
+        <field name="padding">4</field>
+    </record>
+    <!-- sequence for room services #T00471 -->
+    <record id="seq_room_service" model="ir.sequence">
+        <field name="name">Room service sequence number</field>
+        <field name="code">hotel.room.services</field>
+        <field name="prefix">S</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

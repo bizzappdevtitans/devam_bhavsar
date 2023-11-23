@@ -1,0 +1,91 @@
+<odoo>
+    <!-- food product tree view #T00471 -->
+    <record id="food_product_kanban_view" model="ir.ui.view">
+        <field name="name">food.product.kanban</field>
+        <field name="model">food.product</field>
+        <field name="arch" type="xml">
+            <kanban class="food_product_kanban_view" string="Food Details" sample="1">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_content">
+                                <div class="o_kanban_image">
+                                    <field
+                                        name="food_image"
+                                        widget="image"
+                                        class="oe_avatar"
+                                    />
+                                </div>
+                                <div>
+                                    <strong>
+                                        <div>
+                                            Name :
+                                            <field name="food_name" />
+                                        </div>
+                                        <div>
+                                            Price :
+                                            <field name="food_price" />
+                                        </div>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!-- food product tree view #T00471 -->
+    <record id="food_product_tree_view" model="ir.ui.view">
+        <field name="name">food.product.tree</field>
+        <field name="model">food.product</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="food_name" />
+                <field name="food_price" />
+            </tree>
+        </field>
+    </record>
+    <!-- food product form view #T00471 -->
+    <record id="food_product_form_view" model="ir.ui.view">
+        <field name="name">food.product.form</field>
+        <field name="model">food.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="food_image" widget="image" class="oe_avatar" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="food_name" />
+                        <field name="food_price" />
+                        <field name="food_calory" />
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- food product search view #T00471 -->
+    <record id="food_product_search_view" model="ir.ui.view">
+        <field name="name">food.product.search</field>
+        <field name="model">food.product</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="food_name" />
+            </search>
+        </field>
+    </record>
+    <!-- window action #T00471 -->
+    <record id="action_food_products" model="ir.actions.act_window">
+        <field name="name">Food Items</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">food.product</field>
+        <field name='view_mode'>kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add Food items</p>
+        </field>
+    </record>
+</odoo>

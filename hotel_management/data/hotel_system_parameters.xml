@@ -1,0 +1,32 @@
+<odoo>
+    <!-- system parameter for room prices based on season #T00471 -->
+    <record id="winter_season_price" model="ir.config_parameter">
+        <field name="key">winter_season_price</field>
+        <field name="value">1000</field>
+    </record>
+    <record id="summer_season_price" model="ir.config_parameter">
+        <field name="key">summer_season_price</field>
+        <field name="value">1010</field>
+    </record>
+    <record id="monsoon_season_price" model="ir.config_parameter">
+        <field name="key">monsoon_season_price</field>
+        <field name="value">1070</field>
+    </record>
+    <!-- System parameters for room price multipliers #T00471 -->
+    <record id="vip_room_price_multiplier" model="ir.config_parameter">
+        <field name="key">vip_room_price_multiplier</field>
+        <field name="value">4</field>
+    </record>
+    <record id="family_room_price_multiplier" model="ir.config_parameter">
+        <field name="key">family_room_price_multiplier</field>
+        <field name="value">3</field>
+    </record>
+    <record id="double_room_price_multiplier" model="ir.config_parameter">
+        <field name="key">double_room_price_multiplier</field>
+        <field name="value">2</field>
+    </record>
+    <record id="single_room_price_multiplier" model="ir.config_parameter">
+        <field name="key">single_room_price_multiplier</field>
+        <field name="value">1</field>
+    </record>
+</odoo>

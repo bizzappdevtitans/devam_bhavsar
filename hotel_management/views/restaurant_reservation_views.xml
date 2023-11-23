@@ -1,0 +1,154 @@
+<odoo>
+    <!-- Hotel room type tree view #T00471 -->
+    <record id="restaurant_reservation_tree_views" model="ir.ui.view">
+        <field name="name">restaurant.reservation.tree</field>
+        <field name="model">restaurant.reservation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="reservation_no_seq" />
+                <field name="restaurant_reservation_states" />
+            </tree>
+        </field>
+    </record>
+    <!-- Hotel room type form view #T00471 -->
+    <record id="restaurant_reservation_form_views" model="ir.ui.view">
+        <field name="name">restaurant.reservation.form</field>
+        <field name="model">restaurant.reservation</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- Status bar  #T00471-->
+                    <field name="restaurant_reservation_states" widget="statusbar" />
+                    <!-- confirm button #T00471 -->
+                    <button
+                        name="action_confirm"
+                        id="action_confirm"
+                        class="oe_highlight"
+                        type="object"
+                        string="Confirm"
+                        attrs="{'invisible': [('restaurant_reservation_states', 'not in', ['draft'])]}"
+                    />
+                    <!-- cancel button #T00471 -->
+                    <button
+                        name="action_cancel"
+                        id="action_cancel"
+                        class="oe_highlight"
+                        type="object"
+                        string="Cancel"
+                        attrs="{'invisible': [('restaurant_reservation_states', 'in', ['cancelled'])]}"
+                    />
+                    <!-- cancel to draft button #T00471 -->
+                    <button
+                        name="action_cancel_to_draft"
+                        id="action_cancel_to_draft"
+                        class="oe_highlight"
+                        type="object"
+                        string="Set to draft"
+                        attrs="{'invisible': [('restaurant_reservation_states', 'not in', ['cancelled'])]}"
+                    />
+                </header>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="reservation_no_seq" readonly="1" />
+                        </h1>
+                    </div>
+                    <style>
+                        div[name="options"] .o_field_boolean {
+                            margin-left: 10px;
+                            margin-right: 0px;
+                        }
+                    </style>
+                    <div name="options">
+                        <span class="d-inline-block">
+                            <field name="is_direct_reservation" />
+                            <label for="is_direct_reservation" />
+                        </span>
+                    </div>
+                    <group>
+                        <field name="table_booking_list_ids" widget="many2many_tags" />
+                        <field
+                            name="room_id"
+                            attrs="{'invisible': [('is_direct_reservation', '=', True)],'required': [('is_direct_reservation', '=', False)]}"
+                        />
+                        <field name="reservation_date" />
+                        <field
+                            name="guest_name"
+                            attrs="{'invisible': [('is_direct_reservation', '=', False)],'required': [('is_direct_reservation', '=', True)]}"
+                        />
+                        <field
+                            name="guest_email"
+                            widget="email"
+                            attrs="{'invisible': [('is_direct_reservation', '=', False)],'required': [('is_direct_reservation', '=', True)]}"
+                        />
+                        <field
+                            name="guest_phone"
+                            attrs="{'invisible': [('is_direct_reservation', '=', False)],'required': [('is_direct_reservation', '=', True)]}"
+                        />
+                        <field
+                            name="total_guests"
+                            attrs="{'invisible': [('is_direct_reservation', '=', False)],'required': [('is_direct_reservation', '=', True)]}"
+                        />
+                    </group>
+                    <notebook
+                        attrs="{'invisible': [('is_direct_reservation', '=', True)]}"
+                    >
+                        <page string="Guests" name="guests">
+                            <field name="guest_ids">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="phone" />
+                                    <field name="email" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="restaurant_reservation_search_views" model="ir.ui.view">
+        <field name="name">restaurant.reservation.search</field>
+        <field name="model">restaurant.reservation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="reservation_no_seq" />
+                <field name="guest_name" />
+                <field name="reservation_date" />
+                <!-- filter by  is_direct_reservation #T00471-->
+                <filter
+                    string="Direct reservations"
+                    name="is_direct_reservation"
+                    domain="[('is_direct_reservation', '=',True)]"
+                />
+                <!-- filter by status #T00471-->
+                <filter
+                    string="Draft"
+                    name="restaurant_reservation_states"
+                    domain="[('restaurant_reservation_states', '=','draft')]"
+                />
+                <filter
+                    string="Reserved"
+                    name="restaurant_reservation_states"
+                    domain="[('restaurant_reservation_states', '=','confirm')]"
+                />
+                <filter
+                    string="Cancelled"
+                    name="restaurant_reservation_states"
+                    domain="[('restaurant_reservation_states', '=','cancelled')]"
+                />
+            </search>
+        </field>
+    </record>
+    <!-- window action #T00471 -->
+    <record id="action_restaurant_reservation" model="ir.actions.act_window">
+        <field name="name">Restaurant Reservation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">restaurant.reservation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create Reservations</p>
+        </field>
+    </record>
+</odoo>

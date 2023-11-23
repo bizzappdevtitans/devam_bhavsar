@@ -1,0 +1,29 @@
+<odoo>
+    <!-- Email template for reservation reminder #T00471 -->
+    <record id="room_reservation_reminder_email_template" model="mail.template">
+        <field name="name">Room Reservation reminder email template</field>
+        <field name="model_id" ref="hotel_management.model_hotel_room_reservation" />
+        <field name="email_from">{{object.company_id.email}}</field>
+        <field name="email_to">{{object.customer_ids[0].email}}</field>
+        <field name="subject">Reservation Reminder</field>
+        <field name="body_html" type="html">
+            <p>
+                Dear <t t-out="object.customer_ids[0].name" />,
+                <br /><br />
+                We are excited for your upcoming stay at The Taj.
+                <br />
+                As a reminder, check-in date is on <t
+                    t-out="object.check_in_date"
+                /> and check-out date is <t
+                    t-out="object.check_out_date"
+                /> with your stay totaling at <t t-out="object.total_days" /> days.
+                <br />
+                Thank you and we look forward to seeing you soon.
+                <br /><br />
+                Regards,
+                <br />
+                The Taj
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,69 @@
+<odoo>
+    <!-- hotel main menu #T00471 -->
+    <menuitem id="hotel_menu_root" name=" The Taj" />
+    <!--sub-menu for hotel rooms #T00471 -->
+    <menuitem id="hotel_room_root" name="Rooms" parent="hotel_menu_root" />
+    <!-- menu for room reservations #T00471 -->
+    <menuitem
+        id="hotel_room_reservation"
+        name="Reserve room"
+        parent="hotel_room_root"
+        action="action_hotel_room_reservation"
+    />
+    <!-- menu for rooms #T00471 -->
+    <menuitem
+        id="hotel_rooms"
+        name=" All Rooms"
+        parent="hotel_room_root"
+        action="action_hotel_room_type"
+    />
+    <!-- sub menu for services #T00471-->
+    <menuitem
+        id="hotel_room_services_root"
+        name="Room services"
+        parent="hotel_menu_root"
+    />
+    <!-- child menu for room services #T00471 -->
+    <menuitem
+        id="hotel_room_services"
+        name="Services"
+        parent="hotel_room_services_root"
+        action="action_hotel_room_services"
+    />
+    <!-- child menu for food products #T00471 -->
+    <menuitem
+        id="hotel_room_food_services"
+        name="Food"
+        parent="hotel_room_services_root"
+        action="action_food_products"
+    />
+    <menuitem
+        id="transport_vehicles"
+        name="Fleet"
+        parent="hotel_room_services_root"
+        action="action_transpor_vehicles"
+    />
+    <!-- Menu for guest #T00471 -->
+    <menuitem
+        id="hotel_guests"
+        name="Guests"
+        parent="hotel_menu_root"
+        action="base.action_partner_form"
+    />
+    <!-- sub menu for restaurant #T00471 -->
+    <menuitem id="restaurant_root" name="Restaurant" parent="hotel_menu_root" />
+    <!-- menu for restaurant reservation #T00471 -->
+    <menuitem
+        id="restaurant_reservation"
+        name="Reservations"
+        parent="restaurant_root"
+        action="action_restaurant_reservation"
+    />
+    <!-- Menu for restaurant tables #T00471 -->
+    <menuitem
+        id="restaurant_tables"
+        name="Tables"
+        parent="restaurant_root"
+        action="action_restaurant_tables"
+    />
+</odoo>
