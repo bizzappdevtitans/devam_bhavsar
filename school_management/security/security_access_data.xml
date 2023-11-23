@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+    <!-- Groups #T00361-->
+        <record id="access_school_student_group" model="res.groups">
+            <field name="name">Student</field>
+            <field
+                name="users"
+                eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"
+            />
+        </record>
+        <record id="access_school_teacher_group" model="res.groups">
+            <field name="name">Teacher</field>
+            <field
+                name="users"
+                eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"
+            />
+        </record>
+        <record id="access_school_supervisor_group" model="res.groups">
+            <field name="name">Supervisor</field>
+            <field
+                name="users"
+                eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"
+            />
+        </record>
+        <record id="access_school_principal_group" model="res.groups">
+            <field name="name">Principal</field>
+            <field
+                name="implied_ids"
+                eval="[(4, ref('access_school_supervisor_group'))]"
+            />
+            <field
+                name="users"
+                eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"
+            />
+        </record>
+        <record id="school_subject_teacher_rule" model="ir.rule">
+            <field name="name">access rule school subjects by teacher</field>
+            <field name="model_id" ref="model_school_student_subjects" />
+            <field name="domain_force">[("subject_teacher_ids","=",user.id)]</field>
+            <field
+                name="groups"
+                eval="[(4,ref('school_management.access_school_teacher_group'))]"
+            />
+            <field name="perm_read">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+    <!-- custom channel to wish happy birthdays #T00398-->
+        <record id="school_teacher_birthday_announcements" model="mail.channel">
+            <field name="name">Birthdays</field>
+            <field name="description">General birthday announcements</field>
+            <field name="public">groups</field>
+            <field name="group_public_id" ref="base.group_user" />
+        </record>
+    </data>
+</odoo>

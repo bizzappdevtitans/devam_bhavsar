@@ -1,0 +1,93 @@
+<odoo>
+    <data>
+        <!-- main menu #T00335-->
+        <menuitem
+            id="school_management_menu_root"
+            name="School Management"
+            sequence="0"
+        />
+        <!--student menu  #T00335-->
+        <menuitem
+            id="school_management_menu_student_root"
+            name="Student Management"
+            parent="school_management_menu_root"
+            sequence="1"
+        />
+        <!-- student details menu #T00335 -->
+        <menuitem
+            id="school_management_menu_student_details"
+            name="Student Details"
+            parent="school_management_menu_student_root"
+            action="action_school_student"
+            sequence="1"
+        />
+        <!-- classes menu  #T00335 grps added in #T00361-->
+        <menuitem
+            id="school_management_menu_classes"
+            name="Classes"
+            parent="school_management_menu_student_root"
+            sequence="2"
+            action="action_school_classes"
+            groups="school_management.access_school_teacher_group,school_management.access_school_supervisor_group,school_management.access_school_principal_group"
+        />
+        <!-- subjects menu #T00335 grps added in #T00361-->
+        <menuitem
+            id="school_management_menu_subjects"
+            name="Subjects"
+            parent="school_management_menu_student_root"
+            sequence="3"
+            action="action_school_subjects"
+            groups="school_management.access_school_teacher_group,school_management.access_school_supervisor_group,school_management.access_school_principal_group"
+        />
+        <!-- fees menu #T00335 grps added in #T00361-->
+        <menuitem
+            id="school_management_menu_fees"
+            name="Fees"
+            parent="school_management_menu_student_root"
+            sequence="4"
+            action="action_school_fees"
+            groups="school_management.access_school_principal_group"
+        />
+        <!-- teacher main menu #T00335-->
+        <menuitem
+            id="school_management_menu_teacher_root"
+            name="Teacher Management"
+            parent="school_management_menu_root"
+            sequence="2"
+        />
+        <!-- Teacher sub menu#T00335 -->
+        <menuitem
+            id="school_management_menu_teacher_child"
+            name="Teachers"
+            parent="school_management_menu_teacher_root"
+            sequence="1"
+            action="action_school_teacher"
+        />
+        <!-- Teacher leave menu #T00335 grps added in #T00361-->
+        <menuitem
+            id="school_management_menu_teacher_leave"
+            name="Teacher Leave"
+            parent="school_management_menu_teacher_root"
+            sequence="2"
+            action="action_school_teacher_leave"
+            groups="school_management.access_school_principal_group,school_management.access_school_supervisor_group"
+        />
+        <!-- supervisor menu#T00335 -->
+        <menuitem
+            id="school_management_menu_supervisor"
+            name="Supervisor Management"
+            parent="school_management_menu_root"
+            sequence="3"
+            action="action_school_supervisor"
+        />
+        <!-- principal menu #T00335 grps added in #T00361-->
+        <menuitem
+            id="school_management_menu_principal"
+            name="Principal Management"
+            parent="school_management_menu_root"
+            sequence="4"
+            action="action_school_principal"
+            groups="school_management.access_school_principal_group"
+        />
+    </data>
+</odoo>

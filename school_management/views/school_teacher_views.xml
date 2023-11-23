@@ -1,0 +1,187 @@
+<odoo>
+    <!-- kanban view #T00335-->
+    <record id="school_teacher_kanban_view" model="ir.ui.view">
+        <field name="name">school.teacher.kanban</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="school_teacher_kanban_view"
+                string="Teacher Details"
+                sample="1"
+            >
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_content">
+                                <div class="o_kanban_image">
+                                    <field
+                                        name="teacher_photo"
+                                        widget="image"
+                                        class="oe_avatar"
+                                    />
+                                </div>
+                                <div>
+                                    <strong>
+                                        <div>
+                                            First Name :
+                                            <field name="first_name" />
+                                        </div>
+                                        <div>
+                                            Last Name :
+                                            <field name="last_name" />
+                                        </div>
+                                        <div>
+                                            Employee Number  :
+                                            <field name="sequence_teacher_number" />
+                                        </div>
+                                        <div>
+                                            Subject:
+                                            <field name="subject_teacher_id" />
+                                        </div>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!-- tree view #T00335-->
+    <record id="school_teacher_tree_view" model="ir.ui.view">
+        <field name="name">school.teacher.tree</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="first_name" string="First name" />
+                <field name="last_name" string="Last name" />
+                <field
+                    name="sequence_teacher_number"
+                    string="Employee Number"
+                    readonly="1"
+                />
+                <field name="is_status_active" />
+            </tree>
+        </field>
+    </record>
+    <!-- form view #T00335-->
+    <record id="school_teacher_form_view" model="ir.ui.view">
+        <field name="name">school.teacher.form</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- button for wizard #T00348-->
+                    <button
+                        name="%(school_management.action_school_teacher_leave_wizard)d"
+                        string="Leave"
+                        type="action"
+                        class="oe_highlight"
+                        groups="school_management.access_school_teacher_group"
+                    />
+                </header>
+                <sheet>
+                    <!-- smart button #T00335-->
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            class="oe_stat_button"
+                            type="object"
+                            name="action_show_number_of_students"
+                            icon="fa-users"
+                        >
+                            <field
+                                string="Students"
+                                name="student_count"
+                                widget="statinfo"
+                            />
+                        </button>
+                    </div>
+                    <div>
+                        <h1>
+                            <field name="sequence_teacher_number" readonly="1" />
+                            <field
+                                name="teacher_photo"
+                                widget="image"
+                                class="oe_avatar"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="first_name" />
+                            <field name="last_name" />
+                            <field name="age_teacher" />
+                            <field name="gender" />
+                            <field name="assigned_supervisor_id" />
+                            <field name="subject_teacher_id" />
+                        </group>
+                        <group>
+                            <field name="is_status_active" />
+                            <field name="date_of_birth" />
+                            <field name="phone_no_teacher" widget="phone" />
+                            <field name="email_teacher" widget="email" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Student information" name="assigned_students">
+                            <field name="assigned_student_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+    <!-- search view #T00335-->
+    <record id="school_teacher_search_view" model="ir.ui.view">
+        <field name="name">school.teacher.search</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="first_name" />
+                <field name="last_name" />
+                <field name="age_teacher" />
+                <field name="gender" />
+                <field name="date_of_birth" />
+                <field name="is_status_active" />
+                <!-- filter by status #T00335-->
+                <filter
+                    string="Active"
+                    name="is_status_active"
+                    domain="[('is_status_active', '=',True)]"
+                />
+                <!-- group by age #T00335-->
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Age"
+                        name="age_teacher"
+                        context="{'group_by': 'age_teacher'}"
+                    />
+                </group>
+                <!-- group by gender #T00335-->
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Gender"
+                        name="gender"
+                        context="{'group_by': 'gender'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <!-- window action #T00335-->
+    <record id="action_school_teacher" model="ir.actions.act_window">
+        <field name="name">Teacher Details</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create Teacher Record</p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,94 @@
+<odoo>
+    <!-- tree view #T00335-->
+    <record id="school_principal_tree_view" model="ir.ui.view">
+        <field name="name">school.principal.tree</field>
+        <field name="model">school.principal</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="principal_first_name" string="First name" />
+                <field name="principal_last_name" string="Last name" />
+                <field name="principal_sequence" />
+                <field name="is_status_active" />
+            </tree>
+        </field>
+    </record>
+    <!-- form view #T00335-->
+    <record id="school_principal_form_view" model="ir.ui.view">
+        <field name="name">school.principal.form</field>
+        <field name="model">school.principal</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- button for state change #T00335-->
+                        <button
+                        name="action_change_state_to_confirm_info"
+                        string="Confirm information"
+                        type="object"
+                        class="oe_highlight"
+                        icon="fa-check-square"
+                    />
+                    <!-- button for state change #T00335-->
+                        <button
+                        name="action_change_state_to_confirm_admission"
+                        string="Confirm admission"
+                        type="object"
+                        class="oe_highlight"
+                        icon="fa-check-square"
+                    />
+                </header>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="principal_sequence" readonly="1" />
+                            <field
+                                name="principal_photo"
+                                widget="image"
+                                class="oe_avatar"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="principal_first_name" />
+                            <field name="principal_last_name" />
+                            <field name="age_principal" />
+                            <field name="phone_no_principal" />
+                        </group>
+                        <group>
+                            <field name="is_status_active" />
+                            <field name="date_of_birth" />
+                            <field name="gender" />
+                            <field name="principal_email" widget="email" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page
+                            string="Supervisor information"
+                            name="assigned_supervisors"
+                        >
+                            <field name="assigned_supervisors_of_principal_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- chatter #T00335-->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- window action #T00335-->
+    <record id="action_school_principal" model="ir.actions.act_window">
+        <field name="name">Principal Details</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.principal</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create Principal Record</p>
+        </field>
+    </record>
+</odoo>

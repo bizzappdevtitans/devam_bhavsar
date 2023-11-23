@@ -1,0 +1,152 @@
+<odoo>
+    <!-- kanban view #T00335-->
+    <record id="school_supervisor_kanban_view" model="ir.ui.view">
+        <field name="name">school.supervisor.kanban</field>
+        <field name="model">school.supervisor</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="school_supervisor_view_kanban"
+                string="Supervisor Details"
+                sample="1"
+            >
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_content">
+                                <div class="o_kanban_image">
+                                    <field
+                                        name="supervisor_photo"
+                                        widget="image"
+                                        class="oe_avatar"
+                                    />
+                                </div>
+                                <div>
+                                    <strong>
+                                        <div>
+                                            First Name :
+                                            <field name="supervisor_first_name" />
+                                        </div>
+                                        <div>
+                                            Last Name :
+                                            <field name="supervisor_last_name" />
+                                        </div>
+                                        <div>
+                                            Employee Number  :
+                                            <field name="sequence_supervisor_number" />
+                                        </div>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!-- tree view #T00335-->
+    <record id="school_supervisor_tree_view" model="ir.ui.view">
+        <field name="name">school.supervisor.tree</field>
+        <field name="model">school.supervisor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="supervisor_first_name" string="First name" />
+                <field name="supervisor_last_name" string="Last name" />
+                <field name="sequence_supervisor_number" />
+                <field name="is_status_check" />
+            </tree>
+        </field>
+    </record>
+    <!-- form view #T00335-->
+    <record id="school_supervisor_form_view" model="ir.ui.view">
+        <field name="name">school.supervisor.form</field>
+        <field name="model">school.supervisor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="sequence_supervisor_number" readonly="1" />
+                            <field
+                                name="supervisor_photo"
+                                widget="image"
+                                class="oe_avatar"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="supervisor_first_name" />
+                            <field name="supervisor_last_name" />
+                            <field name="age_supervisor" />
+                            <field name="gender" />
+                            <field name="email_supervisor" widget="email" />
+                        </group>
+                        <group>
+                            <field name="is_status_check" />
+                            <field name="date_of_birth" />
+                            <field name="assigned_principal_id" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Teacher information" name="assigned_teachers">
+                            <field name="assigned_teachers_of_supervisor_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+    <!-- search view #T00335-->
+    <record id="school_supervisor_search_view" model="ir.ui.view">
+        <field name="name">school.supervisor.search</field>
+        <field name="model">school.supervisor</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="supervisor_first_name" />
+                <field name="supervisor_last_name" />
+                <field name="age_supervisor" />
+                <field name="gender" />
+                <field name="date_of_birth" />
+                <field name="is_status_check" />
+                <!-- filter by status #T00335-->
+                <filter
+                    string="Active"
+                    name="is_status_check"
+                    domain="[('is_status_check', '=',True)]"
+                />
+                <!-- group by age #T00335-->
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Age"
+                        name="age_supervisor"
+                        context="{'group_by': 'age_supervisor'}"
+                    />
+                </group>
+                <!-- group by gender #T00335-->
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Gender"
+                        name="gender"
+                        context="{'group_by': 'gender'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <!-- window action #T00335-->
+    <record id="action_school_supervisor" model="ir.actions.act_window">
+        <field name="name">Supervisor Details</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.supervisor</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create supervisor Record</p>
+        </field>
+    </record>
+</odoo>

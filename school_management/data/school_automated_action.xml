@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <!-- automated action to change state of  a record if state is in applied or admitted #T00408-->
+        <record
+            id="automated_action_to_change_state_record_if_in_any_given_state"
+            model="base.automation"
+        >
+            <field
+                name="name"
+            >archive the record if in applied or in admitted state for a time period </field>
+            <field name="model_id" ref="model_school_student" />
+            <field name="active">1</field>
+            <field name="trigger">on_time</field>
+            <field
+                name="trg_date_id"
+                search="[('model','=','school.student'),('name','=','create_date')]"
+            />
+            <field name="trg_date_range">2</field>
+            <field name="trg_date_range_type">month</field>
+            <field name="state">code</field>
+            <field name="code">model.archive_record_if_in_given_states()</field>
+        </record>
+    </data>
+</odoo>

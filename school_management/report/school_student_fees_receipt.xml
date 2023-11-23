@@ -1,0 +1,15 @@
+<odoo>
+    <!-- action for template button #T00444 -->
+    <record id="action_student_fees_receipt" model="ir.actions.report">
+        <field name="name">Student fees receipt</field>
+        <field name="model">school.student</field>
+        <field name="report_type">qweb-pdf</field>
+        <field
+            name="report_name"
+        >school_management.school_student_fees_receipt_template</field>
+        <field
+            name="report_file"
+        >school_management.school_student_fees_receipt_template</field>
+        <field name="binding_model_id" ref="model_school_student_fees" />
+    </record>
+</odoo>

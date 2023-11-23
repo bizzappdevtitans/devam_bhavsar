@@ -1,0 +1,50 @@
+<odoo>
+    <!-- Template of fees #T00444 -->
+    <template id="school_student_fees_receipt_template">
+        <t t-foreach="docs" t-as="student">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-set="address">
+                        <strong>Address</strong>
+                        <div t-field="student.address_student" />
+                    </t>
+                    <div class="page">
+                        <h2>
+                            <span t-field="student.student_first_name" />
+                        </h2>
+                        <div>
+                            <strong>Enrollement number: </strong>
+                            <span t-field="student.sequence_enrol_no" />
+                        </div>
+                        <div>
+                            <strong>Standard: </strong>
+                            <span t-field="student.standard" />
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Paid date</th>
+                                    <th>Fees Paid</th>
+                                    <th>Remaining Fees</th>
+                                    <th>Total fees</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t
+                                    t-set="fees"
+                                    t-value="student.mapped('fees_students_ids')"
+                                />
+                                <tr t-foreach="fees" t-as="fee">
+                                    <td><span t-field="fee.paid_date" /></td>
+                                    <td><span t-field="fee.paid_fees" /></td>
+                                    <td><span t-field="fee.remaning_fees" /></td>
+                                    <td><span t-field="fee.total_fees" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
