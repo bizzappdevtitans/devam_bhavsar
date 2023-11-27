@@ -8,7 +8,10 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Product Details" name="product_details">
                     <group string="Last 5 Purchase Orders">
-                        <field name="last_5_po_ids">
+                        <field
+                            name="last_5_po_ids"
+                            attrs="{'invisible': [('last_5_po_ids', '=', [])]}"
+                        >
                             <tree>
                                 <field name="name" />
                                 <field name="date_approve" />
@@ -16,11 +19,10 @@
                         </field>
                     </group>
                     <group string="Last 5 Sales Orders">
-                        <field name="last_5_so_ids">
-                            <tree>
-                                <field name="partner_id" />
-                            </tree>
-                        </field>
+                        <field
+                            name="last_5_so_ids"
+                            attrs="{'invisible': [('last_5_so_ids', '=', [])]}"
+                        />
                     </group>
                 </page>
             </xpath>

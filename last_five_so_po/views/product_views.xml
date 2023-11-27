@@ -22,11 +22,7 @@
                         string="Last 5 Sales Orders"
                         attrs="{'invisible': [('last_5_so_ids', '=', [])]}"
                     >
-                        <field name="last_5_so_ids">
-                            <tree>
-                                <field name="name" />
-                            </tree>
-                        </field>
+                        <field name="last_5_so_ids" />
                     </group>
                 </page>
             </xpath>
