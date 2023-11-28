@@ -19,12 +19,12 @@ msgstr ""
 #. module: hr_timesheet_task_stage
 #: model_terms:ir.ui.view,arch_db:hr_timesheet_task_stage.account_analytic_line_form
 msgid "<span class=\"text-danger\">Closed</span>"
-msgstr ""
+msgstr "<span class=\"text-danger\">Geschlossen</span>"
 
 #. module: hr_timesheet_task_stage
 #: model_terms:ir.ui.view,arch_db:hr_timesheet_task_stage.account_analytic_line_form
 msgid "<span class=\"text-success\">Open</span>"
-msgstr ""
+msgstr "<span class=\"text-success\">Offen</span>"
 
 #. module: hr_timesheet_task_stage
 #: model:ir.model,name:hr_timesheet_task_stage.model_account_analytic_line

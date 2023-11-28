@@ -8,10 +8,10 @@
 
 {
     "name": "Task Log: Open/Close Task",
-    "version": "16.0.1.0.1",
+    "version": "17.0.1.0.0",
     "category": "Operations/Timesheets",
     "website": "https://www.bizzappdev.com",
-    "author": "Tecnativa, CorporateHub, Odoo Community Association (OCA)",
+    "author": "Tecnativa, CorporateHub, Odoo Community Association (OCA), BizzAppdev",
     "license": "AGPL-3",
     "installable": True,
     "application": False,
