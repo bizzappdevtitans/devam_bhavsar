@@ -1,0 +1,31 @@
+<odoo>
+    <!-- Inherted form view from product.template and added required fields #T00447 -->
+    <record id="product_template_product_form_view" model="ir.ui.view">
+        <field name="name">product.template.product.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Product Details" name="product_details">
+                    <group string="Last 5 Purchase Orders">
+                        <field
+                            name="last_5_po_ids"
+                            attrs="{'invisible': [('last_5_po_ids', '=', [])]}"
+                        >
+                            <tree>
+                                <field name="name" />
+                                <field name="date_approve" />
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="Last 5 Sales Orders">
+                        <field
+                            name="last_5_so_ids"
+                            attrs="{'invisible': [('last_5_so_ids', '=', [])]}"
+                        />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
